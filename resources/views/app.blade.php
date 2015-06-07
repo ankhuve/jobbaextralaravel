@@ -26,25 +26,21 @@
                 <ul class="nav">
                     <li>
                         <a href="/">Start</a>
-                    </li>
-                    <li>
-                        <a href="#">Leta jobb</a>
-                    </li>
-                    <li>
+                    </li><li>
+                        <a href="search">Leta jobb</a>
+                    </li><li>
                         <a href="#">Leta arbetskraft</a>
-                    </li>
-                    <li>
+                    </li><li>
                         <a href="#">Logga in</a>
-                    </li>
-                    <li>
+                    </li><li>
                         <a href="about">Om oss</a>
                     </li>
                 </ul>
             </div>
 
         </nav>
-
-        @yield('content')
-
+        <div class="view">
+            @yield('content')
+        </div>
     </body>
 </html>

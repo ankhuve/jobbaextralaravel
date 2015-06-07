@@ -65,7 +65,7 @@ h4 {
 nav {
   display: table;
   width: 100%;
-  background-color: #242424;
+  background-color: #242424 !important;
   height: 175px;
   -webkit-transition: height 0.3s ease;
   /* Safari */
@@ -88,19 +88,23 @@ nav {
     -webkit-transition: height 0.3s ease;
     /* Safari */
     transition: height 0.3s ease; }
-  nav ul.nav {
-    color: #ffeec2;
-    text-transform: uppercase;
-    margin: 0;
-    display: flex; }
-    nav ul.nav a {
-      border-top: solid 1px transparent;
-      -webkit-transition: border-top 0.5s ease;
-      /* Safari */
-      transition: border-top 0.5s ease; }
-    nav ul.nav a:hover {
-      border-top: solid 1.5px #ff6e3f;
-      background-color: #242424 !important; }
+    nav .navLinks ul.nav {
+      color: #ffeec2;
+      text-transform: uppercase;
+      margin: 0; }
+      nav .navLinks ul.nav li {
+        display: inline-block; }
+      nav .navLinks ul.nav a {
+        border-top: solid 1px transparent;
+        padding: 10px 35px;
+        -webkit-transition: border-top 0.5s ease;
+        /* Safari */
+        transition: border-top 0.5s ease; }
+      nav .navLinks ul.nav a:hover {
+        border-top: solid 1.5px #ff6e3f;
+        background-color: #242424 !important; }
+      nav .navLinks ul.nav a:focus {
+        background-color: #242424; }
   nav #hamburgerIcon {
     display: none;
     cursor: pointer; }
@@ -142,7 +146,7 @@ nav {
 #searchBarIcon.searchPage {
   position: relative;
   top: 25px;
-  left: -80%; }
+  left: -73%; }
 
 .filterButtons {
   display: table;
@@ -286,11 +290,11 @@ nav {
 
 .jobSearchForm {
   text-align: left;
-  height: 42px;
-  width: 280px;
+  height: 44px;
+  width: 310px;
   float: left;
-  font-family: Roboto;
-  line-height: 42px;
+  font-family: Roboto, Helvetica Neue, Helvetica, Arial;
+  line-height: 44px;
   font-weight: 300;
   margin: 3px;
   border-radius: 50px;
@@ -372,7 +376,7 @@ nav {
 
 .spinner {
   position: relative;
-  left: 74%;
+  left: 69%;
   top: 23px; }
 
 .spinner.job {
