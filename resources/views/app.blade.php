@@ -21,7 +21,7 @@
     <body>
         <nav>
             <a class="headerLogo" href="/"><img src="img/jobbaextra_logo.png"/></a>
-            <img id="hamburgerIcon" src="img/thin_burger.png" ng-click="toggleMenu()">
+            <img id="hamburgerIcon" src="img/thin_burger.png">
             <div class="navLinks">
                 <ul class="nav">
                     <li>

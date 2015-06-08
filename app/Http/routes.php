@@ -16,6 +16,8 @@ Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index');
 Route::get('about', 'AboutController@index');
 Route::get('search', 'SearchController@index');
+Route::get('search/{keyword}', 'SearchController@search');
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

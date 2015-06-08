@@ -1,9 +1,9 @@
 @extends('app')
-@section("content")
+@section('content')
     <center>
         <div class="searchBar searchPage">
             <div id="orangeBG" class="searchPage">
-                <form novalidate>
+                {!! Form::open() !!}
 
                     <input class="jobSearchForm searchPage" placeholder="Hitta ett jobb" autofocus="autofocus"/>
                     <span id="searchBarIcon" class="searchPage"></span>
@@ -28,7 +28,7 @@
                             <div class="circle4"></div>
                         </div>
                     </div>
-                    <button class="searchButton searchPage">SÖK</button>
+                    <button role="submit" class="searchButton searchPage">SÖK</button>
 
                     <div class="filters">
                         <select class="dropdown searchFilter">
@@ -54,7 +54,7 @@
                         </div>
                     </div>
 
-                </form>
+                {!! Form::close() !!}
             </div>
         </div>
         <br/>
