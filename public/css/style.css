@@ -721,7 +721,10 @@ footer {
     max-height: 150px;
     border-radius: 4px 4px 0 0;
     background-color: rgba(57, 57, 57, 0.95);
-    padding: 0 20px 0 20px; }
+    padding: 0 20px 0 20px;
+    -webkit-transition: background-color 0.3s ease;
+    /* Safari */
+    transition: background-color 0.3s ease; }
     .jobBlock .upperInfo .titles {
       min-height: 72px; }
     .jobBlock .upperInfo h1 {
@@ -760,7 +763,8 @@ footer {
     color: #ffeec2;
     position: relative;
     padding-top: 9px;
-    border-radius: 0 0 4px 4px; }
+    border-radius: 0 0 4px 4px;
+    cursor: default; }
     .jobBlock .bottomInfo div.col-md-4 {
       float: left; }
     .jobBlock .bottomInfo img {
@@ -803,11 +807,23 @@ footer {
   border-top-left-radius: 25px; }
 
 .singleJobButton {
-  background-color: transparent;
-  border: none;
-  color: #FFEEC2;
-  width: 45%;
-  height: 30px; }
+  padding: 0;
+  width: 50px;
+  line-height: 45px;
+  float: left;
+  border-radius: 3px;
+  border: 0;
+  background-color: #454545;
+  -webkit-transition: background-color 0.5s ease;
+  /* Safari */
+  transition: background-color 0.5s ease;
+  height: 40px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.8em;
+  color: #ff6e3f; }
+
+.singleJobButton:hover {
+  background-color: #565656; }
 
 .singleJobButton.save {
   border-left: 1px solid #FF6E3F; }
@@ -1102,8 +1118,21 @@ textarea#description {
   .singleJob {
     width: 100%; }
   .singleJobButton {
-    padding-left: 0;
-    padding-right: 0; }
+    padding: 0;
+    min-width: 250px;
+    display: block;
+    border-radius: 3px;
+    border: 0;
+    background-color: #ff6e3f;
+    -webkit-transition: background-color 0.5s ease;
+    /* Safari */
+    transition: background-color 0.5s ease;
+    height: 45px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.4em;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #ffeec2; }
   body {
     background-position: center top 50px; }
   nav {

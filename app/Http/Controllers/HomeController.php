@@ -1,5 +1,8 @@
 <?php namespace App\Http\Controllers;
 
+use App\Job;
+use Carbon\Carbon;
+
 class HomeController extends Controller {
 
 	/*
@@ -20,7 +23,16 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('home');
+        $newJobs = $this->getNewestJobs();
+//        dd($newJobs->all());
+		return view('home', ['newJobs' => $newJobs->all()]);
 	}
+
+    public function getNewestJobs()
+    {
+        $data = Job::all()->sortByDesc('created_at')->take(2);
+//        dd($data);
+        return $data;
+    }
 
 }

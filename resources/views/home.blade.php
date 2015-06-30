@@ -49,12 +49,14 @@
                 </div>
             </div>
 
-            <!-- div class="latestJobs">
-			<div id="jobsTitle">
-				<h3 class="infoTitle underlined">De senaste jobben</h3>
-			</div>
-			<p id="placeholder">PLACEHOLDER</p>
-		</div> -->
+            <div class="latestJobs">
+                <div id="jobsTitle">
+                    <h3 class="infoTitle underlined">De senaste jobben</h3>
+                </div>
+                @foreach($newJobs as $job)
+                    @include('pages.partials.jobbaextrapuff')
+                @endforeach
+            </div>
         </div>
 
     </center>

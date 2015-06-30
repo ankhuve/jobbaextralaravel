@@ -67,34 +67,9 @@
         @endif
     </center>
 
-        @if (array_key_exists('matchningslista', $jobs))
+        @if (array_key_exists('matchningdata', $jobs->matchningslista))
             @foreach($jobs->matchningslista->matchningdata as $job)
-                <a href="/job/{{ $job->annonsid }}" >
-                    <div class="jobBlock col-md-6" id="{{ $job->annonsid }}">
-                        <div class="upperInfo">
-                            <div class="titles">
-                                <h1 class="text-left">{{ $job->annonsrubrik }}</h1>
-                                <h2 class="text-right"><i>{{ $job->arbetsplatsnamn }}</i></h2>
-                            </div>
-                            {{--<div class="jobShortDescription">{{ $job->annonstext }}</div>--}}
-                            <div class="jobShortDescription"></div>
-                        </div>
-
-                        <div class="bottomInfo">
-                            <div class="col-md-4">
-                                <img src="img/map_pin.png"/>
-                                <span>{{ $job->kommunnamn }}</span>
-                            </div>
-                            <div class="col-md-4">
-                                <img src="img/map_pin.png"/>
-                                <span>{{ substr($job->publiceraddatum, 0, 10) }}</span>
-                            </div>
-                            <div class="col-md-4">
-                                <img src="img/map_pin.png"/>
-                                <span>{{ substr($job->publiceraddatum, 0, 10) }}</span>
-                            </div>
-                        </div>
-                    </div>
+                @include('pages.partials.jobbpuff')
             @endforeach
             {{--<div class="pageSelector" >--}}
                 {{--<button class="pageSelectorButton"><span class="glyphicon glyphicon-backward"></span>pageNavButtonText().first</button>--}}

@@ -23,12 +23,7 @@ class JobController extends Controller
 
         $client = new Client(['base_uri' => 'http://api.arbetsformedlingen.se/af/v0/']);
 
-        $searchParams = [
-            'annonsid' => $jobid,
-        ];
-
         $jobMatch = $client->get('platsannonser/'.$jobid, [
-//            'query' => $searchParams,
             'headers' => [
                 'Accept' => 'application/json',
                 'Accept-Language' => 'sv-se,sv'

@@ -820,6 +820,8 @@ footer{
     border-radius: 4px 4px 0 0;
     background-color: rgba(57, 57, 57, 0.95);
     padding: 0 20px 0 20px;
+    -webkit-transition: background-color 0.3s ease; /* Safari */
+    transition: background-color 0.3s ease;
 
     .titles{
       min-height: 72px;
@@ -874,6 +876,7 @@ footer{
     position: relative;
     padding-top: 9px;
     border-radius: 0 0 4px 4px;
+    cursor: default;
 //    box-shadow: rgba(0, 0, 0, 0.65) 0 6px 7px 0 inset;
 
     div.col-md-4{
@@ -935,11 +938,24 @@ footer{
 }
 
 .singleJobButton{
-  background-color:transparent;
-  border:none;
-  color:#FFEEC2;
-  width:45%;
-  height:30px;
+  padding: 0;
+  width: 50px;
+  line-height: 45px;
+//  display: block;
+  float: left;
+  border-radius: 3px;
+  border: 0;
+  background-color: #454545;
+  -webkit-transition: background-color 0.5s ease; /* Safari */
+  transition: background-color 0.5s ease;
+  height: 40px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.8em;
+  color: #ff6e3f;
+}
+
+.singleJobButton:hover{
+  background-color: #565656;
 }
 
 .singleJobButton.save {
@@ -1349,8 +1365,20 @@ textarea#description{
   }
 
   .singleJobButton{
-    padding-left: 0;
-    padding-right: 0;
+    padding: 0;
+    min-width: 250px;
+    display: block;
+    border-radius: 3px;
+    border: 0;
+    background-color: #ff6e3f;
+    -webkit-transition: background-color 0.5s ease; /* Safari */
+    transition: background-color 0.5s ease;
+    height: 45px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.4em;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #ffeec2;
   }
 
   body {
