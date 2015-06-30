@@ -13,11 +13,27 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('home', 'HomeController@index');
 Route::get('about', 'AboutController@index');
-Route::get('search', 'SearchController@index');
-Route::get('search/{keyword}', 'SearchController@search');
+Route::get('company', 'CompanyController@index');
+Route::get('company/create', 'CompanyController@show');
+Route::post('company/create', 'CompanyController@create');
+Route::get('company/create/confirm', 'CompanyController@confirm');
+Route::get('register', 'RegisterController@index');
+Route::get('search/{keyword?}', 'SearchController@index');
+Route::get('getJobInfo/{jobid}', 'JobController@getJob');
+Route::get('job/{id}', 'JobController@index');
+Route::get('{any}', 'HomeController@index'); // uncaught route
 
+// Auth routes
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+// Registration routes
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+Route::resource('company', 'CompanyController');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

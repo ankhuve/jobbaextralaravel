@@ -1,7 +1,6 @@
 body{
   background-size: 1920px auto;
-  background-color: #3E3E3E;
-  background: url("../img/jobbaextra_bg_web.jpg") no-repeat center top 170px;
+  background: #3E3E3E url("../img/jobbaextra_bg_web.jpg") no-repeat center top 170px;
   font-family: 'Roboto', sans-serif;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -93,6 +92,8 @@ nav{
   .navLinks{
     text-transform: uppercase;
     text-align: center;
+    font-size: 1.2em;
+    font-weight: 100;
     background-color: rgb(47,47,47);
     width: 100%;
     margin-top: 135px;
@@ -110,7 +111,7 @@ nav{
 
       a{
         border-top: solid 1px rgba(0,0,0,0);
-        padding: 10px 35px;
+        padding: 10px 40px;
         -webkit-transition: border-top 0.5s ease; /* Safari */
         transition: border-top 0.5s ease;
       }
@@ -155,7 +156,7 @@ nav{
   height: 64px;
   font-size: 28px;
   line-height: 62px;
-  width: 75%;
+  width: 80%;
   border-radius: 3px;
   text-indent: 10px;
 }
@@ -176,7 +177,7 @@ nav{
 #searchBarIcon.searchPage{
   position: relative;
   top: 25px;
-  left: -73%;
+  left: -78%;
 }
 
 .filterButtons{
@@ -189,9 +190,8 @@ nav{
   width: 8%;
   min-width: 30px;
   height: 40px;
-  margin: 0;
-  margin-right: 15%;
-  display: table-cell;
+  margin: 0 15% 0 0;
+  display: none;
   font-size: 130%;
   float: right;
   padding-top: 10px;
@@ -209,13 +209,11 @@ nav{
 }
 
 .filterButton.searchButton{
-  position: relative;
   display: inline-block;
-  padding-top: 8px;
   height: 40px;
-  line-height: 16px;
+  line-height:14px;
   font-size: 16px;
-  margin: 0;
+  margin-left: -4%;
   background-color: #DF582D;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
@@ -232,7 +230,7 @@ nav{
 }
 
 .filterButton.searchButton p{
-  margin: 0;
+  margin: 10px 5px 2px 5px;
 }
 
 .filters{
@@ -256,10 +254,9 @@ nav{
   display: table-cell;
   float: left;
   width: 171px;
-  margin: 0px 4px;
-  height: 0px;
-  padding: 0;
-  padding-left: 15px;
+  margin: 0 0 0 4px;
+  height: 0;
+  padding: 0 0 0 15px;
   border-radius: 3px;
   -webkit-transition: 0.3s ease; /* Safari */
   transition: 0.3s ease;
@@ -273,7 +270,8 @@ nav{
 
 .searchFilterAnimation{
   margin-bottom: 8px;
-  margin-right: 4px;
+//  margin-right: 4px;
+  margin-left: 4px;
   padding-left:15px;
   height: 30px;
   -webkit-transition: 0.3s ease; /* Safari */
@@ -375,7 +373,7 @@ nav{
   float: left;
   display: inline-block;
   position: relative;
-  opacity: 0;
+  opacity: 1;
   margin-top: 70px;
   margin-bottom: 30px;
   width: 100%;
@@ -383,16 +381,11 @@ nav{
 
 #numSearchResults h4{
   display: inline;
-  background-color:rgba(47,47,47,0.65);
+  background-color:rgba(47,47,47,0.8);
   height: 2.2em;
-  padding: 0.4em;
-  margin-top: 15px;
-  padding: 15px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding: 8px 15px;
   border-radius: 1.7em;
   border-top: 0;
-
   color:#FFFFE6;
   margin: 0;
 }
@@ -466,6 +459,12 @@ nav{
 }
 
 .spinner .spinner-container {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+
+.jobDescLoader .spinner-container {
   position: absolute;
   width: 20px;
   height: 20px;
@@ -619,10 +618,6 @@ nav{
   color: #71CBD9;
 }
 
-/*.extraJobInfo{
-
-}*/
-
 .underlined{
   border-bottom: solid #ff6e3f 2px;
 }
@@ -674,7 +669,7 @@ nav{
 }
 
 .loginLink{
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   color: inherit;
   -webkit-transition: color 0.2s; /* Safari */
@@ -684,9 +679,36 @@ nav{
   margin-left: 0.8em;
 }
 
-.loginLink:hover{
+.loginLink:hover, .forgotPassword:hover, .loginFormLink:hover{
   text-decoration: none;
   color: #44E6FF;
+}
+
+.forgotPassword{
+  color: #71CBD9;
+  font-size: 1em;
+  text-transform: uppercase;
+  margin-top: 0.7em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  -webkit-transition: color 0.2s; /* Safari */
+  transition: color 0.2s;
+  transition-timing-function: ease;
+  text-decoration: none;
+  float: right;
+}
+
+.loginFormLink{
+  color: #71CBD9;
+  font-size: 1em;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  -webkit-transition: color 0.2s; /* Safari */
+  transition: color 0.2s;
+  transition-timing-function: ease;
+  text-decoration: none;
+  float: right;
 }
 
 .latestJobs{
@@ -785,26 +807,94 @@ footer{
 }
 
 .jobBlock {
-  position:relative;
-  padding-left:10px;
-  padding-right:10px;
-  width: 45.5%;
-  float:left;
-  margin-left:3%;
-  /*margin-right:2.5%;*/
-  margin-bottom:20px;
-  min-width:300px;
-  min-height:120px;
-  background-color: rgba(255, 110, 63,0.95);
+//  position:relative;
+  padding: 10px;
   color:#FFFFE6;
+  margin-bottom: 30px;
+  max-height: 180px;
+  min-height: 180px;
+
+  .upperInfo{
+    height: 150px;
+    max-height: 150px;
+    border-radius: 4px 4px 0 0;
+    background-color: rgba(57, 57, 57, 0.95);
+    padding: 0 20px 0 20px;
+
+    .titles{
+      min-height: 72px;
+    }
+
+    h1{
+      font-family: 'Raleway', 'open-sans', sans-serif;
+      font-size: 20px;
+      font-weight:700;
+      margin: 0;
+      padding: 10px 0 5px;
+      text-transform: uppercase;
+      color: #FFEEC2;
+    }
+
+    h2{
+      font-family: "Raleway", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      margin-bottom: 5px;
+      color: #71CBD9;
+    }
+
+    .jobDescLoader{
+      position: relative;
+      display: table;
+      margin: 0 auto;
+    }
+
+    .jobShortDescription{
+      color: #FFEEC2;
+      font-size: 15px;
+      min-height: 30px;
+      max-height: 100px;
+//      overflow: auto;
+
+      img{
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  }
+
+  .bottomInfo{
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    background-color: #ff6e3f;
+    width: 100%;
+    height: 30px;
+    color: #ffeec2;
+    position: relative;
+    padding-top: 9px;
+    border-radius: 0 0 4px 4px;
+//    box-shadow: rgba(0, 0, 0, 0.65) 0 6px 7px 0 inset;
+
+    div.col-md-4{
+      float: left;
+    }
+
+    img{
+      height: 13px;
+//      width: 8px;
+    }
+
+    span{
+      padding-left: 10px;
+    }
+  }
 }
 
-.jobsContainer{
-  margin-bottom:30px;
-}
-
-h4 small{
-  color:#FFFFE6;
+.jobBlock:hover {
+  .upperInfo {
+    background-color: rgba(65, 65, 65, 0.95);
+  }
 }
 
 .sidePicker {
@@ -814,6 +904,7 @@ h4 small{
 
 .singleJob{
   width: 80%;
+  font-size: 16px;
   max-width: 1000px;
   color:#E9DEBE;
   background-color: #ff6e3f;
@@ -858,6 +949,44 @@ h4 small{
 .singleJobButton.removeSaved{
   border-left:1px solid #FF6E3F;
 }
+
+.form-horizontal{
+  label{
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+
+  select.dropdown{
+
+  }
+}
+
+.registerFormSubmitButton{
+  padding: 0;
+  min-width: 250px;
+  display: block;
+  border-radius: 3px;
+  border: 0;
+  background-color: #ff6e3f;
+  -webkit-transition: background-color 0.5s ease; /* Safari */
+  transition: background-color 0.5s ease;
+  height: 45px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.4em;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #ffeec2;
+}
+
+.registerFormSubmitButton:hover{
+  background-color: #FF460A;
+}
+
+.validationError{
+  color: #FFFFFF;
+  background-color: #FF6E3F;
+}
+
 
 .loginContainer{
   height:auto;
@@ -906,6 +1035,8 @@ h4 small{
   width: 70%;
 }
 
+
+
 .registerInput#register:disabled{
   background-color: #535353;
   color: #323232;
@@ -921,23 +1052,87 @@ h4 small{
   margin-left:10px;
 }
 
-
-
 #loginHeader {
   padding-top:10px;
   margin-bottom:30px;
 }
 
-.messageBox{
+.newJobContainer{
   background-color:rgba(36,36,36,0.9);
-  padding-top:10px;
-  padding-bottom:10px;
-  padding-left:10px;
-  padding-right:10px;
-  width:300px;
-  /*min-width:250px;*/
   color:#FFEEC2;
   margin-bottom:30px;
+  max-width: 1500px;
+  padding: 0;
+}
+
+textarea#description{
+  height: 250px;
+  min-height: 30px;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.validationInput{
+  color: #FFEEC2;
+  background-color: transparent;
+  border: none;
+  font-size: 1.2em;
+  box-shadow: 0px 0px 8px 0px rgba(255, 110, 63, 0.5);
+
+  option{
+    background-color: rgb(255, 110, 63);
+  }
+
+  @media (max-width: 991px) {
+    margin-bottom: 15px;
+  }
+}
+
+.validationInput[name=title]{
+  font-size: 2em;
+  padding: 0;
+}
+
+.basicJobInfoContainer{
+  padding: 20px 0 10px 0;
+//  margin: 0 8.333%;
+  margin-bottom: 15px;
+//  background-color: #4a4a4a;
+}
+
+.loggedInUser{
+  font-size: 0.6em;
+  color: rgba(156, 139, 116, 0.6);
+  text-transform: lowercase;
+  font-weight: 300;
+
+  .orange{
+    color: #ff6e3f;
+  }
+}
+
+.messageBox{
+  background-color:rgba(36,36,36,0.9);
+  margin-left: auto;
+  margin-right: auto;
+  width:80%;
+  max-width: 600px;
+  min-width:400px;
+  color:#FFEEC2;
+  margin-bottom:30px;
+}
+
+.messageBoxHeading{
+  text-align: center;
+  background-color: rgb(36,36,36);
+  font-size: 2em;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 100;
+  border-bottom: solid 1.5px #ff6e3f;
+  padding: 10px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 
 .registerText {
@@ -992,17 +1187,6 @@ h4 small{
   padding-top:10px;
 }
 
-.logoutButton {
-  background-color:#FF6E3F;
-  color:#FFEEC2;
-  border:none;
-}
-
-.logoutButton.mediumSizeNav{
-  display: none !important;
-  /*position: relative;*/
-  /*display: block;*/
-}
 /* #################################################### */
 /* ############## START OF RESPONSIVENESS ############# */
 /* #################################################### */
@@ -1021,25 +1205,12 @@ h4 small{
     margin: 35px;
   }
 
-  .navLink{
-    display: block;
-    padding-left: 5px;
-    margin-left: 20px;
-    border-left: solid 1.5px rgba(0,0,0,0);
-    -webkit-transition: border-left 0.5s ease; /* Safari */
-    transition: border-left 0.5s ease;
-  }
-
-  .navLink:hover{
-    border-left: solid 1.5px #ff6e3f;
-    border-bottom: solid 1px rgba(0,0,0,0);
-  }
-
   .navLinks{
     position: relative;
     float: right;
     width: 250px;
     top: 0;
+    font-size: 1.2em;
   }
 
   .linkBox{
@@ -1047,12 +1218,6 @@ h4 small{
     height: auto;
     padding-left: 0;
     padding-right: 35px;
-  }
-
-  .logoutButton.mediumSizeNav{
-    display: block;
-    /*position: relative;*/
-    /*display: block;*/
   }
 
   #splash{
@@ -1227,19 +1392,6 @@ h4 small{
     -webkit-transition: 0.3s;
     transition: 0.3s;
     height: auto;
-  }
-
-  .navLink{
-    font-size: 0;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-  }
-
-  .navLinkAnimation{
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-    font-size: 1em;
-    padding: 5px;
   }
 
   .linkBox{

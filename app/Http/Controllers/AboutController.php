@@ -12,7 +12,7 @@ class AboutController extends Controller {
         $data = [];
         $data['first'] = "Jobba";
         $data['last'] = "Extra";
-        return view("pages.about", $data);
+        return view("pages.about", ['first' => $data['first'], 'last' => $data['last']]);
     }
 
 }

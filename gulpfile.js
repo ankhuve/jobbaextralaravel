@@ -28,6 +28,11 @@ gulp.task('sass', function() {
         .pipe(browserSync.stream());
 });
 
+//gulp.task('copyjs', function(){
+//    gulp.src('vendor/components/jquery/jquery.min.js', 'public/js/jquery.js')
+//        .pipe(gulp.dest('public/js'));
+//});
+
 gulp.task('default', ['serve']);
 /*
  |--------------------------------------------------------------------------
@@ -40,6 +45,4 @@ gulp.task('default', ['serve']);
  |
  */
 //
-//elixir(function(mix) {
-//    mix.sass('style.scss');
-//});
+

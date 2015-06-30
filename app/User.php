@@ -22,7 +22,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'email', 'password'];
+	protected $fillable = ['email', 'password', 'usertype'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -31,4 +31,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+    public function userType(){
+        return $this->usertype;
+    }
+
+    /**
+     * A user may create many jobs.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function jobs()
+    {
+        return $this->hasMany('App\Job');
+    }
 }

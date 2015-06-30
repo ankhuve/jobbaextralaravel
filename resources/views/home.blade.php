@@ -5,12 +5,10 @@
 
         <div class="searchBar">
             <div id="orangeBG">
-
-                <form novalidate>
-                    <input class="jobSearchForm" placeholder="Hitta ett jobb" autofocus="autofocus"></input>
-                    <button class="searchButton">SÖK</button>
-                </form>
-
+                {!! Form::open(array('url' => 'search', 'method' => 'get')) !!}
+                {!! Form::text('q', null, array('class'=>'jobSearchForm', 'placeholder'=>'Hitta ett jobb', 'autofocus'=>'autofocus')) !!}
+                {!! Form::submit('SÖK', array('class'=>'searchButton')) !!}
+                {!! Form::close() !!}
             </div>
             <span id="searchBarIcon"></span>
         </div>
@@ -30,9 +28,9 @@
                         <p class="infoDescription">Här kan man ha massa bra information för de som letar jobb. Man kan skriva att de kan lägga upp sitt CV osv. Bli medlem på den här sidan och få en massa jobb. <br/><br/>Typiskt najs att göra det.</p>
                     </div>
                     <div id="registerUser">
-                        <a><button class="registerButton" >Skapa din profil</button></a>
+                        <a href="{{ URL::action('RegisterController@index') }}"><button class="registerButton" >Skapa din profil</button></a>
                         <br/>
-                        <span class="alreadyJoined">Redan medlem? <a class="loginLink">Logga in!</a></span>
+                        <span class="alreadyJoined">Redan medlem? <a class="loginLink" href="auth/login">Logga in!</a></span>
                     </div>
                 </div>
 
@@ -44,9 +42,9 @@
                         <p class="infoDescription">Här kan man ha massa bra information för de som letar jobb. Man kan skriva att de kan lägga upp sitt CV osv. Bli medlem på den här sidan och få en massa jobb. <br/><br/>Typiskt najs att göra det.</p>
                     </div>
                     <div class="registerCompany" id="registerCompany">
-                        <a><button class="registerButton">Registrera ditt företag</button></a>
+                        <a href="{{ URL::action('RegisterController@index') }}"><button class="registerButton">Registrera ditt företag</button></a>
                         <br/>
-                        <span class="alreadyJoined">Redan kund? <a class="loginLink" >Logga in!</a></span>
+                        <span class="alreadyJoined">Redan kund? <a class="loginLink" href="auth/login">Logga in!</a></span>
                     </div>
                 </div>
             </div>

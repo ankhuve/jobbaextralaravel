@@ -2,43 +2,57 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Client;
-use Psy\Util\Json;
-use Illuminate\Http\Request as LaravelRequest;
+use Input;
+use Illuminate\Http\Request;
 
-class SearchController extends Controller {
 
-    public function index()
+
+class SearchController extends Controller
+{
+
+    public function index(Request $request, $keyword = false)
     {
-        return view('pages.search');
+        if (Input::has('q')) {
+            $keyword = Input::get('q');
+        }
+
+        $results = $this->search($keyword, $request);
+
+        return view('pages.search', ['jobs' => $results]);
     }
 
-    public function search($keyword, LaravelRequest $request){
+    public function search($keyword = null, $request)
+    {
+
         $client = new Client(['base_uri' => 'http://api.arbetsformedlingen.se/af/v0/']);
 
-        $response = $client->get('platsannonser/matchning', [
-            'query' => [
-                'antalrader'      => 10,
-                'sida'            => 1,
-                'nyckelord'       => $keyword,
-                'anstallningstyp' => 2
-            ],
+        $searchParams = [
+            'antalrader' => 10,
+            'sida' => 1,
+            'anstallningstyp' => 2,
+            'nyckelord' => $keyword,
+        ];
+
+        if (Input::get('q') != 'null') {
+            $searchParams['nyckelord'] = Input::get('q');
+        }
+        if (Input::get('lan') != 'null') {
+            $searchParams['lanid'] = Input::get('lan');
+        }
+        if (Input::get('yrkesomraden') != 'null') {
+            $searchParams['yrkesomradeid'] = Input::get('yrkesomraden');
+        }
+
+        $searchResults = $client->get('platsannonser/matchning', [
+            'query' => $searchParams,
             'headers' => [
-                'Accept'          => 'application/json',
+                'Accept' => 'application/json',
                 'Accept-Language' => 'sv-se,sv'
             ]
         ]);
-        $content = json_decode($response->getBody()->getContents());
-
-        dd($content->matchningslista);
-//
-//        if ($request->ajax()) {
-//            return $content->matchningslista;
-//        } else{
-//            return $content->matchningslista;
-//        }
+        $jobMatches = json_decode($searchResults->getBody()->getContents());
+        $request->flash();
+        return $jobMatches;
     }
-
-
 }
