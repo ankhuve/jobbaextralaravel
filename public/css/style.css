@@ -825,7 +825,10 @@ footer {
   height: 40px;
   font-family: 'Raleway', sans-serif;
   font-size: 0.8em;
-  color: #ff6e3f; }
+  color: #ff6e3f;
+  top: 4px;
+  position: relative;
+  margin-right: 20px; }
 
 .singleJobButton:hover {
   background-color: #565656; }
