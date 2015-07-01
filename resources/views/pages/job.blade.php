@@ -12,7 +12,9 @@
             <p class="extraJobInfo"> Publicerad: {{ date('d-m-Y', strtotime($jobMatch->annons->publiceraddatum)) }} </p>
             <p class="extraJobInfo"> Dagar sedan publicering: {{ $daysSincePublished }} </p>
             <p class="extraJobInfo"><a href="{{ $jobMatch->annons->platsannonsUrl }}">Länk till arbetsförmedlingen</a></p>
-                    <div>{{ $jobMatch->ansokan->epostadress }}</div>
+            @if(isset($jobMatch->ansokan->epostadress))
+                <div>{{ $jobMatch->ansokan->epostadress }}</div>
+            @endif
             @if(isset($jobMatch->ansokan->sista_ansokningsdag))
                     <div class="extraJobInfo">Sista ansökningsdag {{ substr($jobMatch->ansokan->sista_ansokningsdag, 0, 10) }}</div>
             @endif

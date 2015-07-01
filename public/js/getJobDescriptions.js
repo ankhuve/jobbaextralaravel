@@ -4,7 +4,6 @@ $(document).ready(function () {
     });
     var jobs = $('div.jobBlock');
     var spinner = '<div class="jobDescLoader"><div class="spinner-container container1"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div><div class="spinner-container container2"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div><div class="spinner-container container3"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div></div>'
-    console.log(jobs);
     for (var i = 0; i < jobs.length; i++) {
         (function (i) {
             $('#' + jobs[i].getAttribute('id')).children('.upperInfo').children('.jobShortDescription').html(spinner);

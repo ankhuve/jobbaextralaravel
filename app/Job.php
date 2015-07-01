@@ -25,7 +25,7 @@ class Job extends Model
      * @param array $data
      * @return static
      */
-    public static function open(array $data)
+    public static function open(array $data = [])
     {
         return new static($data);
     }

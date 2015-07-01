@@ -44,7 +44,7 @@ class CompanyController extends Controller
                 'type' => $data['type'],
                 'county' => $data['county'],
                 'municipality' => $data['municipality'],
-                'description' => $data['description'],
+                'description' => nl2br($data['description']),
                 'latest_application_date' => $data['latest_application_date'],
                 'contact_email' => $data['contact_email'],
                 'published_at' => Carbon::now()

@@ -1,9 +1,9 @@
 @extends('app')
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
-            <div class="col-md-10 col-md-offset-1 newJobContainer">
+            <div class="col-md-12 newJobContainer">
                 <div class="messageBoxHeading">Dina jobbannonser
                     @if(count(($user->jobs)) != 0)
                         ( {{ count($user->jobs) }} )
@@ -13,7 +13,7 @@
                 <div class="panel-body">
                     @if($user->jobs)
                         @foreach($user->jobs as $job)
-                            @include('company.jobbpuff')
+                            @include('pages.partials.jobbaextrapuff')
                         @endforeach
                     @else
                         <div class="row">

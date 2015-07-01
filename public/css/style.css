@@ -1,7 +1,7 @@
 @charset "UTF-8";
 body {
   background-size: 1920px auto;
-  background: #3E3E3E url("../img/jobbaextra_bg_web.jpg") no-repeat center top 170px;
+  background: #3E3E3E url("../img/jobbaextra_bg_web.jpg") repeat center top 170px;
   font-family: 'Roboto', sans-serif;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -117,11 +117,12 @@ nav {
   width: 400px; }
 
 .searchBar.searchPage {
+  margin: 0 auto;
   width: 100%;
   max-width: 700px; }
 
 #orangeBG.searchPage {
-  width: 85.71428571428571%;
+  width: 100%;
   height: 70px;
   border-radius: 3px; }
 
@@ -140,8 +141,8 @@ nav {
   position: absolute;
   height: 70px;
   font-size: 30px;
-  margin-left: -62px;
-  width: 100px;
+  margin-left: -20px;
+  width: 130px;
   float: none; }
 
 #searchBarIcon.searchPage {
@@ -154,8 +155,11 @@ nav {
   width: 100%; }
 
 .searchButton.resetFilters {
+  position: relative;
+  top: -40px;
+  text-align: center;
   background-color: #DF582D;
-  width: 8%;
+  width: 50px;
   min-width: 30px;
   height: 40px;
   margin: 0 15% 0 0;
@@ -176,11 +180,14 @@ nav {
   transition: 0.3s ease; }
 
 .filterButton.searchButton {
-  display: inline-block;
+  position: relative;
+  display: block;
   height: 40px;
   line-height: 14px;
+  text-align: center;
+  padding-top: 8px;
   font-size: 16px;
-  margin-left: -4%;
+  margin: 0 auto;
   background-color: #DF582D;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
@@ -195,7 +202,7 @@ nav {
   top: -15px; }
 
 .filterButton.searchButton p {
-  margin: 10px 5px 2px 5px; }
+  margin: 0px 5px 2px 5px; }
 
 .filters {
   display: inline-table;
@@ -290,7 +297,7 @@ nav {
   height: 44px;
   width: 310px;
   float: left;
-  font-family: Roboto, Helvetica Neue, Helvetica, Arial;
+  font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
   line-height: 44px;
   font-weight: 300;
   margin: 3px;
@@ -317,25 +324,22 @@ nav {
   float: left; }
 
 .searchButton:focus {
-  outline-color: transparent;
-  outline-style: none; }
+  outline: transparent none; }
+
+.searchResults {
+  margin-top: 30px; }
 
 #numSearchResults {
-  float: left;
-  display: inline-block;
-  position: relative;
-  opacity: 1;
-  margin-top: 70px;
-  margin-bottom: 30px;
-  width: 100%; }
+  text-align: center;
+  margin: 20px auto 0;
+  width: 200px; }
 
 #numSearchResults h4 {
-  display: inline;
-  background-color: rgba(47, 47, 47, 0.8);
-  height: 2.2em;
-  padding: 8px 15px;
+  display: block;
+  font-weight: 500;
+  background-color: rgba(47, 47, 47, 0.95);
+  padding: 12px 15px;
   border-radius: 1.7em;
-  border-top: 0;
   color: #FFFFE6;
   margin: 0; }
 
@@ -369,8 +373,8 @@ nav {
 
 .spinner {
   position: relative;
-  left: 69%;
-  top: 23px; }
+  left: 74%;
+  top: 24px; }
 
 .spinner.job {
   position: relative;
@@ -724,7 +728,8 @@ footer {
     padding: 0 20px 0 20px;
     -webkit-transition: background-color 0.3s ease;
     /* Safari */
-    transition: background-color 0.3s ease; }
+    transition: background-color 0.3s ease;
+    text-align: left; }
     .jobBlock .upperInfo .titles {
       min-height: 72px; }
     .jobBlock .upperInfo h1 {
@@ -762,7 +767,7 @@ footer {
     height: 30px;
     color: #ffeec2;
     position: relative;
-    padding-top: 9px;
+    padding-top: 7px;
     border-radius: 0 0 4px 4px;
     cursor: default; }
     .jobBlock .bottomInfo div.col-md-4 {
@@ -835,7 +840,7 @@ footer {
   font-size: 1.2em;
   font-weight: 300; }
 
-.registerFormSubmitButton {
+.registerFormSubmitButton, .responsiveButton {
   padding: 0;
   min-width: 250px;
   display: block;
@@ -852,7 +857,7 @@ footer {
   text-transform: uppercase;
   color: #ffeec2; }
 
-.registerFormSubmitButton:hover {
+.registerFormSubmitButton:hover, .responsiveButton:hover {
   background-color: #FF460A; }
 
 .validationError {
@@ -917,10 +922,11 @@ footer {
   margin-bottom: 30px; }
 
 .newJobContainer {
-  background-color: rgba(36, 36, 36, 0.9);
+  background-color: rgba(36, 36, 36, 0.95);
+  font-size: 1.2em;
   color: #FFEEC2;
   margin-bottom: 30px;
-  max-width: 1500px;
+  max-width: 1200px;
   padding: 0; }
 
 textarea#description {
@@ -1023,6 +1029,32 @@ textarea#description {
   text-align: right;
   padding-right: 20px;
   padding-top: 10px; }
+
+#confirmBox {
+  -webkit-transition: width 0.3s;
+  -moz-transition: width 0.3s;
+  -ms-transition: width 0.3s;
+  -o-transition: width 0.3s;
+  transition: width 0.3s;
+  border-radius: 5px;
+  width: 50%;
+  margin: 50px auto 0;
+  font-size: 14px;
+  margin-bottom: 100px; }
+  #confirmBox .messageBoxHeading {
+    background-color: #484848; }
+
+.confirmationForm form {
+  display: none; }
+
+.responsiveButton {
+  min-width: unset; }
+
+.cancelButton {
+  background-color: #c00b19; }
+
+.confirmButton {
+  background-color: #55c04d; }
 
 /* #################################################### */
 /* ############## START OF RESPONSIVENESS ############# */
