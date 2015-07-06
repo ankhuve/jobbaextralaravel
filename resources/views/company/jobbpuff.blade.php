@@ -12,11 +12,11 @@
                 <span>{{ $job->municipality }}</span>
             </div>
             <div class="col-md-4">
-                <img src="img/map_pin.png"/>
+                <img src="img/time_ago.png"/>
                 <span>{{ $job->created_at->format('Y-m-d') }}</span>
             </div>
             <div class="col-md-4">
-                <img src="img/map_pin.png"/>
+                <img src="img/calendar.png"/>
                 <span>{{ $job->created_at->format('Y-m-d') }}</span>
             </div>
         </div>

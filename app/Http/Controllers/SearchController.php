@@ -34,15 +34,12 @@ class SearchController extends Controller
             'nyckelord' => $keyword,
         ];
 
-        if (Input::get('q') != 'null') {
-            $searchParams['nyckelord'] = Input::get('q');
-        }
-        if (Input::get('lan') != 'null') {
-            $searchParams['lanid'] = Input::get('lan');
-        }
-        if (Input::get('yrkesomraden') != 'null') {
-            $searchParams['yrkesomradeid'] = Input::get('yrkesomraden');
-        }
+            $searchParams['nyckelord'] = Input::get('q') ? : null;
+            $searchParams['lanid'] = Input::get('lan') ? : null;
+            $searchParams['yrkesomradeid'] = Input::get('yrkesomraden') ? : null;
+//        if (Input::get('sida') != 'null') {
+//            $searchParams['sida'] = Input::get('sida') ? : "";
+//        }
 
         $searchResults = $client->get('platsannonser/matchning', [
             'query' => $searchParams,

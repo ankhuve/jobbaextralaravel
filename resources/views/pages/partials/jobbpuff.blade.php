@@ -15,12 +15,14 @@
             <span>{{ $job->kommunnamn }}</span>
         </div>
         <div class="col-md-4" title="Dagar sedan jobbet publicerades.">
-            <img src="img/map_pin.png"/>
+            <img src="img/time_ago.png"/>
 
-            <span>{{ (int)(floor((time() - strtotime($job->publiceraddatum))/(60*60*24))) === 0 ? 'Idag' : ((int)(floor((time() - strtotime($job->publiceraddatum))/(60*60*24))) === 1 ? (int)(floor((time() - strtotime($job->publiceraddatum))/(60*60*24))).' dag sedan' : (int)(floor((time() - strtotime($job->publiceraddatum))/(60*60*24))).' dagar sedan')}}</span>
+            <span>
+                {{ (int)(floor((time() - strtotime($job->publiceraddatum))/(60*60*24))) === 0 ? 'Idag' : ((int)(floor((time() - strtotime($job->publiceraddatum))/(60*60*24))) === 1 ? (int)(floor((time() - strtotime($job->publiceraddatum))/(60*60*24))).' dag sedan' : (int)(floor((time() - strtotime($job->publiceraddatum))/(60*60*24))).' dagar sedan')}}
+            </span>
         </div>
         <div class="col-md-4" title="Sista ansökningsdatum för jobbet.">
-            <img src="img/map_pin.png"/>
+            <img src="img/calendar.png"/>
             <span>{{ substr($job->publiceraddatum, 0, 10) }}</span>
         </div>
     </div>

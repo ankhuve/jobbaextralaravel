@@ -15,12 +15,12 @@
             <span>{{ $job->municipality }}</span>
         </div>
         <div class="col-md-4" title="Dagar sedan jobbet publicerades.">
-            <img src="/img/map_pin.png"/>
+            <img src="/img/time_ago.png"/>
 
-{{--            <span>{{ $job->created_at->diffInDays(\Carbon\Carbon::now()) < 1 ? 'Idag' : ($job->created_at->diffInDays(\Carbon\Carbon::now()) == 1 ? 'Igår' : ($job->created_at->diffInDays(\Carbon\Carbon::now()).' dagar sedan')) }}</span>--}}
+            <span>{{ $job->created_at->diffInDays(\Carbon\Carbon::now()) < 1 ? 'Idag' : ($job->created_at->diffInDays(\Carbon\Carbon::now()) == 1 ? 'Igår' : ($job->created_at->diffInDays(\Carbon\Carbon::now()).' dagar sedan')) }}</span>
         </div>
         <div class="col-md-4" title="Sista ansökningsdatum för jobbet.">
-            <img src="/img/map_pin.png"/>
+            <img src="/img/calendar.png"/>
             <span>{{ $job->latest_application_date }}</span>
         </div>
     </div>

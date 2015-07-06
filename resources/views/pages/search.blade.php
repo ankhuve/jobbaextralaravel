@@ -69,19 +69,21 @@
                     @foreach($jobs->matchningslista->matchningdata as $job)
                         @include('pages.partials.jobbpuff')
                     @endforeach
-                    {{--<div class="pageSelector" >--}}
-                        {{--<button class="pageSelectorButton"><span class="glyphicon glyphicon-backward"></span>pageNavButtonText().first</button>--}}
-                        {{--<button class="pageSelectorButton"><span class="glyphicon glyphicon-chevron-left"></span>pageNavButtonText().previous</button>--}}
-                        {{--<span class="viewingPageNumber">pageNavButtonText().infoText</span>--}}
-                        {{--<button class="pageSelectorButton">pageNavButtonText().next<span class="glyphicon glyphicon-chevron-right"></span></button>--}}
-                        {{--<button class="pageSelectorButton">pageNavButtonText().last <span class="glyphicon glyphicon-forward"></span></button>--}}
-                    {{--</div>--}}
+
+                </div>
+                <div class="pageSelector" >
+                    <button onclick="paginate(1)" class="pageSelectorButton"><span class="glyphicon glyphicon-backward"></span></button>
+                    <button onclick="paginate(-1)" class="pageSelectorButton"><span class="glyphicon glyphicon-chevron-left"></span></button>
+                    <span class="viewingPageNumber">Sida 1</span>
+                    <button onclick="paginate(+1)" class="pageSelectorButton"><span class="glyphicon glyphicon-chevron-right"></span></button>
+                    <button onclick="paginate('last')" class="pageSelectorButton"><span class="glyphicon glyphicon-forward"></span></button>
                 </div>
             @endif
     </div>
 
     {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.1/vue.js"></script>--}}
     <script src="/js/jquery.js"></script>
+    <script src="/js/paginate.js"></script>
     <script src="/js/search.js"></script>
     <script src="/js/getJobDescriptions.js"></script>
 

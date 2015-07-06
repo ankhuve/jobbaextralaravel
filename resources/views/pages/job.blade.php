@@ -3,7 +3,28 @@
 @section('content')
     <div class="container">
         <div class="col-md-10 col-md-offset-1 newJobContainer">
-            <div class="messageBoxHeading"><a href="{{ URL::previous() }}"><button class="singleJobButton"><span class="glyphicon glyphicon-triangle-left"/></span></button></a>{{ $jobMatch->annons->annonsrubrik }}</div>
+            <div class="messageBoxHeading">
+                <a href="{{ URL::previous() }}">
+                    <button class="singleJobButton">
+                        <span class="glyphicon glyphicon-triangle-left"/>
+                    </button>
+                </a>
+                {{ $jobMatch->annons->annonsrubrik }}
+
+                    <h2 class="text-right workplace">
+                        <i>
+                            @if($jobMatch->arbetsplats->hemsida != '')
+                            <a href="{{ '//'.$jobMatch->arbetsplats->hemsida }}">
+                                {{ $jobMatch->arbetsplats->arbetsplatsnamn }}
+                            </a>
+                            @else
+                                {{ $jobMatch->arbetsplats->arbetsplatsnamn }}
+                            @endif
+                        </i>
+                    </h2>
+
+
+            </div>
             <div class="panel-body">
                 <p style="white-space: pre-line">{{ $jobMatch->annons->annonstext }}</p>
             </div>
