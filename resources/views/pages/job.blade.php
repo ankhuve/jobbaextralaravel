@@ -14,9 +14,9 @@
                     <h2 class="text-right workplace">
                         <i>
                             @if($jobMatch->arbetsplats->hemsida != '')
-                            <a href="{{ '//'.$jobMatch->arbetsplats->hemsida }}">
-                                {{ $jobMatch->arbetsplats->arbetsplatsnamn }}
-                            </a>
+                                <a href={{ $jobMatch->arbetsplats->hemsida }}>
+                                    {{ $jobMatch->arbetsplats->arbetsplatsnamn }}
+                                </a>
                             @else
                                 {{ $jobMatch->arbetsplats->arbetsplatsnamn }}
                             @endif
