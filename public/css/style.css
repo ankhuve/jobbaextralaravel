@@ -248,18 +248,15 @@ nav {
 
 .pageSelector {
   color: white;
-  font-size: 14pt;
-  /*position: absolute;*/
-  /*bottom: 320px;*/
+  font-size: 12pt;
   display: inline-block;
   text-align: center;
-  width: 100%;
-  margin-bottom: 30px; }
+  margin: 30px auto; }
 
 .pageSelectorButton {
   background-color: #dd5625;
   border: none;
-  padding: 15px;
+  padding: 10px;
   border-radius: 5px; }
 
 .viewingPageNumber {

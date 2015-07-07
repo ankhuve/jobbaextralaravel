@@ -18,18 +18,19 @@ class SearchController extends Controller
         }
 
         $results = $this->search($keyword, $request);
-
+        if($request->ajax()){
+            return(json_encode($results->matchningslista));
+        }
         return view('pages.search', ['jobs' => $results]);
     }
 
-    public function search($keyword = null, $request)
+    public function search($keyword = null, Request $request)
     {
 
         $client = new Client(['base_uri' => 'http://api.arbetsformedlingen.se/af/v0/']);
 
         $searchParams = [
             'antalrader' => 10,
-            'sida' => 1,
             'anstallningstyp' => 2,
             'nyckelord' => $keyword,
         ];
@@ -38,7 +39,7 @@ class SearchController extends Controller
             $searchParams['lanid'] = Input::get('lan') ? : null;
             $searchParams['yrkesomradeid'] = Input::get('yrkesomraden') ? : null;
 //        if (Input::get('sida') != 'null') {
-//            $searchParams['sida'] = Input::get('sida') ? : "";
+            $searchParams['sida'] = Input::get('sida') ? : 1;
 //        }
 
         $searchResults = $client->get('platsannonser/matchning', [
