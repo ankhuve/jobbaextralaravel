@@ -13,7 +13,7 @@
 
                     <h2 class="text-right workplace">
                         <i>
-                            @if($jobMatch->arbetsplats->hemsida != '')
+                            @if(property_exists($jobMatch->arbetsplats, 'hemsida'))
                                 <a href={{ $jobMatch->arbetsplats->hemsida }}>
                                     {{ $jobMatch->arbetsplats->arbetsplatsnamn }}
                                 </a>

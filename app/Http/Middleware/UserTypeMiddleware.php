@@ -31,13 +31,12 @@ class UserTypeMiddleware
     {
         if (Auth::check())
         {
-            if (Auth::user()->usertype === 'user')
+            if (Auth::user()->role === 1)
             {
                 return view('auth.register')->with(['user' => Auth::user()]);
             }
-            elseif(Auth::user()->usertype === 'company')
+            elseif(Auth::user()->role >= 2)
             {
-//                dd($request->getRequestUri());
                 return $next($request);
             }
         }
