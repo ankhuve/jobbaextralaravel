@@ -14,6 +14,7 @@
 Route::get('/', 'HomeController@index');
 
 Route::get('about', 'AboutController@index');
+Route::get('featured', 'FeaturedController@index');
 Route::get('company', 'CompanyController@index');
 Route::get('company/create', 'CompanyController@show');
 Route::post('company/create', 'CompanyController@create');
@@ -21,6 +22,7 @@ Route::get('company/create/confirm', 'CompanyController@confirm');
 Route::get('register', 'RegisterController@index');
 Route::get('search/{keyword?}', 'SearchController@index');
 Route::get('getJobInfo/{jobid}', 'JobController@getJob');
+Route::get('job/{id}/{slug}', 'JobController@customJob');
 Route::get('job/{id}', 'JobController@index');
 Route::get('{any}', 'HomeController@index'); // uncaught route
 

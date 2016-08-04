@@ -9,12 +9,12 @@
         <meta name="_token" content="{!! csrf_token() !!}"/>
 
         <title>Under utveckling</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">--}}
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-        <link rel="stylesheet" href="/css/style.css"/>
+        <link rel="stylesheet" href="/css/app.css"/>
         <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,700|Raleway:400' rel='stylesheet' type='text/css'>
     </head>
     <body>
@@ -31,6 +31,8 @@
                         <a href="{{ URL::action('CompanyController@index') }}">Hitta arbetskraft</a>
                     </li><li>
                         <a href="{{ URL::action('AboutController@index') }}">Om oss</a>
+                    </li><li>
+                        <a href="{{ URL::action('FeaturedController@index') }}">Attraktiva arbetsgivare</a>
                     </li>@if(Auth::check())<li>
                             <a href="{{ URL::action('Auth\AuthController@getLogout') }}">Logga ut</a>
                         </li>
