@@ -11,6 +11,7 @@
                     <div class="loggedInUser"><span class="orange">(</span> {{ $user->email }} <span class="orange">)</span></div>
                 </div>
                 <div class="panel-body">
+                    {{ $user->logo_path }}
                     @if($user->jobs)
                         @foreach($user->jobs as $job)
                             @include('pages.partials.jobbaextrapuff')

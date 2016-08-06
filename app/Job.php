@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Job extends Model
@@ -28,6 +29,18 @@ class Job extends Model
     public static function open(array $data = [])
     {
         return new static($data);
+    }
+
+
+    public static function getActiveJobs()
+    {
+        // NOT WORKING
+        return Job::all()->where('latest_application_date', '>', Carbon::now());
+    }
+
+    public static function numActiveJobs()
+    {
+        return Job::where('latest_application_date', '>', Carbon::now())->count();
     }
 
 }

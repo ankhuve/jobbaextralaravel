@@ -3,8 +3,7 @@ var $ = require("jquery");
 var toggledFilter = false;
 var searchParameters;
 var filterToggleArrow = $("#filterToggleArrow");
-const spinner = '<div class="jobDescLoader"><div class="spinner-container container1"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div><div class="spinner-container container2"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div><div class="spinner-container container3"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div></div>'
-
+const spinner = '<div class="jobDescLoader"><div class="spinner-container container1"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div><div class="spinner-container container2"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div><div class="spinner-container container3"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div></div>';
 
 var toggleFilters = function() {
 
@@ -74,7 +73,7 @@ var enableOrDisablePaginateButtons = function(){
 };
 
 var getCurrentPage = function(){
-    return searchParameters['sida'];
+    return searchParameters['page'];
 };
 
 var getNewJobData = function(){
@@ -178,5 +177,5 @@ $(document).ready(function () {
         headers: {'X-CSRF-Token': $('meta[name=_token]').attr('content')}
     });
     getJobDescriptions();
-    enableOrDisablePaginateButtons();
+    //enableOrDisablePaginateButtons();
 });

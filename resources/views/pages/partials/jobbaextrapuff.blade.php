@@ -10,7 +10,7 @@
     </div>
 
     <div class="bottomInfo">
-        <div class="col-md-4" title="Kommunen där jobbet finns.">
+        <div class="col-md-5" title="Kommunen där jobbet finns.">
             <img src="/img/map_pin.png"/>
             <span>{{ $job->municipality }}</span>
         </div>
@@ -19,7 +19,7 @@
 
             <span>{{ \Carbon\Carbon::parse($job->published_at)->diffInDays(\Carbon\Carbon::now()) < 1 ? 'Idag' : (\Carbon\Carbon::parse($job->published_at)->diffInDays(\Carbon\Carbon::now()) == 1 ? 'Igår' : (\Carbon\Carbon::parse($job->published_at)->diffInDays(\Carbon\Carbon::now()).' dagar sedan')) }}</span>
         </div>
-        <div class="col-md-4" title="Sista ansökningsdatum för jobbet.">
+        <div class="col-md-3" title="Sista ansökningsdatum för jobbet.">
             <img src="/img/calendar.png"/>
             <span>{{ $job->latest_application_date }}</span>
         </div>

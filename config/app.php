@@ -137,6 +137,7 @@ return [
         'Illuminate\View\ViewServiceProvider',
         'Collective\Html\HtmlServiceProvider',
         'Illuminate\Broadcasting\BroadcastServiceProvider',
+		'TomLingham\Searchy\SearchyServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -146,6 +147,7 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
+
 
 	],
 
@@ -196,6 +198,7 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
         'Form'      => 'Collective\Html\FormFacade',
         'Html'      => 'Collective\Html\HtmlFacade',
+		'Searchy' 	=> 'TomLingham\Searchy\Facades\Searchy'
 	],
 
 ];

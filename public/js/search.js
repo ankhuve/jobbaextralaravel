@@ -10151,7 +10151,7 @@ var enableOrDisablePaginateButtons = function enableOrDisablePaginateButtons() {
 };
 
 var getCurrentPage = function getCurrentPage() {
-    return searchParameters['sida'];
+    return searchParameters['page'];
 };
 
 var getNewJobData = function getNewJobData() {
@@ -10227,7 +10227,7 @@ $(document).ready(function () {
         headers: { 'X-CSRF-Token': $('meta[name=_token]').attr('content') }
     });
     getJobDescriptions();
-    enableOrDisablePaginateButtons();
+    //enableOrDisablePaginateButtons();
 });
 
 },{"jquery":1}]},{},[2]);

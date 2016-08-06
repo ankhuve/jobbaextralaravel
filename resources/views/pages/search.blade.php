@@ -27,6 +27,7 @@
                                         name='{{ $option->namn }}'>{{ $option->namn }}</option>
                             @endforeach
                                 </select>
+                                </select>
                         @endforeach
                     @endif
                 </div>

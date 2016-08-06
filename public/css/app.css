@@ -6908,4 +6908,7 @@ textarea#description {
     width: 290px;
     font-size: 1.3em; } }
 
+.searchResults .message {
+  background: rgba(47, 47, 47, 0.95); }
+
 /*# sourceMappingURL=app.css.map */

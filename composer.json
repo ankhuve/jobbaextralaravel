@@ -8,8 +8,9 @@
 		"laravel/framework": "5.1.*",
 		"guzzlehttp/guzzle": "^6.0",
 		"components/jquery": "^2.1",
-		"laravelcollective/html": "~5.0",
-		"doctrine/dbal": "^2.6@dev"
+		"laravelcollective/html": "5.0.x-dev",
+		"doctrine/dbal": "^2.6@dev",
+		"tom-lingham/searchy" : "2.*"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
