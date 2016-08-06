@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - homestead@localhost" uuid="aa667547-486a-4e6f-8fc0-4293ff6184d6">
+    <data-source name="MySQL - jobbaextra@localhost" uuid="b7771915-ccd3-4684-b2bd-3ddded772e86">
       <secret-storage>master_key</secret-storage>
       <user-name>homestead</user-name>
-      <schema-pattern>homestead.*</schema-pattern>
-      <default-schemas>homestead.*</default-schemas>
+      <schema-pattern>jobbaextra.*</schema-pattern>
+      <default-schemas>jobbaextra.*</default-schemas>
     </data-source>
   </component>
 </project>

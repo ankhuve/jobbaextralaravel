@@ -227,24 +227,16 @@ class SearchController extends Controller
             ->fields('title', 'description')
             ->query($searchQuery)
             ->getQuery()
-            ->having('relevance', '>', 20);
+            ->having('relevance', '>', 20)
+            ->orderBy('published_at', 'desc');
 
         $numTotalMatches = count($allMatches->get());
 
+        // Hämta träffarna för sidan
         $pageResults = $allMatches
             ->skip($rowsToSkip)
             ->take($this->numPerPage)
             ->get();
-
-        // Gör sökningen, returnera resultat för rätt sida
-//        $jobMatches = Searchy::search('jobs')
-//            ->fields('title', 'description')
-//            ->query($searchQuery)
-//            ->getQuery()
-//            ->having('relevance', '>', 10)
-//            ->skip($rowsToSkip)
-//            ->take($this->numPerPage)
-//            ->get();
 
         // Perform the query using Query Builder
 //        $jobMatches = Job::where('title', 'like', $searchQuery)
@@ -252,8 +244,6 @@ class SearchController extends Controller
 //            ->paginate($this->numPerPage)
 //            ->sortByDesc('published_at')
 //            ->all();
-
-//        dd($jobMatches);
 
         $request->flash(); // sätt tillbaka sökparametrarna på sidan för användaren
         $results = [
@@ -267,8 +257,8 @@ class SearchController extends Controller
     {
         $pageResults = DB::table('jobs')
             ->where('latest_application_date', '>', Carbon::now())
+            ->orderBy('published_at', 'desc')
             ->paginate($this->numPerPage)
-            ->sortByDesc('published_at')
             ->all();
 
         $numTotalMatches = Job::numActiveJobs();

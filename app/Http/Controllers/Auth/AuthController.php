@@ -46,7 +46,7 @@ class AuthController extends Controller {
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
-            'role' => 'required|integer|in:1,2',
+//            'role' => 'required|integer|in:1',
         ]);
     }
 
@@ -61,7 +61,7 @@ class AuthController extends Controller {
         return User::create([
             'email' => $data['email'],
             'name' => $data['name'],
-            'role' => $data['role'],
+            'role' => 1, // TEMP: sätt registrering till endast användare för tillfället
             'password' => bcrypt($data['password']),
         ]);
     }

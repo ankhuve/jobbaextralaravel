@@ -30,7 +30,7 @@ class HomeController extends Controller {
 
     public function getNewestJobs()
     {
-        $data = Job::all()->sortByDesc('created_at')->take(2);
+        $data = Job::all()->sortByDesc('published_at')->take(2);
 //        dd($data);
         return $data;
     }

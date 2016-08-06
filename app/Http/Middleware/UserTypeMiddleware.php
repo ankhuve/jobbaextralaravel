@@ -31,11 +31,15 @@ class UserTypeMiddleware
     {
         if (Auth::check())
         {
-            if (Auth::user()->role === 1)
+            if (Auth::user()->role === 1) // is user
             {
                 return view('auth.register')->with(['user' => Auth::user()]);
             }
-            elseif(Auth::user()->role >= 2)
+            elseif(Auth::user()->role === 2) // is company
+            {
+                return $next($request);
+            }
+            elseif(Auth::user()->role === 3) // is admin
             {
                 return $next($request);
             }

@@ -18,7 +18,7 @@ class Registrar implements RegistrarContract {
 			'usertype' => 'required|max:255',
 			'email' => 'required|email|max:255|unique:users',
 			'password' => 'required|confirmed|min:6',
-			'role' => 'required|min:1|max:2',
+//			'role' => 'required|min:1|max:1',
 		]);
 	}
 
@@ -32,7 +32,8 @@ class Registrar implements RegistrarContract {
 	{
 		return User::create([
 			'email' => $data['email'],
-            'role' => $data['role'],
+            'role' => 1, // TEMP: sätt registrering till endast användare för tillfället
+//            'role' => $data['role'],
 			'password' => bcrypt($data['password']),
 		]);
 	}
