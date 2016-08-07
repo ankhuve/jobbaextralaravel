@@ -5732,7 +5732,7 @@ button.close {
 
 body {
   background-size: 1920px auto;
-  background: #242424 url("../img/jobbaextra_bg_web.jpg") no-repeat center top 170px;
+  background: #242424 url("../img/jobbaextra_bg_web.jpg") no-repeat center top 120px;
   font-family: 'Roboto', sans-serif;
   transition: 0.3s;
   transform: translateZ(0);
@@ -5795,7 +5795,7 @@ nav {
   display: table;
   width: 100%;
   background-color: #242424 !important;
-  height: 175px;
+  height: 120px;
   /* Safari */
   transition: height 0.3s ease; }
   nav .headerLogo {
@@ -5805,7 +5805,8 @@ nav {
     /* Safari */
     transition: margin 0.3s ease; }
     nav .headerLogo img {
-      height: 85px; }
+      width: 230px;
+      height: auto; }
   nav .navLinks {
     text-transform: uppercase;
     text-align: center;
@@ -5813,7 +5814,7 @@ nav {
     font-weight: 100;
     background-color: #2f2f2f;
     width: 100%;
-    margin-top: 135px;
+    margin-top: 100px;
     /* Safari */
     transition: height 0.3s ease; }
     nav .navLinks ul.nav {

@@ -14,12 +14,12 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-        <link rel="stylesheet" href="/css/app.css"/>
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}"/>
         <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,700|Raleway:400' rel='stylesheet' type='text/css'>
     </head>
     <body>
         <nav>
-            <a class="headerLogo" href="/"><img src="/img/jobbaextra_logo.png"/></a>
+            <a class="headerLogo" href="/"><img src="/img/jobbrek.png"/></a>
             <img id="hamburgerIcon" src="/img/thin_burger.png">
             <div class="navLinks">
                 <ul class="nav">
