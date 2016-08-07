@@ -20,13 +20,22 @@ class CompanyController extends Controller
     public function __construct(Guard $auth)
     {
         $this->auth = $auth;
-        $this->middleware('usertype');
+        $this->middleware('role:admin', ['except' => ['index']]);
     }
 
     public function index()
     {
         $user = $this->auth->user();
-        return view('company.home', compact('user'));
+
+        if(!is_null($user)){
+            if($user->role === 1){
+                return view('auth.register')->with(['user' => $user]);
+            } elseif($user->role === 2 || $user->role === 3){
+                return view('company.home', compact('user'));
+            }
+        } else{
+            return view('auth.register')->with(['user' => $user]);
+        }
     }
 
     /**
@@ -57,8 +66,12 @@ class CompanyController extends Controller
     /**
      * @return \Illuminate\View\View
      */
-    public function show()
+    public function show(Request $request = null)
     {
+        if($request){
+            dd($request->all());
+            redirect('company.create')->withInput();
+        }
         $user = $this->auth->user();
         return view('company.create', compact('user'));
     }
@@ -83,6 +96,7 @@ class CompanyController extends Controller
     public function store(ValidateNewJob $request)
     {
         $newJob = $this->createJob($request);
+        $newJob->published_at = Carbon::now();
 
         \Auth::user()->jobs()->save($newJob);
 

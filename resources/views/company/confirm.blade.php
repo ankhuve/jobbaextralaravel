@@ -13,7 +13,6 @@
                 @include('errors.validation')
 
                 {!! Form::open(['method' => 'POST', 'action' => 'CompanyController@store', 'class'=>'form-horizontal', 'id' => 'createNewJob']) !!}
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                 <div class="form-group">
                     <div class="col-md-10 col-md-offset-1">
@@ -25,7 +24,7 @@
                 <div class="basicJobInfoContainer">
                     <div class="form-group">
                         <div class="col-md-4 col-md-offset-2">
-                            {!! Form::select('type', ['Kock' => 'Kock', 'Bagare' => 'Bagare'], $data['type'], ['class' =>
+                            {!! Form::input('text', 'type', $data['type'], ['class' =>
                             'form-control validationInput']) !!}
                         </div>
 
@@ -37,7 +36,7 @@
 
                     <div class="form-group">
                         <div class="col-md-4 col-md-offset-2">
-                            {!! Form::select('county', ['Stockholms län' => 'Stockholms län'], $data['county'], ['class' =>
+                            {!! Form::input('text', 'county', $data['county'], ['class' =>
                             'form-control validationInput']) !!}
                         </div>
 
@@ -72,10 +71,13 @@
                     </div>
                 </div>
 
-                </form>
+                {!! Form::close() !!}
                 <div class="confirmButtons form-group">
                     <div class="col-xs-6">
-                        <button class="responsiveButton col-xs-12 cancelButton" id="openConfirmForm">Nej, ändra</button>
+                        {{--{{ dd(URL::getRequest()->request->all()) }}--}}
+                        <a href="{{ URL::route('company.create', URL::getRequest()->request->all()) }}">
+                            <button class="responsiveButton col-xs-12 cancelButton">Nej, ändra</button>
+                        </a>
                     </div>
                     <div class="col-xs-6">
                         {!! Form::submit('Ja, Publicera', ['class' => 'responsiveButton col-xs-12 confirmButton', 'form' => 'createNewJob']) !!}
@@ -85,6 +87,6 @@
         </div>
     </div>
 
-    <script src="/js/jquery.js"></script>
-    <script src="/js/openConfirmForm.js"></script>
+    {{--<script src="/js/jquery.js"></script>--}}
+    {{--<script src="js/openConfirmForm.js"></script>--}}
 @endsection

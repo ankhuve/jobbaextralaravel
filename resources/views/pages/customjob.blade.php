@@ -26,7 +26,7 @@
             </div>
             <div class="moreInfo">
                 {{--<p class="extraJobInfo"> Varaktighet: {{ $jobMatch->villkor->varaktighet }} </p>--}}
-                <p class="extraJobInfo"> Kommun:  {{ $jobMatch->county }}</p>
+                <p class="extraJobInfo"> Kommun:  {{ $jobMatch->municipality }}</p>
                 <p class="extraJobInfo"> Publicerad: {{ date('d-m-Y', strtotime($jobMatch->published_at)) }} </p>
                 <p class="extraJobInfo"> Dagar sedan publicering: {{ $daysSincePublished }} </p>
                 {{--<p class="extraJobInfo"><a href="{{ $jobMatch->annons->platsannonsUrl }}">Länk till arbetsförmedlingen</a></p>--}}

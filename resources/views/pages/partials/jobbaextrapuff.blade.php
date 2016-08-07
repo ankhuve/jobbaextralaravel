@@ -1,12 +1,24 @@
 <div class="jobBlock col-md-6">
-    <div class="upperInfo">
-        <a href="/job/{{ $job->id }}/{{ str_slug($job->title) }}" >
-            <div class="titles">
-                <h1 class="text-left">{{ $job->title }}</h1>
-                <h2 class="text-right"><i>{{ $job->work_place }}</i></h2>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="upperInfo bordered">
+                <a href="/job/{{ $job->id }}/{{ str_slug($job->title) }}" >
+                    <div class="row">
+                        <div class="titles {{ \App\User::find($job->user_id)->logo_path ? 'col-xs-8' : 'col-xs-12' }}">
+                            <h1 class="text-left">{{ $job->title }}</h1>
+                            <h2 class="text-left"><i>{{ $job->work_place }}</i></h2>
+                        </div>
+                        @if(\App\User::find($job->user_id)->logo_path)
+                            <div class="logo logo-job-block col-xs-4" >
+                                <div class="logo logo-img" style="background-image: url('{{ env("UPLOADS_URL") }}/{{ \App\User::find($job->user_id)->logo_path }}')"></div>
+                            </div>
+                        @endif
+                    </div>
+
+                </a>
+                <div class="jobShortDescription">{{ (strlen($job->description)<200) ? $job->description : substr($job->description, 0, 200)." ..." }}</div>
             </div>
-        </a>
-        <div class="jobShortDescription">{{ (strlen($job->description)<200) ? $job->description : substr($job->description, 0, 200)." ..." }}</div>
+        </div>
     </div>
 
     <div class="bottomInfo">

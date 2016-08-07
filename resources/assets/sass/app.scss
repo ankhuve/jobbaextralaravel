@@ -1,4 +1,9 @@
 $icon-font-path: "../fonts/";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "partials/colors";
 @import "style";
 @import "partials/search-page";
+@import "partials/company";
+@import "partials/job-block";
+@import "partials/panel";
+@import "partials/alert";

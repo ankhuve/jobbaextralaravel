@@ -25,14 +25,15 @@ class ValidateNewJob extends Request
     public function rules()
     {
         return [
-            'title' => 'required|max:60',
-            'work_place' => 'required',
-            'type' => 'required',
-            'county' => 'required',
-            'municipality' => 'required',
-            'description' => 'required',
+            'title' => 'required|max:60|string',
+            'work_place' => 'required|string',
+            'type' => 'required|integer',
+            'county' => 'required|integer',
+            'municipality' => 'required|string',
+            'description' => 'required|string',
             'latest_application_date' => 'after:'.Carbon::today()->format('Y-m-d'),
             'contact_email' => 'required|email',
+            'external_link' => 'url',
         ];
     }
 }

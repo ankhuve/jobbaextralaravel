@@ -8,43 +8,29 @@ use Illuminate\Contracts\Auth\Guard;
 
 class UserTypeMiddleware
 {
-
-    /**
-     * Create a new authentication controller instance.
-     *
-     * @param  \Illuminate\Contracts\Auth\Guard  $auth
-     * @return void
-     */
-    public function __construct(Guard $auth)
-    {
-        $this->auth = $auth;
-    }
-
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure $next
+     * @param  string $role
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $role = null)
     {
-        if (Auth::check())
-        {
-            if (Auth::user()->role === 1) // is user
-            {
-                return view('auth.register')->with(['user' => Auth::user()]);
-            }
-            elseif(Auth::user()->role === 2) // is company
-            {
-                return $next($request);
-            }
-            elseif(Auth::user()->role === 3) // is admin
-            {
-                return $next($request);
-            }
+        $roles = [
+            'admin'     => 3,
+            'company'   => 2,
+            'user'      => 1
+        ];
+
+        if ($request->user()->role != ($roles[$role])) {
+            return view('auth.register')->with(['user' => Auth::user()]);
+//            return redirect('auth/login');
         }
 
-        return redirect('auth/login');
+        return $next($request);
+
+
     }
 }

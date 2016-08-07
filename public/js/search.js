@@ -10086,20 +10086,23 @@ var spinner = '<div class="jobDescLoader"><div class="spinner-container containe
 
 var toggleFilters = function toggleFilters() {
 
-    if (toggledFilter) {
-        $(".searchFilter").removeClass("searchFilterAnimation");
+    if (!toggledFilter) {
+        $(".searchFilter").removeClass("searchFilterAnimation").hide();
+        //setTimeout(function(){
+        //    $(".searchFilter").hide(300);
+        //}, 300);
         $(".filters").removeClass("filtersAnimation");
         filterToggleArrow.removeClass("glyphicon-chevron-up");
         filterToggleArrow.addClass("glyphicon-chevron-down");
         $("#resetFilters").hide(300);
-        toggledFilter = false;
+        toggledFilter = true;
     } else {
-        $(".searchFilter").addClass("searchFilterAnimation");
+        $(".searchFilter").show().addClass("searchFilterAnimation");
         $(".filters").addClass("filtersAnimation");
         filterToggleArrow.removeClass("glyphicon-chevron-down");
         filterToggleArrow.addClass("glyphicon-chevron-up");
         $("#resetFilters").show(300);
-        toggledFilter = true;
+        toggledFilter = false;
     }
 };
 
@@ -10203,7 +10206,7 @@ var getJobDescriptions = function getJobDescriptions() {
     for (var i = 0; i < jobs.length; i++) {
         if (jobs[i].hasAttribute('id')) {
             (function (i) {
-                $('#' + jobs[i].getAttribute('id')).children('.upperInfo').children('.jobShortDescription').html(spinner);
+                $('#' + jobs[i].getAttribute('id')).find('.jobShortDescription').html(spinner);
                 $.ajax({
                     url: 'getJobInfo/' + jobs[i].getAttribute('id'),
                     type: "get",
@@ -10214,7 +10217,7 @@ var getJobDescriptions = function getJobDescriptions() {
                         } else {
                             shortDescription = data;
                         }
-                        $('#' + jobs[i].getAttribute('id')).children('.upperInfo').children('.jobShortDescription').html(shortDescription);
+                        $('#' + jobs[i].getAttribute('id')).find('.jobShortDescription').html(shortDescription);
                     }
                 });
             })(i);
@@ -10228,6 +10231,25 @@ $(document).ready(function () {
     });
     getJobDescriptions();
     //enableOrDisablePaginateButtons();
+
+    // confirm box when creating new job
+    var toggled = false;
+    var panel = $('#confirmBox');
+    $('#openConfirmForm').click(function () {
+        $(this).html('Stäng');
+        $('.confirmationForm form').toggle(300);
+        if (!toggled) {
+            panel.css('width', '100%');
+        } else {
+            panel.css('width', '50%');
+        }
+        toggled = !toggled;
+    });
+
+    toggleFilters();
+
+    $('.filterButton.searchPage').on('click', toggleFilters);
+    $('#resetFilters').on('click', resetFilters);
 });
 
 },{"jquery":1}]},{},[2]);

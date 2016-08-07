@@ -9,6 +9,7 @@
     <div class="searchResults row">
 
         @foreach($jobs as $job)
+            {{--{{ dd(\App\User::find($job->user_id)->logo_path) }}--}}
             @if(key_exists('annonsid', $job))
                 @include('pages.partials.jobbpuff')
             @else

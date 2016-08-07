@@ -5736,7 +5736,8 @@ body {
   font-family: 'Roboto', sans-serif;
   transition: 0.3s;
   transform: translateZ(0);
-  -webkit-transform: translateZ(0); }
+  -webkit-transform: translateZ(0);
+  font-size: 1.4em; }
 
 a {
   text-decoration: none;
@@ -6065,12 +6066,13 @@ nav {
   width: 60%;
   margin-left: 20%;
   margin-right: 20%;
-  text-align: center;
   margin-top: 20px;
-  padding: 20px; }
+  padding: 20px;
+  font-size: 1.2em; }
 
 .aboutHeader {
-  text-transform: none;
+  text-align: center;
+  text-transform: uppercase;
   font-weight: 400; }
 
 .aboutDivider {
@@ -6209,8 +6211,7 @@ nav {
 .infoBoxes {
   padding-top: 60px;
   width: 800px;
-  margin-bottom: 100px;
-  height: 400px; }
+  margin-bottom: 50px; }
 
 .infoBox {
   /*position: relative;*/
@@ -6400,71 +6401,6 @@ footer {
 #customFilterButton:focus {
   outline-color: transparent;
   outline-style: none; }
-
-.jobBlock {
-  padding: 10px;
-  color: #FFFFE6;
-  margin-bottom: 30px;
-  max-height: 180px;
-  min-height: 180px; }
-  .jobBlock .upperInfo {
-    height: 150px;
-    max-height: 150px;
-    border-radius: 4px 4px 0 0;
-    background-color: rgba(57, 57, 57, 0.95);
-    padding: 0 20px 0 20px;
-    /* Safari */
-    transition: background-color 0.3s ease;
-    text-align: left; }
-    .jobBlock .upperInfo .titles {
-      min-height: 72px; }
-    .jobBlock .upperInfo h1 {
-      font-family: 'Raleway', 'open-sans', sans-serif;
-      font-size: 20px;
-      font-weight: 700;
-      margin: 0;
-      padding: 10px 0 5px;
-      text-transform: uppercase;
-      color: #FFEEC2; }
-    .jobBlock .upperInfo h2 {
-      font-family: "Raleway", Helvetica, Arial, sans-serif;
-      font-weight: 700;
-      font-size: 12px;
-      margin-bottom: 5px;
-      color: #71CBD9; }
-    .jobBlock .upperInfo .jobDescLoader {
-      position: relative;
-      display: table;
-      margin: 0 auto; }
-    .jobBlock .upperInfo .jobShortDescription {
-      color: #FFEEC2;
-      font-size: 15px;
-      min-height: 30px;
-      max-height: 100px; }
-      .jobBlock .upperInfo .jobShortDescription img {
-        margin: 0 auto;
-        display: block; }
-  .jobBlock .bottomInfo {
-    font-family: 'Raleway', Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
-    font-size: 0.8em;
-    background-color: #ff6e3f;
-    width: 100%;
-    height: 30px;
-    color: #ffeec2;
-    position: relative;
-    padding-top: 7px;
-    border-radius: 0 0 4px 4px;
-    cursor: default; }
-    .jobBlock .bottomInfo div.col-md-4 {
-      float: left; }
-    .jobBlock .bottomInfo img {
-      height: 13px; }
-    .jobBlock .bottomInfo span {
-      padding-left: 10px; }
-
-.jobBlock:hover .upperInfo {
-  background-color: rgba(65, 65, 65, 0.95); }
 
 .sidePicker {
   cursor: pointer;
@@ -6773,8 +6709,7 @@ textarea#description {
 @media (max-width: 878px) {
   /* Tablet-ish */
   .infoBoxes {
-    width: inherit;
-    height: 750px; }
+    width: inherit; }
   .infoTitle {
     padding-top: 25px; }
   #userInfo {
@@ -6907,7 +6842,116 @@ textarea#description {
     width: 290px;
     font-size: 1.3em; } }
 
+.btn-link {
+  color: #ff6e3f; }
+
 .searchResults .message {
   background: rgba(47, 47, 47, 0.95); }
+
+.logo .logo-job-block {
+  height: 72px;
+  width: 100%;
+  padding-right: 0;
+  text-align: right; }
+
+.logo .logo-img {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  height: 62px;
+  margin: 5px 0 5px 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right; }
+
+.required {
+  color: #ff6e3f; }
+
+.jobBlock {
+  padding: 10px;
+  color: #FFFFE6;
+  margin-bottom: 30px;
+  max-height: 180px;
+  min-height: 180px; }
+  .jobBlock .upperInfo {
+    height: 150px;
+    max-height: 150px;
+    border-radius: 4px 4px 0 0;
+    background-color: rgba(57, 57, 57, 0.95);
+    padding: 0 20px 0 20px;
+    /* Safari */
+    transition: background-color 0.3s ease;
+    text-align: left; }
+    .jobBlock .upperInfo.bordered {
+      border: #ff6e3f solid 2px;
+      border-bottom: none; }
+    .jobBlock .upperInfo .titles {
+      min-height: 72px; }
+    .jobBlock .upperInfo h1 {
+      font-family: 'Raleway', 'open-sans', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0;
+      padding: 10px 0 5px;
+      text-transform: uppercase;
+      color: #FFEEC2; }
+    .jobBlock .upperInfo h2 {
+      font-family: "Raleway", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      margin-bottom: 5px;
+      color: #71CBD9; }
+    .jobBlock .upperInfo .jobDescLoader {
+      position: relative;
+      display: table;
+      margin: 0 auto; }
+    .jobBlock .upperInfo .jobShortDescription {
+      color: #FFEEC2;
+      font-size: 15px;
+      min-height: 30px;
+      max-height: 100px; }
+      .jobBlock .upperInfo .jobShortDescription img {
+        margin: 0 auto;
+        display: block; }
+  .jobBlock .bottomInfo {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 0.8em;
+    background-color: #ff6e3f;
+    width: 100%;
+    height: 30px;
+    color: #ffeec2;
+    position: relative;
+    padding-top: 7px;
+    border-radius: 0 0 4px 4px;
+    cursor: default; }
+    .jobBlock .bottomInfo div.col-md-4 {
+      float: left; }
+    .jobBlock .bottomInfo img {
+      height: 13px; }
+    .jobBlock .bottomInfo span {
+      padding-left: 10px; }
+  .jobBlock:hover .upperInfo {
+    background-color: rgba(65, 65, 65, 0.95); }
+
+.panel.panel-custom {
+  background: #242424;
+  color: #ffeec2; }
+  .panel.panel-custom .panel-heading {
+    border-bottom: 1.5px solid #ff6e3f;
+    text-align: center;
+    padding: 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px; }
+  .panel.panel-custom .well-custom {
+    font-size: 1.1em;
+    background: #3a3a3a;
+    border: none; }
+
+.alert.alert-custom {
+  background: #ff6e3f;
+  color: #ffeec2;
+  padding-left: 2em; }
 
 /*# sourceMappingURL=app.css.map */

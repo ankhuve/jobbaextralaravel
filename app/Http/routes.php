@@ -14,6 +14,8 @@
 Route::get('/', 'HomeController@index');
 
 Route::get('about', 'AboutController@index');
+Route::get('contact', 'ContactController@create');
+Route::post('contact', 'ContactController@store');
 //Route::get('featured', 'FeaturedController@index');
 Route::get('company', 'CompanyController@index');
 Route::get('company/create', 'CompanyController@show');

@@ -6,6 +6,7 @@ body{
   transition: 0.3s;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
+  font-size: 1.4em;
 }
 
 a{
@@ -398,13 +399,15 @@ nav{
   width: 60%;
   margin-left: 20%;
   margin-right: 20%;
-  text-align: center;
+  //text-align: center;
   margin-top:20px;
   padding:20px;
+  font-size: 1.2em;
 }
 
 .aboutHeader{
-  text-transform: none;
+  text-align: center;
+  text-transform: uppercase;
   font-weight:400;
 }
 
@@ -585,8 +588,8 @@ nav{
 .infoBoxes{
   padding-top: 60px;
   width: 800px;
-  margin-bottom: 100px;
-  height: 400px;
+  margin-bottom: 50px;
+  //height: 400px;
 }
 
 .infoBox{
@@ -806,101 +809,6 @@ footer{
 #customFilterButton:focus{
   outline-color: transparent;
   outline-style: none;
-}
-
-.jobBlock {
-//  position:relative;
-  padding: 10px;
-  color:#FFFFE6;
-  margin-bottom: 30px;
-  max-height: 180px;
-  min-height: 180px;
-
-  .upperInfo{
-    height: 150px;
-    max-height: 150px;
-    border-radius: 4px 4px 0 0;
-    background-color: rgba(57, 57, 57, 0.95);
-    padding: 0 20px 0 20px;
-    -webkit-transition: background-color 0.3s ease; /* Safari */
-    transition: background-color 0.3s ease;
-    text-align: left;
-
-    .titles{
-      min-height: 72px;
-    }
-
-    h1{
-      font-family: 'Raleway', 'open-sans', sans-serif;
-      font-size: 20px;
-      font-weight:700;
-      margin: 0;
-      padding: 10px 0 5px;
-      text-transform: uppercase;
-      color: #FFEEC2;
-    }
-
-    h2{
-      font-family: "Raleway", Helvetica, Arial, sans-serif;
-      font-weight: 700;
-      font-size: 12px;
-      margin-bottom: 5px;
-      color: #71CBD9;
-    }
-
-    .jobDescLoader{
-      position: relative;
-      display: table;
-      margin: 0 auto;
-    }
-
-    .jobShortDescription{
-      color: #FFEEC2;
-      font-size: 15px;
-      min-height: 30px;
-      max-height: 100px;
-//      overflow: auto;
-
-      img{
-        margin: 0 auto;
-        display: block;
-      }
-    }
-  }
-
-  .bottomInfo{
-    font-family: 'Raleway', Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
-    font-size: 0.8em;
-    background-color: #ff6e3f;
-    width: 100%;
-    height: 30px;
-    color: #ffeec2;
-    position: relative;
-    padding-top: 7px;
-    border-radius: 0 0 4px 4px;
-    cursor: default;
-//    box-shadow: rgba(0, 0, 0, 0.65) 0 6px 7px 0 inset;
-
-    div.col-md-4{
-      float: left;
-    }
-
-    img{
-      height: 13px;
-//      width: 8px;
-    }
-
-    span{
-      padding-left: 10px;
-    }
-  }
-}
-
-.jobBlock:hover {
-  .upperInfo {
-    background-color: rgba(65, 65, 65, 0.95);
-  }
 }
 
 .sidePicker {
@@ -1300,7 +1208,7 @@ textarea#description{
 @media (max-width: 878px){ /* Tablet-ish */
   .infoBoxes{
     width: inherit;
-    height: 750px;
+    //height: 750px;
   }
 
   .infoBox{
@@ -1526,4 +1434,8 @@ textarea#description{
     width: 290px;
     font-size: 1.3em;
   }
+}
+
+.btn-link{
+  color: $accent-color;
 }

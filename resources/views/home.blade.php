@@ -19,13 +19,19 @@
     </center>
     <center>
         <div class="container full-width">
-            <div class="infoBoxes">
+            <div class="infoBoxes row">
                 <div class="boxAndButton" id="userInfo">
                     <div class="infoBox" >
                         <div id="infoBoxTitle">
                             <h3 class="infoTitle"><span class="underlined">Jobbsökande</span>?</h3>
                         </div>
-                        <p class="infoDescription">Här kan man ha massa bra information för de som letar jobb. Man kan skriva att de kan lägga upp sitt CV osv. Bli medlem på den här sidan och få en massa jobb. <br/><br/>Typiskt najs att göra det.</p>
+                        <p class="infoDescription">
+                            Här kan du söka bland tusentals jobb!
+                            <br><br>
+                            Oavsett om Du är nyutexaminerad eller helt enkelt vill vidare i karriären kan vi hjälpa dig att hitta rätt. Vi jobbar rikstäckande och hjälper allt i från enskilda firmor till stora koncerner, kommuner och myndigheter med att hitta rätt personal.
+                            <br><br>
+                            Registrera dig nedan. Låt oss se vad du gör idag, vad du vill göra i morgon och låt oss hjälpa dig med nästa steg i Din karriär.
+                        </p>
                     </div>
                     <div id="registerUser">
                         <a href="{{ URL::action('RegisterController@index') }}"><button class="registerButton" >Skapa din profil</button></a>
@@ -39,7 +45,13 @@
                         <div id="infoBoxTitle">
                             <h3 class="infoTitle"><span class="underlined">Arbetsgivare</span>?</h3>
                         </div>
-                        <p class="infoDescription">Här kan man ha massa bra information för de som letar jobb. Man kan skriva att de kan lägga upp sitt CV osv. Bli medlem på den här sidan och få en massa jobb. <br/><br/>Typiskt najs att göra det.</p>
+                        <p class="infoDescription">
+                            Är det viktigt för Er med en smidig och lyckad rekrytering?
+                            <br><br>
+                            Någon att bolla med och som har 20 års erfarenhet av branschen?
+                            <br><br>
+                            Då är Ni hjärtligt välkomna att registrera Er under fliken Registrera ditt företag eller kontakta oss för personlig service så kan vi prata vidare om just ert behov, era förväntningar och hur vi tillsammans kan nå det bästa resultatet av Er rekrytering.
+                        </p>
                     </div>
                     <div class="registerCompany" id="registerCompany">
                         <a href="{{ URL::action('RegisterController@index') }}"><button class="registerButton">Registrera ditt företag</button></a>
@@ -51,7 +63,7 @@
 
             <div class="latestJobs">
                 <div id="jobsTitle">
-                    <h3 class="infoTitle underlined">De senaste jobben</h3>
+                    <h3 class="infoTitle underlined">Våra senaste jobb</h3>
                 </div>
                 @foreach($newJobs as $job)
                     @include('pages.partials.jobbaextrapuff')

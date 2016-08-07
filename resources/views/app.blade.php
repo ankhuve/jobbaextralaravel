@@ -31,6 +31,8 @@
                         <a href="{{ URL::action('CompanyController@index') }}">Hitta arbetskraft</a>
                     </li><li>
                         <a href="{{ URL::action('AboutController@index') }}">Om oss</a>
+                    </li><li>
+                        <a href="{{ URL::action('ContactController@create') }}">Kontakt</a>
                     </li>@if(Auth::check())<li>
                             <a href="{{ URL::action('Auth\AuthController@getLogout') }}">Logga ut</a>
                         </li>
@@ -48,4 +50,5 @@
             @yield('content')
         </div>
     </body>
+    <script src="{{ asset('js/search.js') }}"></script>
 </html>

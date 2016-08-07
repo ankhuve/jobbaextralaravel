@@ -3,6 +3,11 @@
 @section('content')
     <div class="container">
         <div class="row">
+            {{--@if($user->logo_path)--}}
+                {{--<div class="col-md-12">--}}
+                    {{--<img class="logo" src="{{ env('UPLOADS_URL') }}/{{ $user->logo_path }}" alt="">--}}
+                {{--</div>--}}
+            {{--@endif--}}
             <div class="col-md-12 newJobContainer">
                 <div class="messageBoxHeading">Dina jobbannonser
                     @if(count(($user->jobs)) != 0)
@@ -11,7 +16,6 @@
                     <div class="loggedInUser"><span class="orange">(</span> {{ $user->email }} <span class="orange">)</span></div>
                 </div>
                 <div class="panel-body">
-                    {{ $user->logo_path }}
                     @if($user->jobs)
                         @foreach($user->jobs as $job)
                             @include('pages.partials.jobbaextrapuff')
@@ -23,13 +27,15 @@
                             </div>
                         </div>
                     @endif
-                    <div class="col-md-4 col-md-offset-4">
-                        <a href="{{ url('company/create') }}">
-                            <button class="registerFormSubmitButton col-md-12">
-                                Skapa en annons
-                            </button>
-                        </a>
-                    </div>
+                    @if($user->role === 3)
+                        <div class="col-md-4 col-md-offset-4">
+                            <a href="{{ url('company/create') }}">
+                                <button class="registerFormSubmitButton col-md-12">
+                                    Skapa en annons
+                                </button>
+                            </a>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

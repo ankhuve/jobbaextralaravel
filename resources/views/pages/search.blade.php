@@ -32,11 +32,11 @@
                     @endif
                 </div>
                 <div class="filterButtons">
-                    <div onclick="toggleFilters()" class="searchButton filterButton searchPage">
+                    <div class="searchButton filterButton searchPage">
                         <p>Filtrera</p> <br/>
                         <span id="filterToggleArrow" class="glyphicon glyphicon-chevron-down"></span>
                     </div>
-                    <div id="resetFilters" onclick="resetFilters()" class="searchButton resetFilters"
+                    <div id="resetFilters" class="searchButton resetFilters"
                          title="Återställ alla filter">
                         <span class="glyphicon glyphicon-trash"></span>
                     </div>
@@ -51,7 +51,7 @@
     </div>
 
     {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.1/vue.js"></script>--}}
-    <script src="/js/jquery.js"></script>
-    <script src="/js/search.js"></script>
+    {{--<script src="/js/jquery.js"></script>--}}
+    {{--<script src="/js/search.js"></script>--}}
 
 @endsection

@@ -43,4 +43,9 @@ class Job extends Model
         return Job::where('latest_application_date', '>', Carbon::now())->count();
     }
 
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
 }

@@ -1,12 +1,18 @@
 <div class="jobBlock col-md-6" id="{{ $job->annonsid }}">
-    <div class="upperInfo">
-        <a href="/job/{{ $job->annonsid }}" >
-            <div class="titles">
-                <h1 class="text-left">{{ $job->annonsrubrik }}</h1>
-                <h2 class="text-right"><i>{{ $job->arbetsplatsnamn }}</i></h2>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="upperInfo">
+                <a href="/job/{{ $job->annonsid }}" >
+                    <div class="row">
+                        <div class="titles col-xs-12">
+                            <h1 class="text-left">{{ $job->annonsrubrik }}</h1>
+                            <h2 class="text-left"><i>{{ $job->arbetsplatsnamn }}</i></h2>
+                        </div>
+                    </div>
+                </a>
+                <div class="jobShortDescription"></div>
             </div>
-        </a>
-        <div class="jobShortDescription"></div>
+        </div>
     </div>
 
     <div class="bottomInfo">

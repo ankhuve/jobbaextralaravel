@@ -2,8 +2,14 @@
 
 @section('content')
     <div class="aboutInfo">
-        <h2 class="aboutHeader"> {{ $first }}{{ $last }} </h2>
-        <hr class="aboutDivider"></hr>
-        <p>Bacon ipsum dolor amet pork pork chop salami fatback sirloin, jowl brisket cow meatloaf chicken turducken. Pork belly andouille pork chop tongue prosciutto shankle strip steak. Pork loin tri-tip meatball, jowl meatloaf turkey shank short loin tail pork biltong fatback pork chop. Cow leberkas ribeye beef. Pork loin jerky spare ribs, ball tip landjaeger turducken sirloin strip steak sausage hamburger filet mignon venison turkey beef beef ribs. Corned beef drumstick jerky pig turkey doner. Pork andouille kielbasa, pastrami ham prosciutto brisket venison sirloin tri-tip.</p>
+        <h2 class="aboutHeader"> Jobbrek </h2>
+        <hr class="aboutDivider"/>
+        <p>
+            Tillsammans har vi över 20 års erfarenhet av rekrytering och skräddarsydda annonseringslösningar.
+            <br><br>
+            Kundservice och professionalism är två av de viktigaste grundstenarna i vår värdegrund. Vårt mål är alltid att arbeta med snabba processer, långsiktiga relationer och framförallt goda resultat.
+            <br><br>
+            Att hitta rätt för kunden, arbetsgivare och jobbsökande är a och o.  Att få en perfekt matchning mellan dessa sker inte genom tur. Det handlar om att genom hårt arbete och målmedvetenhet hela tiden vara i framkant, medveten om arbetsmarknaden och ha god lokalkännedom.
+        </p>
     </div>
 @endsection

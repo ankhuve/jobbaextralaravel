@@ -1,0 +1,7 @@
+.alert{
+    &.alert-custom{
+        background: $accent-color;
+        color: $font-color-primary;
+        padding-left: 2em;
+    }
+}
