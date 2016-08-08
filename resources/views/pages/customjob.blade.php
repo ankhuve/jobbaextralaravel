@@ -23,15 +23,10 @@
                 <p style="white-space: pre-line">{{ $jobMatch->description }}</p>
             </div>
             <div class="moreInfo">
-                {{--<p class="extraJobInfo"> Varaktighet: {{ $jobMatch->villkor->varaktighet }} </p>--}}
                 <p class="extraJobInfo"> Kommun:  {{ $jobMatch->municipality }}</p>
                 <p class="extraJobInfo"> Publicerad: {{ date('d-m-Y', strtotime($jobMatch->published_at)) }} </p>
                 <p class="extraJobInfo"> Dagar sedan publicering: {{ $daysSincePublished }} </p>
-                {{--<p class="extraJobInfo"><a href="{{ $jobMatch->annons->platsannonsUrl }}">Länk till arbetsförmedlingen</a></p>--}}
                 <hr>
-                @if(isset($jobMatch->contact_email))
-                    <div><a href="mailto:{{ $jobMatch->contact_email }}">{{ $jobMatch->contact_email }}</a></div>
-                @endif
                 @if(isset($jobMatch->latest_application_date))
                         <div class="extraJobInfo">Sista ansökningsdag {{ $jobMatch->latest_application_date }}</div>
                 @endif

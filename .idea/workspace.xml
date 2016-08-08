@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d5b5543-3bf0-482b-a9f9-d1dcd7698677" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/customjob.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/customjob.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/job.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/job.blade.php" />
     </list>
     <ignored path="jobbaextralaravel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,24 +31,6 @@
         <option name="myItemId" />
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
       </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - jobbaextra@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - jobbaextra@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="jobs" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
@@ -62,7 +46,7 @@
               <file leaf-file-name="app.blade.php" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="-10.0">
+                    <state vertical-scroll-proportion="-14.384615">
                       <caret line="22" column="63" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="63" />
                       <folding />
                     </state>
@@ -72,8 +56,8 @@
               <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.24132492">
-                      <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+                    <state vertical-scroll-proportion="0.3422619">
+                      <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
                       <folding />
                     </state>
                   </provider>
@@ -86,7 +70,7 @@
               <file leaf-file-name="_panel.scss" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/resources/assets/sass/partials/_panel.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="-10.461538">
+                    <state vertical-scroll-proportion="0.0">
                       <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
                       <folding />
                     </state>
@@ -96,7 +80,7 @@
               <file leaf-file-name="_colors.scss" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/resources/assets/sass/partials/_colors.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="-1.3076923">
+                    <state vertical-scroll-proportion="0.0">
                       <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
                       <folding />
                     </state>
@@ -106,7 +90,7 @@
               <file leaf-file-name="_buttons.scss" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/resources/assets/sass/partials/_buttons.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.3753943">
+                    <state vertical-scroll-proportion="0.35416666">
                       <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
                       <folding />
                     </state>
@@ -152,7 +136,7 @@
           <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.07633588">
+                <state vertical-scroll-proportion="0.11971831">
                   <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
                   <folding />
                 </state>
@@ -218,15 +202,15 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" />
         <option value="$PROJECT_DIR$/resources/assets/sass/app.scss" />
         <option value="$PROJECT_DIR$/resources/assets/sass/partials/_buttons.scss" />
-        <option value="$PROJECT_DIR$/resources/views/pages/job.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/contact.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/ValidateNewJob.php" />
         <option value="$PROJECT_DIR$/resources/views/company/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/partials/jobbpuff.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/partials/jobbaextrapuff.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/customjob.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/job.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/customjob.blade.php" />
       </list>
     </option>
   </component>
@@ -709,11 +693,10 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="home.&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/home.blade.php&#10;app.b&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/app.blade.php&#10;custom&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/customjob.blade.php&#10;job.bl&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/job.blade.php&#10;jobbae&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/partials/jobbaextrapuff.blade.php&#10;jobbpuf&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/partials/jobbpuff.blade.php&#10;valida&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/Requests/ValidateNewJob.php&#10;create&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/company/create.blade.php&#10;contact&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/contact.blade.php&#10;app.sc&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/assets/sass/app.scss&#10;Job.ph&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Job.php&#10;validate&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/Requests/ValidateNewJob.php&#10;newjob&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/Requests/ValidateNewJob.php&#10;Company&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/Controllers/CompanyController.php&#10;JobCo&#9;null&#9;null&#10;confir&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/company/confirm.blade.php&#10;colors&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/assets/sass/partials/_colors.scss&#10;.env&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/.env&#10;about&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/about.blade.php&#10;app.bl&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/app.blade.php&#10;services&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/config/services.php&#10;userty&#9;null&#9;null&#10;register&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/auth/register.blade.php&#10;laravel&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/storage/logs/laravel-2016-08-07.log&#10;composer.j&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/composer.json&#10;packa&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/package.json&#10;services.&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/config/services.php&#10;mail.&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/config/mail.php&#10;mail.p&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/config/mail.php&#10;Contac&#9;null&#9;null&#10;routes&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/routes.php&#10;customjo&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/customjob.blade.php&#10;newjobco&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/partials/newjobconfirmation.blade.php&#10;confirm&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/company/confirm.blade.php&#10;app.php&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/config/app.php&#10;composer.js&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/composer.json&#10;search.&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/search.blade.php&#10;jobbpu&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/partials/jobbpuff.blade.php&#10;Compa&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/Controllers/CompanyController.php&#10;company&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/Controllers/CompanyController.php&#10;search.js&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/assets/js/search.js&#10;NewJ&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/Requests/ValidateNewJob.php&#10;$searchOptions&#9;null&#9;null&#10;home&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/Controllers/HomeController.php&#10;SearchCo&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/Controllers/SearchController.php&#10;search&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/search.blade.php&#10;app.&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/app.blade.php&#10;opencon&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/public/js/openConfirmForm.js&#10;SearchCon&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/Controllers/SearchController.php&#10;searchre&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/partials/searchresults.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="custom&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/customjob.blade.php&#10;job.&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/job.blade.php&#10;home.&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/home.blade.php&#10;app.b&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/app.blade.php&#10;job.bl&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/job.blade.php&#10;jobbae&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/partials/jobbaextrapuff.blade.php&#10;jobbpuf&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/partials/jobbpuff.blade.php&#10;valida&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/Requests/ValidateNewJob.php&#10;create&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/company/create.blade.php&#10;contact&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/contact.blade.php&#10;app.sc&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/assets/sass/app.scss&#10;Job.ph&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Job.php&#10;validate&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/Requests/ValidateNewJob.php&#10;newjob&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/Requests/ValidateNewJob.php&#10;Company&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/Controllers/CompanyController.php&#10;JobCo&#9;null&#9;null&#10;confir&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/company/confirm.blade.php&#10;colors&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/assets/sass/partials/_colors.scss&#10;.env&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/.env&#10;about&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/about.blade.php&#10;app.bl&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/app.blade.php&#10;services&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/config/services.php&#10;userty&#9;null&#9;null&#10;register&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/auth/register.blade.php&#10;laravel&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/storage/logs/laravel-2016-08-07.log&#10;composer.j&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/composer.json&#10;packa&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/package.json&#10;services.&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/config/services.php&#10;mail.&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/config/mail.php&#10;mail.p&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/config/mail.php&#10;Contac&#9;null&#9;null&#10;routes&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/routes.php&#10;customjo&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/customjob.blade.php&#10;newjobco&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/partials/newjobconfirmation.blade.php&#10;confirm&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/company/confirm.blade.php&#10;app.php&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/config/app.php&#10;composer.js&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/composer.json&#10;search.&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/search.blade.php&#10;jobbpu&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/partials/jobbpuff.blade.php&#10;Compa&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/Controllers/CompanyController.php&#10;company&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/Controllers/CompanyController.php&#10;search.js&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/assets/js/search.js&#10;NewJ&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/Requests/ValidateNewJob.php&#10;$searchOptions&#9;null&#9;null&#10;home&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/Controllers/HomeController.php&#10;SearchCo&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/Controllers/SearchController.php&#10;search&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/pages/search.blade.php&#10;app.&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/resources/views/app.blade.php&#10;opencon&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/public/js/openConfirmForm.js&#10;SearchCon&#9;FILE&#9;file://C:/Users/Erik/Homestead/Projects/jobbaextralaravel/app/Http/Controllers/SearchController.php" />
     <property name="options.lastSelected" value="preferences.keymap" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="FullScreen" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="LayoutCode.rearrangeEntriesBlade" value="false" />
@@ -820,28 +803,28 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1337953" sideWeight="0.21052632" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1337953" sideWeight="0.7894737" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13486141" sideWeight="0.21776815" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13486141" sideWeight="0.78223187" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282326" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17551462" sideWeight="0.50033313" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15991472" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.097508125" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15991472" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.053087756" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24981076" sideWeight="0.4995878" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16296864" sideWeight="0.4996669" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12686567" sideWeight="0.25" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39938793" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39938793" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17984831" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="CSS Styles" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.097508125" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39938793" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1005,14 +988,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/790b8beb/b7771915-ccd3-4684-b2bd-3ddded772e86/jobbaextra.users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1027,9 +1010,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6422764">
           <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
-          <folding>
-            <element signature="e#40#81#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1082,17 +1062,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07633588">
-          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/sass/partials/_panel.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538">
+        <state vertical-scroll-proportion="0.0">
           <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
           <folding />
         </state>
@@ -1102,7 +1074,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14488636">
           <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1110,7 +1081,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3380682">
           <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1118,7 +1088,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34700316">
           <caret line="211" column="20" selection-start-line="211" selection-start-column="20" selection-end-line="211" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1126,7 +1095,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1214511">
           <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1134,9 +1102,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18512397">
           <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#77#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1144,32 +1109,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.1355371">
           <caret line="76" column="78" selection-start-line="76" selection-start-column="78" selection-end-line="76" selection-end-column="78" />
-          <folding>
-            <marker date="1470652374004" expanded="true" signature="677:881" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="690:879" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="724:878" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="1127:1244" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="1140:1242" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="1172:1241" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="1358:1536" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="1371:1534" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="1415:1533" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="1738:1859" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="1751:1857" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="1787:1856" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="1973:2106" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="1986:2104" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="2034:2103" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="2320:2536" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="2336:2534" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="2374:2533" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="2789:2931" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="2801:2929" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="2863:2928" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="3129:3252" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="3142:3250" placeholder="..." />
-            <marker date="1470652374004" expanded="true" signature="3184:3249" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1177,7 +1116,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28333333">
           <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1185,13 +1123,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21451104">
           <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/sass/partials/_colors.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3076923">
+        <state vertical-scroll-proportion="0.0">
           <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
           <folding />
         </state>
@@ -1201,13 +1138,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24132492">
           <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/sass/partials/_buttons.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3753943">
+        <state vertical-scroll-proportion="0.35416666">
           <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
           <folding />
         </state>
@@ -1217,7 +1153,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33596215">
           <caret line="23" column="87" selection-start-line="23" selection-start-column="87" selection-end-line="23" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1225,7 +1160,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6694215">
           <caret line="912" column="28" selection-start-line="912" selection-start-column="28" selection-end-line="912" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1233,36 +1167,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3322314">
           <caret line="37" column="68" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/790b8beb/b7771915-ccd3-4684-b2bd-3ddded772e86/jobbaextra.jobs">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/customjob.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4022082">
-          <caret line="15" column="55" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/job.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.670347">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1270,7 +1186,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3753943">
           <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1278,7 +1193,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32176656">
           <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1286,22 +1200,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.5">
           <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0">
+        <state vertical-scroll-proportion="-14.384615">
           <caret line="22" column="63" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11971831">
+          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/customjob.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26636904">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/job.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3794643">
+          <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24132492">
-          <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.3422619">
+          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
           <folding />
         </state>
       </provider>
