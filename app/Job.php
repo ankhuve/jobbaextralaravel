@@ -18,6 +18,7 @@ class Job extends Model
         'description',
         'latest_application_date',
         'contact_email',
+        'external_link',
     ];
 
     /**

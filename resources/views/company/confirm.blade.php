@@ -71,6 +71,14 @@
                     </div>
                 </div>
 
+                <div class="form-group">
+                    <label class="col-md-offset-5 col-md-3 control-label">Extern ansökningslänk</label>
+                    <div class="col-md-3">
+                        {!! Form::text('external_link', $data['external_link'], ['class' => 'form-control', 'placeholder' => 'dittföretag.se/ansök']) !!}
+                    </div>
+
+                </div>
+
                 {!! Form::close() !!}
                 <div class="confirmButtons form-group">
                     <div class="col-xs-6">

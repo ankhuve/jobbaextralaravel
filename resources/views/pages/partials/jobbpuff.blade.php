@@ -1,3 +1,4 @@
+
 <div class="jobBlock col-md-6" id="{{ $job->annonsid }}">
     <div class="row">
         <div class="col-xs-12">
@@ -5,8 +6,8 @@
                 <a href="/job/{{ $job->annonsid }}" >
                     <div class="row">
                         <div class="titles col-xs-12">
-                            <h1 class="text-left">{{ $job->annonsrubrik }}</h1>
-                            <h2 class="text-left"><i>{{ $job->arbetsplatsnamn }}</i></h2>
+                            <h1 class="text-left">{{ $job->arbetsplatsnamn }}</h1>
+                            <h2 class="text-left"><i>{{ $job->annonsrubrik }}</i></h2>
                         </div>
                     </div>
                 </a>
@@ -29,7 +30,7 @@
         </div>
         <div class="col-md-3" title="Sista ansökningsdatum för jobbet.">
             <img src="img/calendar.png"/>
-            <span>{{ substr($job->publiceraddatum, 0, 10) }}</span>
+            <span>{{ array_key_exists('sista_ansokningsdag', $job) ? substr($job->sista_ansokningsdag, 0, 10) : '-' }}</span>
         </div>
     </div>
 </div>

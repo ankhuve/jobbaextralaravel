@@ -48,7 +48,7 @@ class CompanyController extends Controller
     {
         if($data){
             return Job::create([
-                'title' => $data['jobtitle'],
+                'title' => $data['title'],
                 'work_place' => $data['work_place'],
                 'type' => $data['type'],
                 'county' => $data['county'],
@@ -56,6 +56,7 @@ class CompanyController extends Controller
                 'description' => nl2br($data['description']),
                 'latest_application_date' => $data['latest_application_date'],
                 'contact_email' => $data['contact_email'],
+                'external_link' => $data['external_link'],
                 'published_at' => Carbon::now()
             ]);
         }
@@ -69,7 +70,7 @@ class CompanyController extends Controller
     public function show(Request $request = null)
     {
         if($request){
-            dd($request->all());
+//            dd($request->all());
             redirect('company.create')->withInput();
         }
         $user = $this->auth->user();

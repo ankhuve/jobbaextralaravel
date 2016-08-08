@@ -13,9 +13,7 @@
 
                     <h2 class="text-right workplace">
                         <i>
-                            @if(property_exists($jobMatch, 'work_place'))
-                                {{ $jobMatch->work_place }}
-                            @endif
+                            {{ $jobMatch->work_place }}
                         </i>
                     </h2>
 
@@ -37,6 +35,17 @@
                 @if(isset($jobMatch->latest_application_date))
                         <div class="extraJobInfo">Sista ansökningsdag {{ $jobMatch->latest_application_date }}</div>
                 @endif
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        @if($jobMatch->external_link != '')
+                            <a target="_blank" href="{{ $jobMatch->external_link }}">
+                        @else
+                            <a target="_blank" href="mailto:{{ $jobMatch->contact_email }}">
+                        @endif
+                                <button class="btn btn-confirm">Ansök</button>
+                            </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

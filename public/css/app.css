@@ -6955,4 +6955,27 @@ textarea#description {
   color: #ffeec2;
   padding-left: 2em; }
 
+.btn {
+  padding: 0;
+  display: block;
+  border-radius: 3px;
+  border: 0;
+  background-color: #ff6e3f;
+  /* Safari */
+  transition: background-color 0.5s ease;
+  height: 45px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.4em;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #ffeec2;
+  width: 100%; }
+  .btn:hover {
+    color: #ffeec2;
+    text-decoration: none; }
+  .btn.btn-confirm {
+    background: #55c04d; }
+    .btn.btn-confirm:hover {
+      background: #3f9f38; }
+
 /*# sourceMappingURL=app.css.map */

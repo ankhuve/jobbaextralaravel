@@ -33,13 +33,23 @@
                 <p class="extraJobInfo"> Kommun:  {{ $jobMatch->annons->kommunnamn }}</p>
                 <p class="extraJobInfo"> Publicerad: {{ date('d-m-Y', strtotime($jobMatch->annons->publiceraddatum)) }} </p>
                 <p class="extraJobInfo"> Dagar sedan publicering: {{ $daysSincePublished }} </p>
-                <p class="extraJobInfo"><a href="{{ $jobMatch->annons->platsannonsUrl }}">Länk till arbetsförmedlingen</a></p>
-                @if(isset($jobMatch->ansokan->epostadress))
-                    <div>{{ $jobMatch->ansokan->epostadress }}</div>
+                @if($jobMatch->ansokan->epostadress != '')
+                    <p class="extraJobInfo"><a target="_blank" href="{{ $jobMatch->annons->platsannonsUrl }}">Länk till arbetsförmedlingen</a></p>
                 @endif
                 @if(isset($jobMatch->ansokan->sista_ansokningsdag))
                         <div class="extraJobInfo">Sista ansökningsdag {{ substr($jobMatch->ansokan->sista_ansokningsdag, 0, 10) }}</div>
                 @endif
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        @if($jobMatch->ansokan->epostadress != '')
+                            <a target="_blank" href="mailto:{{ $jobMatch->ansokan->epostadress }}">
+                        @else
+                            <a target="_blank" href="{{ $jobMatch->annons->platsannonsUrl }}">
+                        @endif
+                                <button class="btn btn-confirm">Ansök</button>
+                            </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

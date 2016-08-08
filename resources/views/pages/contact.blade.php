@@ -22,7 +22,7 @@
                         Företag och arbetsplatser är byggt och består av människor.
                         <br><br>
                         Med den insikten förstår vi att samma lösning inte passar alla.
-                        Kontakta oss via formuläret nedan så återkommer vi till er snarast för en dialog kring hur vi tillsammans kan skräddasy en lösning för och få ett resultat som passar just er.
+                        Kontakta oss via formuläret nedan så återkommer vi till er snarast för en dialog kring hur vi tillsammans kan skräddasy en lösning för att få ett resultat som passar just er.
                     </p>
                 </div>
 

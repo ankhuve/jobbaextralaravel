@@ -28,7 +28,7 @@ class ValidateNewJob extends Request
             'title' => 'required|max:60|string',
             'work_place' => 'required|string',
             'type' => 'required|integer',
-            'county' => 'required|integer',
+            'county' => 'required',
             'municipality' => 'required|string',
             'description' => 'required|string',
             'latest_application_date' => 'after:'.Carbon::today()->format('Y-m-d'),
