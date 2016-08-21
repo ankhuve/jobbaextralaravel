@@ -11,9 +11,9 @@
             @if(key_exists('annonsid', $job))
                 @include('pages.partials.jobbpuff')
             @else
-                @if((\Carbon\Carbon::now()->lte(Carbon\Carbon::parse($job->latest_application_date))))
+{{--                @if((\Carbon\Carbon::now()->lte(Carbon\Carbon::parse($job->latest_application_date))))--}}
                     @include('pages.partials.jobbaextrapuff')
-                @endif
+                {{--@endif--}}
             @endif
 
         @endforeach
