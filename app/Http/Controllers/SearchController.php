@@ -55,41 +55,40 @@ class SearchController extends Controller
         $offset = $totalCustomJobs % $this->numPerPage;
         $numToGetFromAF = (10-$offset);
 
-        if($offset == 0 && $totalCustomJobs > 0){
+        if($offset === 0 && $totalCustomJobs > 0){
             $firstPageWithAFJobs = (int)ceil($totalCustomJobs / $this->numPerPage) + 1;
         } else{
             $firstPageWithAFJobs = (int)ceil($totalCustomJobs / $this->numPerPage);
         }
 
         $firstPageToGetFromAF = ($askedPage - $firstPageWithAFJobs) + 1;
-        if($offset != 0 && ($firstPageWithAFJobs + 1) === $askedPage){
+        if($totalCustomJobs === 0){
+            // om vi inte har några custom jobs
+            $firstPageToGetFromAF = $askedPage;
+        } elseif($offset != 0 && ($firstPageWithAFJobs + 1) === $askedPage){
             $firstPageToGetFromAF = $askedPage - 1;
         } elseif($offset != 0 && $askedPage > $firstPageWithAFJobs){
             $firstPageToGetFromAF--;
+        } else{
+            $firstPageToGetFromAF = 1;
         }
-//        if($firstPageToGetFromAF === 0){
-//            $firstPageToGetFromAF = 1; // annars visas inga AF-jobb på första sidan om det finns custom-träffar
-//        } elseif($firstPageWithAFJobs === 1 && $askedPage === 2){
-//            $firstPageToGetFromAF = 2;
-//        }
 
 
 //        dd('page: ' . $askedPage, 'firstPageToGetFromAF: ' . $firstPageToGetFromAF, 'firstPageWithAfJobs: ' . $firstPageWithAFJobs, 'offset: ' . $offset);
         $askedPage >= $firstPageWithAFJobs ? $shouldGetAFJobs = true : $shouldGetAFJobs = false;
 
         // calculate which pages to get from AF API and then get the jobs
-        if($offset === 0 && $askedPage >= $firstPageWithAFJobs){
+        if($firstPageWithAFJobs > $askedPage){
+            // om vi inte ska hämta några jobb, men vill ha stats ändå
+            $afSearchMeta['antal_platsannonser'] = $this->getNumberOfAfJobs($keyword);
+        } elseif($offset === 0 && $askedPage >= $firstPageWithAFJobs){
             // om vi inte har offset och ska är på en sida där af-jobb ska hämtas
             $results = $this->search($keyword, $numToGetFromAF, $firstPageToGetFromAF); // get jobs from Arbetsförmedlingen
             $afJobs = $results['jobMatches'];
             $afSearchMeta = $results['searchMeta'];
 
         } elseif($offset != 0 && $askedPage === $firstPageWithAFJobs){
-            // om vi är på första sidan med AF-jobb och behöver slicea bort eftersom vi har custom jobs
-
-//            dd('page: ' . $askedPage, 'firstPageToGetFromAF: ' . $firstPageToGetFromAF, 'firstPageWithAfJobs: ' . $firstPageWithAFJobs, 'offset: ' . $offset, 'numToGetFromAF: '. $numToGetFromAF);
-
-
+            // om vi är på första sidan med AF-jobb och har custom jobs
             $results = $this->search($keyword, $this->numPerPage, $firstPageToGetFromAF); // get jobs from Arbetsförmedlingen
 
             if($results){
@@ -98,11 +97,9 @@ class SearchController extends Controller
 
                 $afJobs = $results['jobMatches'];
                 $afSearchMeta = $results['searchMeta'];
-//                dd($afJobs);
             } else{
-                // om det är slut på resultat
+                // om det inte hittades några AF-jobb
                 $request->flash();
-                return view('pages.search', ['jobs' => [], 'searchMeta' => [], 'currentPage' => $askedPage]);
             }
 
         } elseif($offset != 0 && $askedPage > $firstPageWithAFJobs){
@@ -143,10 +140,6 @@ class SearchController extends Controller
             }
         } else{
             // om vi är på sista sidan med AF-jobb
-
-            dd('page: ' . $askedPage, 'firstPageToGetFromAF: ' . $firstPageToGetFromAF, 'firstPageWithAfJobs: ' . $firstPageWithAFJobs, 'offset: ' . $offset, 'numToGetFromAF: '. $numToGetFromAF);
-
-
             $results = $this->search($keyword, $this->numPerPage, $firstPageToGetFromAF); // get jobs from Arbetsförmedlingen
 
             if($results){
@@ -186,8 +179,6 @@ class SearchController extends Controller
         }
         $searchMeta['numPages'] = ceil($searchMeta['all'] / $this->numPerPage);
 
-//        dd($searchMeta);
-//        dd($allJobs);
 
         // Make a paginator to paginate the search results
         $currPage = Input::get('page') ?: null;

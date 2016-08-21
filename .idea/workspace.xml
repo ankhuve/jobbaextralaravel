@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4d5b5543-3bf0-482b-a9f9-d1dcd7698677" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/partials/searchresults.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/partials/searchresults.blade.php" />
     </list>
     <ignored path="jobbaextralaravel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -99,8 +98,8 @@
               <file leaf-file-name="SearchController.php" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SearchController.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.725">
-                      <caret line="76" column="35" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
+                    <state vertical-scroll-proportion="0.8421875">
+                      <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
@@ -827,16 +826,16 @@
     <property name="list.type.of.created.stylesheet" value="SCSS" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Erik\Homestead\Projects\jobbaextralaravel\public\img" />
-      <recent name="C:\Users\Erik\Homestead\Projects\jobbaextralaravel\resources\views\company" />
-      <recent name="C:\Users\Erik\Homestead\Projects\jobbaextralaravel\app\JobbaExtra\Arbetsförmedlingen" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Erik\Homestead\Projects\jobbaextralaravel\public\img" />
       <recent name="C:\Users\Erik\Homestead\Projects\jobbaextralaravel\resources\assets\sass\partials" />
       <recent name="C:\Users\Erik\Homestead\Projects\jobbaextralaravel" />
       <recent name="C:\Users\Erik\Homestead\Projects\jobbaextralaravel\resources\lang\sv" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Erik\Homestead\Projects\jobbaextralaravel\public\img" />
+      <recent name="C:\Users\Erik\Homestead\Projects\jobbaextralaravel\resources\views\company" />
+      <recent name="C:\Users\Erik\Homestead\Projects\jobbaextralaravel\app\JobbaExtra\Arbetsförmedlingen" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.SearchController.php">
@@ -1362,14 +1361,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage/framework/views/6449405488548adbcaa9fae5ef3b105a">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7339833">
-          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/search.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.87716764">
@@ -1417,10 +1408,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/storage/framework/views/6449405488548adbcaa9fae5ef3b105a">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7912913">
+          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SearchController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.725">
-          <caret line="76" column="35" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.8421875">
+          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
           <folding />
         </state>
       </provider>
