@@ -67,21 +67,24 @@ class SearchController extends Controller
             $firstPageToGetFromAF = $askedPage;
         } elseif($offset != 0 && ($firstPageWithAFJobs + 1) === $askedPage){
             $firstPageToGetFromAF = $askedPage - 1;
-        } elseif($offset != 0 && $askedPage > $firstPageWithAFJobs){
+        } elseif($offset != 0 && $askedPage > $firstPageWithAFJobs) {
             $firstPageToGetFromAF--;
+        } elseif($totalCustomJobs > 0 && $offset === 0){
+            ($askedPage - $firstPageWithAFJobs) > 0 ? $firstPageToGetFromAF = $askedPage - $firstPageWithAFJobs + 1 : $firstPageToGetFromAF = 1;
         } else{
             $firstPageToGetFromAF = 1;
         }
 
 
 //        dd('page: ' . $askedPage, 'firstPageToGetFromAF: ' . $firstPageToGetFromAF, 'firstPageWithAfJobs: ' . $firstPageWithAFJobs, 'offset: ' . $offset);
+
         $askedPage >= $firstPageWithAFJobs ? $shouldGetAFJobs = true : $shouldGetAFJobs = false;
 
         // calculate which pages to get from AF API and then get the jobs
         if($firstPageWithAFJobs > $askedPage){
             // om vi inte ska hämta några jobb, men vill ha stats ändå
             $afSearchMeta['antal_platsannonser'] = $this->getNumberOfAfJobs($keyword);
-        } elseif($offset === 0 && $askedPage >= $firstPageWithAFJobs){
+        } elseif($offset === 0 && $shouldGetAFJobs){
             // om vi inte har offset och ska är på en sida där af-jobb ska hämtas
             $results = $this->search($keyword, $numToGetFromAF, $firstPageToGetFromAF); // get jobs from Arbetsförmedlingen
             $afJobs = $results['jobMatches'];
