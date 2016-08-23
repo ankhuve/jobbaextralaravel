@@ -7024,4 +7024,33 @@ ul.pagination {
       color: #ff6e3f;
       background: #fff1ce; }
 
+.note-editor .btn, .note-popover .btn {
+  width: auto;
+  font-size: 12px;
+  font-family: inherit;
+  height: auto;
+  padding: 5px 10px;
+  text-transform: inherit;
+  transition: background-color 0.2s; }
+  .note-editor .btn:hover, .note-popover .btn:hover {
+    background: #ff561f; }
+
+.modal .modal-dialog .modal-content {
+  padding: 0 2rem;
+  background: #242424; }
+  .modal .modal-dialog .modal-content .modal-header {
+    padding: 15px 0; }
+  .modal .modal-dialog .modal-content .modal-title {
+    font-size: 2rem;
+    font-weight: 500; }
+  .modal .modal-dialog .modal-content .close {
+    opacity: 0.8; }
+    .modal .modal-dialog .modal-content .close:hover {
+      opacity: 1; }
+    .modal .modal-dialog .modal-content .close span {
+      color: #ff6e3f;
+      text-shadow: none;
+      opacity: 1;
+      font-size: 3rem; }
+
 /*# sourceMappingURL=app.css.map */

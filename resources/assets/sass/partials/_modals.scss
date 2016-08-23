@@ -1,0 +1,31 @@
+.modal{
+    .modal-dialog{
+        .modal-content{
+            padding: 0 2rem;
+            background: $bg-color-primary;
+
+            .modal-header{
+                padding: 15px 0;
+            }
+
+            .modal-title{
+                font-size: 2rem;
+                font-weight: 500;
+            }
+
+            .close{
+                opacity: 0.8;
+
+                &:hover{
+                    opacity: 1;
+                }
+                span{
+                    color: $accent-color;
+                    text-shadow: none;
+                    opacity: 1;
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+}

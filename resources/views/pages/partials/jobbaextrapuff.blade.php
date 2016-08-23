@@ -16,7 +16,7 @@
                     </div>
 
                 </a>
-                <div class="jobShortDescription">{{ (strlen($job->description)<200) ? $job->description : substr($job->description, 0, 200)." ..." }}</div>
+                <div class="jobShortDescription">{{ (strlen(strip_tags($job->description))<200) ? strip_tags($job->description) : substr(strip_tags($job->description), 0, 200)." ..." }}</div>
             </div>
         </div>
     </div>

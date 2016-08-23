@@ -1,7 +1,7 @@
 <div class="col-md-12 newJobContainer">
     <div class="messageBoxHeading">{{ $data['title'] }}</div>
     <div class="panel-body">
-        <p style="white-space: pre-line">{{ $data['description'] }}</p>
+        <p style="white-space: pre-line">{!! $data['description'] !!}</p>
     </div>
     <div class="moreInfo">
         {{--<p class="extraJobInfo"> Varaktighet: {{ $jobMatch->villkor->varaktighet }} </p>--}}

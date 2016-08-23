@@ -42,7 +42,7 @@ class JobController extends Controller
             ]
         ]);
 
-        // @TODO: Catch error when request does not work
+        // TODO: Catch error when request does not work
 
         $jobMatch = json_decode($jobMatch->getBody()->getContents());
         if(!is_null($request)){

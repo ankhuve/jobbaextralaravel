@@ -1,0 +1,19 @@
+.note-editor, .note-popover{
+    .btn{
+        width: auto;
+        font-size: 12px;
+        font-family: inherit;
+        height: auto;
+        padding: 5px 10px;
+        text-transform: inherit;
+        -webkit-transition: background-color 0.2s;
+        -moz-transition: background-color 0.2s;
+        -ms-transition: background-color 0.2s;
+        -o-transition: background-color 0.2s;
+        transition: background-color 0.2s;
+
+        &:hover{
+            background: scale_color($accent-color, $lightness: -10%);
+        }
+    }
+}
