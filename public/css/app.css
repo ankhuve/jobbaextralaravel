@@ -7037,6 +7037,12 @@ ul.pagination {
   .note-editor .btn .note-icon-font.note-recent-color, .note-popover .btn .note-icon-font.note-recent-color {
     color: #696969; }
 
+.note-editor .panel-heading.note-toolbar .note-color .dropdown-menu .btn-group .note-color-reset, .note-popover .panel-heading.note-toolbar .note-color .dropdown-menu .btn-group .note-color-reset {
+  padding: 5px;
+  font-size: 12px; }
+  .note-editor .panel-heading.note-toolbar .note-color .dropdown-menu .btn-group .note-color-reset:hover, .note-popover .panel-heading.note-toolbar .note-color .dropdown-menu .btn-group .note-color-reset:hover {
+    background: #ff561f !important; }
+
 .modal .modal-dialog .modal-content {
   padding: 0 2rem;
   background: #242424; }

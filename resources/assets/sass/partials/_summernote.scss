@@ -20,4 +20,12 @@
             color: $bg-color-secondary;
         }
     }
+
+    .panel-heading.note-toolbar .note-color .dropdown-menu .btn-group .note-color-reset{
+        padding: 5px;
+        font-size: 12px;
+        &:hover{
+            background: scale_color($accent-color, $lightness: -10%) !important;
+        }
+    }
 }
