@@ -7034,6 +7034,8 @@ ul.pagination {
   transition: background-color 0.2s; }
   .note-editor .btn:hover, .note-popover .btn:hover {
     background: #ff561f; }
+  .note-editor .btn .note-icon-font.note-recent-color, .note-popover .btn .note-icon-font.note-recent-color {
+    color: #696969; }
 
 .modal .modal-dialog .modal-content {
   padding: 0 2rem;

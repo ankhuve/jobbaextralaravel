@@ -15,5 +15,9 @@
         &:hover{
             background: scale_color($accent-color, $lightness: -10%);
         }
+
+        .note-icon-font.note-recent-color{
+            color: $bg-color-secondary;
+        }
     }
 }

@@ -179,11 +179,11 @@ $(document).ready(function () {
         minHeight: null, // set minimum height of editor
         disableDragAndDrop: true,
         placeholder: 'Här beskriver du jobbets uppgifter, vad som förväntas av den jobbsökande, och kanske en kort företagsbeskrivning.',
-        fontNames: ['Arial', 'Arial Black', 'Courier New', 'Helvetiva', 'Impact', 'Roboto', 'Tahoma', 'Times New Roman', 'Verdana'],
+        fontNames: ['Arial', 'Arial Black', 'Courier New', 'Helvetica', 'Impact', 'Roboto', 'Tahoma', 'Times New Roman', 'Verdana'],
         fontNamesIgnoreCheck: ['Roboto'],
         toolbar: [
         // [groupName, [list of button]]
-        ['style', ['bold', 'italic', 'underline', 'clear']], ['fontsize', ['fontsize']], ['fontname', ['fontname']], ['para', ['ul', 'ol', 'paragraph']], ['insert', ['link']], ['misc', ['undo', 'redo']]]
+        ['style', ['bold', 'italic', 'underline', 'clear']], ['fontsize', ['fontsize']], ['fontname', ['fontname']], ['color', ['color']], ['para', ['ul', 'ol', 'paragraph']], ['insert', ['link']], ['misc', ['undo', 'redo']]]
     });
 
     $('.modal').on('show.bs.modal', function () {
