@@ -1,4 +1,3 @@
-
 <div class="jobBlock col-md-6" id="{{ $job->annonsid }}">
     <div class="row">
         <div class="col-xs-12">
@@ -25,7 +24,7 @@
             <img src="img/time_ago.png"/>
 
             <span>
-                {{ (int)(floor((time() - strtotime($job->publiceraddatum))/(60*60*24))) === 0 ? 'Idag' : ((int)(floor((time() - strtotime($job->publiceraddatum))/(60*60*24))) === 1 ? (int)(floor((time() - strtotime($job->publiceraddatum))/(60*60*24))).' dag sedan' : (int)(floor((time() - strtotime($job->publiceraddatum))/(60*60*24))).' dagar sedan')}}
+                {{ (\Carbon\Carbon::createFromFormat('Y-m-d\TH:i:se', $job->publiceraddatum)->isSameDay(\Carbon\Carbon::today())) ? 'Idag' : ((\Carbon\Carbon::createFromFormat('Y-m-d\TH:i:se', $job->publiceraddatum)->isSameDay(\Carbon\Carbon::yesterday())) ? 'Igår' : \Carbon\Carbon::createFromFormat('Y-m-d\TH:i:se', $job->publiceraddatum)->startOfDay()->diffInDays(Carbon\Carbon::now()) . ' dagar sedan') }}
             </span>
         </div>
         <div class="col-md-3" title="Sista ansökningsdatum för jobbet.">
