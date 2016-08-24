@@ -83,9 +83,9 @@
                 <div class="confirmButtons form-group">
                     <div class="col-xs-6">
                         {{--{{ dd(URL::getRequest()->request->all()) }}--}}
-                        <a href="{{ URL::route('company.create', URL::getRequest()->request->all()) }}">
-                            <button class="responsiveButton col-xs-12 cancelButton">Nej, ändra</button>
-                        </a>
+                        {{--<a href="{{ URL::route('company.create', URL::getRequest()->request->all()) }}">--}}
+                        <button class="responsiveButton col-xs-12 cancelButton" onclick="window.history.go(-1);">Nej, ändra</button>
+                        {{--</a>--}}
                     </div>
                     <div class="col-xs-6">
                         {!! Form::submit('Ja, Publicera', ['class' => 'responsiveButton col-xs-12 confirmButton', 'form' => 'createNewJob']) !!}

@@ -8,7 +8,7 @@
                 <div class="panel-body">
                     @include('errors.validation')
 
-                    {!! Form::open(['method' => 'GET', 'action' => 'CompanyController@confirm', 'class'=>'form-horizontal']) !!}
+                    {!! Form::open(['method' => 'POST', 'action' => 'CompanyController@confirm', 'class'=>'form-horizontal']) !!}
 
                         <div class="form-group">
                             <label class="col-md-2 control-label">Arbetsplats <span class="required">*</span></label>
@@ -65,7 +65,7 @@
 
                             <div class="col-md-9 col-md-offset-2">
                                 <label for="description">Beskrivning <span class="required">*</span></label>
-                                {!! Form::textarea('description', Request::get('description'), ['class' => 'form-control', 'id' => 'description', 'placeholder' => 'Beskriv jobbets uppgifter, förkunskaper, krav osv.']) !!}
+                                {!! Form::textarea('description', Request::get('description'), ['class' => 'form-control summernote', 'id' => 'description', 'placeholder' => 'Beskriv jobbets uppgifter, förkunskaper, krav osv.']) !!}
                             </div>
                         </div>
 

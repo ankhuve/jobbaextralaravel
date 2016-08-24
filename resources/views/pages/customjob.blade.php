@@ -20,7 +20,7 @@
 
             </div>
             <div class="panel-body">
-                <p style="white-space: pre-line">{{ $jobMatch->description }}</p>
+                <p style="white-space: pre-line">{!! $jobMatch->description !!}</p>
             </div>
             <div class="moreInfo">
                 <p class="extraJobInfo"> Kommun:  {{ $jobMatch->municipality }}</p>

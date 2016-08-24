@@ -16,7 +16,7 @@
                     </div>
 
                 </a>
-                <div class="jobShortDescription">{{ (strlen($job->description)<200) ? $job->description : substr($job->description, 0, 200)." ..." }}</div>
+                <div class="jobShortDescription">{{ (strlen(strip_tags($job->description))<200) ? strip_tags($job->description) : substr(strip_tags($job->description), 0, 200)." ..." }}</div>
             </div>
         </div>
     </div>
@@ -29,7 +29,7 @@
         <div class="col-md-4" title="Dagar sedan jobbet publicerades.">
             <img src="/img/time_ago.png"/>
 
-            <span>{{ \Carbon\Carbon::parse($job->published_at)->diffInDays(\Carbon\Carbon::now()) < 1 ? 'Idag' : (\Carbon\Carbon::parse($job->published_at)->diffInDays(\Carbon\Carbon::now()) == 1 ? 'Igår' : (\Carbon\Carbon::parse($job->published_at)->diffInDays(\Carbon\Carbon::now()).' dagar sedan')) }}</span>
+            <span>{{ \Carbon\Carbon::parse($job->published_at)->isSameDay(Carbon\Carbon::today()) ? 'Idag' : (\Carbon\Carbon::parse($job->published_at)->isSameDay(\Carbon\Carbon::yesterday()) ? 'Igår' : (\Carbon\Carbon::parse($job->published_at)->startOfDay()->diffInDays(\Carbon\Carbon::now()).' dagar sedan')) }}</span>
         </div>
         <div class="col-md-3" title="Sista ansökningsdatum för jobbet.">
             <img src="/img/calendar.png"/>

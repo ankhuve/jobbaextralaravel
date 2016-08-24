@@ -20,7 +20,7 @@ Route::post('contact', 'ContactController@store');
 Route::get('company', 'CompanyController@index');
 Route::get('company/create', 'CompanyController@show');
 Route::post('company/create', 'CompanyController@create');
-Route::get('company/create/confirm', 'CompanyController@confirm');
+Route::post('company/create/confirm', 'CompanyController@confirm');
 Route::get('register', 'RegisterController@index');
 //Route::get('search/{keyword?}', 'SearchController@index');
 Route::get('search', 'SearchController@index');
