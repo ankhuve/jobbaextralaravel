@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+
         @if(Session::has('contactError'))
             <div class="row">
                 <div class="col-md-offset-1 col-md-10">
@@ -20,6 +21,8 @@
                 </div>
             </div>
         @endif
+
+
         <div class="col-md-10 col-md-offset-1 newJobContainer">
             <div class="messageBoxHeading">
                 <a href="{{ URL::previous() }}">
@@ -38,6 +41,13 @@
 
             </div>
             <div class="panel-body">
+                @if($jobMatch->user->logo_path)
+                    <div class="row">
+                        <div class="logo col-xs-12" >
+                            <div class="logo logo-img logo-job" style="background-image: url('{{ env("UPLOADS_URL") }}/{{ $jobMatch->user->logo_path }}')"></div>
+                        </div>
+                    </div>
+                @endif
                 <p style="white-space: pre-line">{!! $jobMatch->description !!}</p>
             </div>
             <div class="moreInfo">

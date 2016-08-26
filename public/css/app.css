@@ -6852,6 +6852,11 @@ textarea#description {
   background-repeat: no-repeat;
   background-position: right; }
 
+.logo .logo-job {
+  height: 80px;
+  margin-bottom: 2rem;
+  background-position: center; }
+
 .required {
   color: #ff6e3f; }
 
