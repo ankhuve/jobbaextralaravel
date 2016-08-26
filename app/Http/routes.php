@@ -27,7 +27,7 @@ Route::get('search', 'SearchController@index');
 Route::get('getJobInfo/{jobid}', 'JobController@getJob');
 Route::get('job/{id}/{slug}', 'JobController@customJob');
 Route::get('job/{id}', 'JobController@index');
-
+Route::post('job/{id}/{slug?}/apply', 'JobController@apply');
 // uncaught route
 Route::get('{any}', function(){
 	return(redirect(URL::action('HomeController@index')));

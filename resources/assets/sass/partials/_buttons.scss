@@ -3,7 +3,7 @@
     display: block;
     border-radius: 3px;
     border: 0;
-    background-color: #ff6e3f;
+    background-color: $accent-color;
     -webkit-transition: background-color 0.5s ease; /* Safari */
     transition: background-color 0.5s ease;
     height: 45px;
@@ -15,15 +15,19 @@
     width: 100%;
 
     &:hover{
-        color: #ffeec2;
+        color: $font-color-primary;
         text-decoration: none;
     }
 
+    &:focus{
+        color: $font-color-primary;
+    }
+
     &.btn-confirm{
-        background: rgb(85, 192, 77);
+        background: $success-color;
 
         &:hover{
-            background: scale_color(rgb(85, 192, 77), $lightness: -20%);
+            background: $success-color-dark;
         }
     }
 }

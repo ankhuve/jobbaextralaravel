@@ -147,6 +147,10 @@ var getJobDescriptions = function getJobDescriptions() {
     }
 };
 
+var toggleContactForm = function toggleContactForm() {
+    $('#contactForm').show(300);
+};
+
 $(document).ready(function () {
     $.ajaxSetup({
         headers: { 'X-CSRF-Token': $('meta[name=_token]').attr('content') }
@@ -170,6 +174,10 @@ $(document).ready(function () {
 
     toggleFilters();
 
+    if ($('#applicationValidationError').length) {
+        $('#contactForm').show(300);
+    }
+
     $('.filterButton.searchPage').on('click', toggleFilters);
     $('#resetFilters').on('click', resetFilters);
 
@@ -189,6 +197,20 @@ $(document).ready(function () {
     $('.modal').on('show.bs.modal', function () {
         var scrollTop = $(window).scrollTop();
         $(this).css({ 'top': scrollTop + 50 + 'px' });
+    });
+
+    $('[data-action]').on('click', function () {
+        var action = $(this).data('action');
+        if (action === "contactForm") {
+            $('#contactForm').show(300);
+        }
+    });
+
+    $('[data-dismiss]').on('click', function () {
+        var action = $(this).data('dismiss');
+        if (action === "contactForm") {
+            $('#contactForm').hide(300);
+        }
     });
 });
 
