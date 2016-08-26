@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d5b5543-3bf0-482b-a9f9-d1dcd7698677" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css" afterPath="$PROJECT_DIR$/public/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css.map" afterPath="$PROJECT_DIR$/public/css/app.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/sass/partials/_company.scss" afterPath="$PROJECT_DIR$/resources/assets/sass/partials/_company.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/customjob.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/customjob.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" />
     </list>
     <ignored path="jobbaextralaravel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -114,15 +109,25 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="customjob.blade.php" pinned="false" current-in-tab="true">
+              <file leaf-file-name="customjob.blade.php" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/resources/views/pages/customjob.blade.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.34311926">
+                    <state vertical-scroll-proportion="-7.1923075">
                       <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
                       <folding>
                         <element signature="e#1527#1617#0#HTML" expanded="true" />
                         <element signature="e#1725#1754#0#HTML" expanded="true" />
                       </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="app.blade.php" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state vertical-scroll-proportion="0.65688074">
+                      <caret line="62" column="31" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
+                      <folding />
                     </state>
                   </provider>
                 </entry>
@@ -282,7 +287,6 @@
         <option value="$PROJECT_DIR$/resources/views/pages/partials/jobbaextrapuff.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/company/confirm.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" />
-        <option value="$PROJECT_DIR$/resources/views/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/sass/partials/_summernote.scss" />
         <option value="$PROJECT_DIR$/resources/assets/sass/partials/_helpers.scss" />
         <option value="$PROJECT_DIR$/resources/assets/sass/style.scss" />
@@ -308,6 +312,7 @@
         <option value="$PROJECT_DIR$/resources/views/company/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/customjob.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/sass/partials/_company.scss" />
+        <option value="$PROJECT_DIR$/resources/views/app.blade.php" />
       </list>
     </option>
   </component>
@@ -1048,14 +1053,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/ValidateNewJob.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7171875">
-          <caret line="31" column="48" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/company/confirm.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.576923">
@@ -1147,14 +1144,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1734694">
           <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47128713">
-          <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -1503,12 +1492,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/customjob.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34311926">
+        <state vertical-scroll-proportion="-7.1923075">
           <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
           <folding>
             <element signature="e#1527#1617#0#HTML" expanded="true" />
             <element signature="e#1725#1754#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65688074">
+          <caret line="62" column="31" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
