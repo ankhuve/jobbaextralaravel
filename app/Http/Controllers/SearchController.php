@@ -201,7 +201,7 @@ class SearchController extends Controller
         return view('pages.search', ['jobs' => $allJobs, 'searchMeta' => $searchMeta, 'currentPage' => $askedPage, 'request' => $request, 'paginator' => $paginator]);
     }
 
-    public function getNumberOfAfJobs($keyword)
+    public static function getNumberOfAfJobs($keyword = null)
     {
         $client = new Client(['base_uri' => 'http://api.arbetsformedlingen.se/af/v0/']);
 
