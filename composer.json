@@ -10,7 +10,8 @@
 		"components/jquery": "^2.1",
 		"laravelcollective/html": "5.0.x-dev",
 		"doctrine/dbal": "^2.6@dev",
-		"tom-lingham/searchy" : "2.*"
+		"tom-lingham/searchy" : "2.*",
+		"league/flysystem-aws-s3-v3" :  "~1.0"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

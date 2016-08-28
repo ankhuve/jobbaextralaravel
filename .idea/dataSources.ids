@@ -195,16 +195,19 @@
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <index id="53" parent="6" name="users_email_unique">
+      <column id="53" parent="6" name="cv_path">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="54" parent="6" name="users_email_unique">
         <columns>email</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="54" parent="6" name="PRIMARY">
+      <key id="55" parent="6" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <key id="55" parent="6" name="users_email_unique">
+      <key id="56" parent="6" name="users_email_unique">
         <columns>email</columns>
         <underlying-index>users_email_unique</underlying-index>
       </key>

@@ -44,4 +44,16 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $this->hasMany('App\Job');
     }
+
+
+	/**
+	 *
+	 * Check if user has an uploaded CV already.
+	 *
+	 * @return bool
+     */
+	public function hasCV()
+	{
+		return $this->cv_path ? true : false;
+	}
 }

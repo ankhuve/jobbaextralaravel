@@ -4,4 +4,10 @@
         color: $font-color-primary;
         padding-left: 2em;
     }
+    
+    &.alert-success{
+        background: $success-color;
+        border: $success-color-dark;
+        color: white;
+    }
 }

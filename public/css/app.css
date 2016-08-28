@@ -6545,19 +6545,6 @@ footer {
   padding-top: 10px;
   margin-bottom: 30px; }
 
-.newJobContainer {
-  background-color: rgba(36, 36, 36, 0.95);
-  color: #FFEEC2;
-  margin-bottom: 30px;
-  max-width: 1200px;
-  padding: 0; }
-  .newJobContainer .messageBoxHeading h2.workplace {
-    font-family: "Raleway", Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    margin-bottom: 5px;
-    color: #71CBD9; }
-
 textarea#description {
   height: 250px;
   min-height: 30px;
@@ -6865,6 +6852,11 @@ textarea#description {
   background-repeat: no-repeat;
   background-position: right; }
 
+.logo .logo-job {
+  height: 80px;
+  margin-bottom: 2rem;
+  background-position: center; }
+
 .required {
   color: #ff6e3f; }
 
@@ -6936,6 +6928,28 @@ textarea#description {
   .jobBlock:hover .upperInfo {
     background-color: rgba(65, 65, 65, 0.95); }
 
+.newJobContainer {
+  background-color: rgba(36, 36, 36, 0.95);
+  color: #FFEEC2;
+  margin-bottom: 30px;
+  max-width: 1200px;
+  padding: 0; }
+  .newJobContainer .messageBoxHeading h2.workplace {
+    font-family: "Raleway", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #71CBD9; }
+  .newJobContainer #contactForm {
+    position: relative;
+    display: none; }
+    .newJobContainer #contactForm [data-dismiss="contactForm"] {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      width: 50px;
+      background: #fd2f2f; }
+
 .panel.panel-custom {
   background: #242424;
   color: #ffeec2; }
@@ -6955,6 +6969,11 @@ textarea#description {
   color: #ffeec2;
   padding-left: 2em; }
 
+.alert.alert-success {
+  background: #55c04d;
+  border: #3f9f38;
+  color: white; }
+
 .btn {
   padding: 0;
   display: block;
@@ -6973,6 +6992,8 @@ textarea#description {
   .btn:hover {
     color: #ffeec2;
     text-decoration: none; }
+  .btn:focus {
+    color: #ffeec2; }
   .btn.btn-confirm {
     background: #55c04d; }
     .btn.btn-confirm:hover {
@@ -7060,5 +7081,61 @@ ul.pagination {
       text-shadow: none;
       opacity: 1;
       font-size: 3rem; }
+
+.p-a-1 {
+  padding: 1rem; }
+
+.p-a-2 {
+  padding: 2rem; }
+
+.p-h-1 {
+  padding-left: 1rem;
+  padding-right: 1rem; }
+
+.p-h-2 {
+  padding-left: 2rem;
+  padding-right: 2rem; }
+
+.p-v-1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
+
+.p-v-2 {
+  padding-top: 2rem;
+  padding-bottom: 2rem; }
+
+.m-a-1 {
+  margin: 1rem; }
+
+.m-a-2 {
+  margin: 2rem; }
+
+.m-h-1 {
+  margin-left: 1rem;
+  margin-right: 1rem; }
+
+.m-h-2 {
+  margin-left: 2rem;
+  margin-right: 2rem; }
+
+.m-v-1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem; }
+
+.m-v-2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem; }
+
+.m-t-1 {
+  margin-top: 1rem; }
+
+.m-t-2 {
+  margin-top: 2rem; }
+
+.m-b-1 {
+  margin-bottom: 1rem; }
+
+.m-b-2 {
+  margin-bottom: 2rem; }
 
 /*# sourceMappingURL=app.css.map */

@@ -84,7 +84,7 @@
                         <div class="form-group">
                             <label class="col-md-offset-5 col-md-3 control-label">Extern ansökningslänk</label>
                             <div class="col-md-3">
-                                {!! Form::text('external_link', Request::get('external_link'), ['class' => 'form-control', 'placeholder' => 'dittföretag.se/ansök']) !!}
+                                {!! Form::text('external_link', Request::get('external_link'), ['class' => 'form-control', 'placeholder' => 'http://dittföretag.se/ansök']) !!}
                             </div>
 
                         </div>

@@ -39,6 +39,24 @@
                 @if(isset($jobMatch->ansokan->sista_ansokningsdag))
                         <div class="extraJobInfo">Sista ansökningsdag {{ substr($jobMatch->ansokan->sista_ansokningsdag, 0, 10) }}</div>
                 @endif
+
+                {{-- Om vi skulle vilja ha kontaktformulär på AF-annonser också --}}
+                {{--<div class="row">--}}
+                    {{--@if(!isset($jobMatch->annons->platsannonsUrl))--}}
+                        {{--@include('pages.partials.applicationform')--}}
+                    {{--@endif--}}
+                    {{--<div class="col-sm-4 col-sm-offset-4">--}}
+                        {{--@if(!isset($jobMatch->annons->platsannonsUrl))--}}
+                            {{--<button class="btn btn-confirm" data-action="contactForm">Ansök</button>--}}
+                        {{--@else--}}
+                            {{--<a target="_blank" href="{{ $jobMatch->annons->platsannonsUrl }}">--}}
+                                {{--<button class="btn btn-confirm">Ansök</button>--}}
+                            {{--</a>--}}
+                        {{--@endif--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+
+
                 <div class="row">
                     <div class="col-sm-4 col-sm-offset-4">
                         @if(isset($jobMatch->annons->platsannonsUrl))
