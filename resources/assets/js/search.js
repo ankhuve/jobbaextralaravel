@@ -208,6 +208,8 @@ $(document).ready(function () {
     $('.filterButton.searchPage').on('click', toggleFilters);
     $('#resetFilters').on('click', resetFilters);
 
+
+    // Wysiwyg editor
     $('.summernote').summernote({
         lang: 'sv-SE', // default: 'en-US'
         height: 300,                 // set editor height

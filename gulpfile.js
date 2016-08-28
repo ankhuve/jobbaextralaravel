@@ -57,4 +57,6 @@ elixir(function(mix) {
             proxy: 'jobbaextra.app'
         });
 
+    mix.version(['css/app.css', 'js/search.js']);
+
 });
