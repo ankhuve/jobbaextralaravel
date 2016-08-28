@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" minimal-ui>
-        <meta name="description" content="Jobbrek.se" />
-        <meta name="keywords" content="extrajobb, sommarjobb, jobb, extra, jobbaextra, deltid, deltidsjobb" />
+        <meta name="description" content="Jobbrek.se | Lediga jobb inom skola, sjukvård, IT, m.m." />
+        <meta name="keywords" content="Lediga jobb, jobb, skola, sjukvård, IT, jobbrek, extrajobb, deltidsjobb, jobba extra" />
         <meta name="_token" content="{!! csrf_token() !!}"/>
 
         <title>Jobbrek</title>
@@ -15,15 +15,15 @@
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}"/>
+        <link rel="stylesheet" href="{{ elixir('css/app.css') }}"/>
         {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">--}}
         <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,700|Raleway:400' rel='stylesheet' type='text/css'>
     </head>
     <body>
         <nav>
-            <a class="headerLogo" href="/"><img src="/img/jobbrek.png"/></a>
-            <img id="hamburgerIcon" src="/img/thin_burger.png">
+            <a class="headerLogo" href="/"><img src="{{ asset('build/img/jobbrek.png') }}"/></a>
+            <img id="hamburgerIcon" src="{{ asset('build/img/thin_burger.png') }}">
             <div class="navLinks">
                 <ul class="nav">
                     <li>
@@ -68,5 +68,5 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.min.js"></script>
     <script src="{{ asset('js/summernote/lang/summernote-sv-SE.js') }}"></script>
-    <script src="{{ asset('js/search.js') }}"></script>
+    <script src="{{ elixir('js/search.js') }}"></script>
 </html>

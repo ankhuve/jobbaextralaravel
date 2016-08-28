@@ -14,7 +14,7 @@
         </div>
 
         <div id="splash">
-            <h2 id="splashText">Vi letar efter dig</h2>
+            <h2 id="splashText">{{ $numJobs }} jobb söker dig</h2>
         </div>
     </center>
     <center>

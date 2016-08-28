@@ -23,9 +23,10 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
+		$numJobs = $this->getTotalNumberOfJobs();
         $newJobs = $this->getNewestJobs();
 //        dd($newJobs->all());
-		return view('home', ['newJobs' => $newJobs->all()]);
+		return view('home', ['newJobs' => $newJobs->all(), 'numJobs' => $numJobs]);
 	}
 
     public function getNewestJobs()
@@ -34,5 +35,12 @@ class HomeController extends Controller {
 //        dd($data);
         return $data;
     }
+
+	public function getTotalNumberOfJobs()
+	{
+		$numOfAFJobs = SearchController::getNumberOfAfJobs();
+		$numCustomJobs = Job::where('latest_application_date', '>', Carbon::now())->count();
+		return $numOfAFJobs + $numCustomJobs;
+	}
 
 }
