@@ -1,0 +1,62 @@
+.puff{
+    border: 2px solid $accent-color;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin: 2rem 0;
+    width: 100%;
+
+    &.puff-featured{
+        height: 100px;
+        background: #3a3a3a;
+
+        .puff-heading{
+            //display: flex;
+            //flex-direction: column;
+            //justify-content: center;
+        }
+
+        .puff-content{
+            &.left{
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+
+    .puff-heading{
+        background: #3a3a3a;
+        position: relative;
+        //padding: 4rem 1rem;
+        text-align: center;
+        text-transform: uppercase;
+        color: $font-color-primary;
+        font-weight: 700;
+        font-size: 2rem;
+
+        .subheading{
+            color: $accent-color-secondary;
+            padding-top: 1rem;
+            text-transform: none;
+            font-size: 1.5rem;
+            font-style: italic;
+        }
+
+        .heading-img{
+            height: 100px;
+            background-size: contain;
+            background-position: right;
+            background-repeat: no-repeat;
+        }
+    }
+
+    .puff-body{
+        position: relative;
+        padding: 0 1rem 2rem;
+    }
+
+    .puff-footer{
+        position: relative;
+        bottom: 0;
+    }
+}

@@ -9,6 +9,13 @@
             padding: 10px;
             border-top-left-radius: 3px;
             border-top-right-radius: 3px;
+
+            .subheading{
+                color: $accent-color-secondary;
+                font-weight: 700;
+                font-size: 16px;
+                text-transform: uppercase;
+            }
         }
 
         .well-custom{
@@ -16,5 +23,9 @@
             background: scale_color($bg-color-primary, $lightness: +10%);
             border: none;
         }
+    }
+
+    img{
+        max-width: 100%;
     }
 }

@@ -44,6 +44,8 @@
                     </li><li>
                         <a href="{{ URL::action('CompanyController@index') }}">Hitta arbetskraft</a>
                     </li><li>
+                        <a href="{{ URL::action('FeaturedController@index') }}">Attraktiva arbetsgivare</a>
+                    </li><li>
                         <a href="{{ URL::action('AboutController@index') }}">Om oss</a>
                     </li><li>
                         <a href="{{ URL::action('ContactController@create') }}">Kontakt</a>
