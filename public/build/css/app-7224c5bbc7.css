@@ -7219,7 +7219,7 @@ nav {
   font-size: 2.5rem; }
   .job-counter span {
     display: inline-block;
-    font-family: 'Abel', "Courier New", serif;
+    font-family: 'Abel', sans-serif;
     padding: 0 6px;
     background: #ff6e3f;
     border-right: 2px solid #d45d36; }
