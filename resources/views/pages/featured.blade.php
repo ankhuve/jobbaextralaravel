@@ -12,7 +12,9 @@
 
                     @if(isset($companies))
                         @foreach($companies as $company)
-                            @include('pages.partials.featuredpuff')
+                            @if($company->hasPresentation())
+                                @include('pages.partials.featuredpuff')
+                            @endif
                         @endforeach
                     @endif
 

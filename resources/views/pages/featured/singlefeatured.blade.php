@@ -21,7 +21,6 @@
 
                     {!! $featured->description !!}
 
-
                 </div>
             </div>
         </div>

@@ -1,5 +1,4 @@
 .puff{
-    border: 2px solid $accent-color;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -7,32 +6,57 @@
     width: 100%;
 
     &.puff-featured{
-        height: 100px;
-        background: #3a3a3a;
+        position: relative;
+        top: 0;
+        height: 120px;
+        background: $accent-color;
+        -webkit-box-shadow: 0 6px 0 $accent-color-dark, 0 3px 15px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.3);
+        -moz-box-shadow: 0 6px 0 $accent-color-dark, 0 3px 15px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.3);
+        box-shadow: 0 6px 0 $accent-color-dark, 0 3px 15px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.3);
+        -webkit-transition: box-shadow 0.1s, background 0.2s, top 0.1s;
+        -moz-transition: box-shadow 0.1s, background 0.2s, top 0.1s;
+        -ms-transition: box-shadow 0.1s, background 0.2s, top 0.1s;
+        -o-transition: box-shadow 0.1s, background 0.2s, top 0.1s;
+        transition: box-shadow 0.1s, background 0.2s, top 0.1s;
 
         .puff-heading{
-            //display: flex;
-            //flex-direction: column;
-            //justify-content: center;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .logo-holder{
+                height: 100px;
+                padding: 10px;
+                align-self: center;
+                background: white;
+                width: 100%;
+            }
         }
 
-        .puff-content{
-            &.left{
-                display: flex;
-                justify-content: center;
-            }
+        &:hover{
+            cursor: pointer;
+            background: $accent-color-light;
+        }
+
+        &:active{
+            position: relative;
+            top: 4px;
+            background: $accent-color-dark;
+            -webkit-box-shadow: 0 2px 0 $accent-color-dark, 0 3px 15px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.3);
+            -moz-box-shadow: 0 2px 0 $accent-color-dark, 0 3px 15px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.3);
+            box-shadow: 0 2px 0 $accent-color-dark, 0 3px 15px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.3);
         }
     }
 
     .puff-heading{
-        background: #3a3a3a;
         position: relative;
-        //padding: 4rem 1rem;
         text-align: center;
         text-transform: uppercase;
-        color: $font-color-primary;
-        font-weight: 700;
-        font-size: 2rem;
+        color: white;
+        font-weight: 500;
+        font-size: 2.3rem;
+        width: 100%;
 
         .subheading{
             color: $accent-color-secondary;
@@ -44,8 +68,10 @@
 
         .heading-img{
             height: 100px;
+            padding: 10px;
+            margin-top: -10px;
             background-size: contain;
-            background-position: right;
+            background-position: center;
             background-repeat: no-repeat;
         }
     }

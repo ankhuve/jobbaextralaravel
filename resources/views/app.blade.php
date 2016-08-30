@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="{{ elixir('css/app.css') }}"/>
         {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">--}}
         <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,700|Raleway:400' rel='stylesheet' type='text/css'>
 
         <script>
@@ -62,6 +63,27 @@
             </div>
 
         </nav>
+
+        @if (isset($afApiError))
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <div class="alert alert-custom alert-top">
+                        <p>
+                            <strong>Ajdå!</strong>
+                            Just nu verkar vi har lite problem med att hämta information från Arbetsförmedlingen.
+                        </p>
+                        <div class="hidden">
+                            <ul>
+                                @foreach($afApiError as $key => $value)
+                                    <li>{{ $key }} : {{ $value }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+
         <div class="view">
             @yield('content')
         </div>

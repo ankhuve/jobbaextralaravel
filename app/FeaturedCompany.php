@@ -28,4 +28,18 @@ class FeaturedCompany extends Model
     {
         return $this->belongsTo('App\User', 'company_id', 'id');
     }
+
+    /**
+     * Check if the company has made a presentation yet.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function hasPresentation()
+    {
+        if($this->title)
+        {
+            return true;
+        }
+        return false;
+    }
 }
