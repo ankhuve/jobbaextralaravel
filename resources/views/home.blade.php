@@ -21,7 +21,7 @@
                         {{ $number }}
                     </span>@endforeach
                 <div>
-                    <h3>lediga jobb</h3>
+                    <h3>aktiva jobbannonser</h3>
                 </div>
             </div>
         </div>
