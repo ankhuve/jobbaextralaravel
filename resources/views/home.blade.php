@@ -14,6 +14,9 @@
 
         <div class="col-xs-12">
             <div class="job-counter">
+                <div>
+                    <h3>Just nu kan du söka bland</h3>
+                </div>
                 @foreach(str_split($numJobs) as $number)<span>
                         {{ $number }}
                     </span>@endforeach
