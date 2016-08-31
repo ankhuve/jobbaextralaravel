@@ -2,7 +2,6 @@
 
 @section('content')
     <center>
-
         <div class="searchBar">
             <div id="orangeBG">
                 {!! Form::open(array('url' => 'search', 'method' => 'get')) !!}
@@ -13,8 +12,22 @@
             <span id="searchBarIcon"></span>
         </div>
 
+        <div class="col-xs-12">
+            <div class="job-counter">
+                <div>
+                    <h3>Just nu kan du söka bland</h3>
+                </div>
+                @foreach(str_split($numJobs) as $number)<span>
+                        {{ $number }}
+                    </span>@endforeach
+                <div>
+                    <h3>lediga jobb</h3>
+                </div>
+            </div>
+        </div>
+
         <div id="splash">
-            <h2 id="splashText">{{ $numJobs }} jobb söker dig</h2>
+            <h2 id="splashText">Vi letar efter dig</h2>
         </div>
     </center>
     <center>

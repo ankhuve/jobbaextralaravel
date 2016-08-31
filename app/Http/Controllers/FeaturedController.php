@@ -18,7 +18,18 @@ class FeaturedController extends Controller
      */
     public function index()
     {
-        $companies = FeaturedCompany::paginate(1);
+        $companies = FeaturedCompany::where('end_date', '>', \Carbon\Carbon::now())->get();
         return view('pages.featured', compact('companies', 'companies'));
+    }
+
+    /**
+     * Display a featured company's presentation.
+     *
+     * @return Response
+     */
+    public function featured($id)
+    {
+        $featured = FeaturedCompany::find($id);
+        return view('pages.featured.singlefeatured', compact('featured'));
     }
 }

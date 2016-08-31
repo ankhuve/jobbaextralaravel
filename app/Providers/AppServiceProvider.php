@@ -1,5 +1,6 @@
 <?php namespace App\Providers;
 
+use GuzzleHttp\Exception\ServerException;
 use Illuminate\Support\ServiceProvider;
 use GuzzleHttp\Client;
 
@@ -15,26 +16,28 @@ class AppServiceProvider extends ServiceProvider {
         $client = new Client(['base_uri' => 'http://api.arbetsformedlingen.se/af/v0/']);
         $searchOptions = array();
 
-        $results = $client->get('platsannonser/soklista/lan', [
-            'headers' => [
-                'Accept'          => 'application/json',
-                'Accept-Language' => 'sv-se,sv'
-            ]
-        ])->getBody()->getContents();
-        $results = json_decode($results);
-        array_push($searchOptions, $results);
+		try{
+			$results = $client->get('platsannonser/soklista/lan', [
+				'headers' => [
+					'Accept'          => 'application/json',
+					'Accept-Language' => 'sv-se,sv'
+				]
+			])->getBody()->getContents();
+			$results = json_decode($results);
+			array_push($searchOptions, $results);
 
-        $results = $client->get('platsannonser/soklista/yrkesomraden', [
-            'headers' => [
-                'Accept'          => 'application/json',
-                'Accept-Language' => 'sv-se,sv'
-            ]
-        ])->getBody()->getContents();
-        $results = json_decode($results);
-        array_push($searchOptions, $results);
-
-//        dd($searchOptions);
-        view()->share('searchOptions', $searchOptions);
+			$results = $client->get('platsannonser/soklista/yrkesomraden', [
+				'headers' => [
+					'Accept'          => 'application/json',
+					'Accept-Language' => 'sv-se,sv'
+				]
+			])->getBody()->getContents();
+			$results = json_decode($results);
+			array_push($searchOptions, $results);
+			view()->share('searchOptions', $searchOptions);
+		} catch(\Exception $e){
+			view()->share('afApiError', $e);
+		}
 	}
 
 	/**

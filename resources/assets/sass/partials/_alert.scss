@@ -1,4 +1,6 @@
 .alert{
+    font-size: 18px;
+
     &.alert-custom{
         background: $accent-color;
         color: $font-color-primary;
@@ -9,5 +11,14 @@
         background: $success-color;
         border: $success-color-dark;
         color: white;
+    }
+
+    &.alert-top{
+        border-top: none;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 0;
     }
 }

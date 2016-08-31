@@ -222,18 +222,22 @@ class SearchController extends Controller
             $searchParams['yrkesomraden'] = Input::get('yrkesomraden');
         }
 
-        $searchResults = $client->get('platsannonser/matchning', [
-            'query' => $searchParams,
-            'headers' => [
-                'Accept' => 'application/json',
-                'Accept-Language' => 'sv-se,sv'
-            ]
-        ]);
+        try{
+            $searchResults = $client->get('platsannonser/matchning', [
+                'query' => $searchParams,
+                'headers' => [
+                    'Accept' => 'application/json',
+                    'Accept-Language' => 'sv-se,sv'
+                ]
+            ]);
 
-        $response = json_decode($searchResults->getBody()->getContents());
-        $numHits = $response->matchningslista->antal_platsannonser;
+            $response = json_decode($searchResults->getBody()->getContents());
+            $numHits = $response->matchningslista->antal_platsannonser;
 
-        return $numHits;
+            return $numHits;
+        } catch(\Exception $e){
+            return 0;
+        }
     }
 
 
@@ -290,27 +294,31 @@ class SearchController extends Controller
 //        }
 //        var_dump($searchParams);
 
-        $searchResults = $client->get('platsannonser/matchning', [
-            'query' => $searchParams,
-            'headers' => [
-                'Accept' => 'application/json',
-                'Accept-Language' => 'sv-se,sv'
-            ]
-        ]);
-        // Create a Collection of the results
-        $response = collect(json_decode($searchResults->getBody()->getContents()));
-        $searchMeta = collect($response->get('matchningslista'));
-        $searchMeta->pop(); // remove the job ads from the Collection
+        try{
+            $searchResults = $client->get('platsannonser/matchning', [
+                'query' => $searchParams,
+                'headers' => [
+                    'Accept' => 'application/json',
+                    'Accept-Language' => 'sv-se,sv'
+                ]
+            ]);
+            // Create a Collection of the results
+            $response = collect(json_decode($searchResults->getBody()->getContents()));
+            $searchMeta = collect($response->get('matchningslista'));
+            $searchMeta->pop(); // remove the job ads from the Collection
 
 
-        if(array_key_exists('matchningdata', $response->get('matchningslista'))){
-            $jobMatches = collect($response->get('matchningslista')->matchningdata); // the queried jobs
-        } else{
-            return false;
+            if(array_key_exists('matchningdata', $response->get('matchningslista'))){
+                $jobMatches = collect($response->get('matchningslista')->matchningdata); // the queried jobs
+            } else{
+                return false;
+            }
+    //        $jobMatches = collect($response->get('matchningslista')->matchningdata); // the queried jobs
+
+            return compact(['jobMatches', 'searchMeta']);
+        } catch(\Exception $e){
+            return compact(['jobMatches' => [], 'searchMeta' => []]);
         }
-//        $jobMatches = collect($response->get('matchningslista')->matchningdata); // the queried jobs
-
-        return compact(['jobMatches', 'searchMeta']);
     }
 
     public function searchCustomJobs($keyword = null, Request $request, $askedPage = 1)

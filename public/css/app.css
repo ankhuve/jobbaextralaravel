@@ -5789,56 +5789,6 @@ h4 {
   padding-top: 100px;
   min-height: 80vh; }
 
-/* ################################# */
-/* ########## START NAVBAR ######### */
-nav {
-  display: table;
-  width: 100%;
-  background-color: #242424 !important;
-  height: 120px;
-  /* Safari */
-  transition: height 0.3s ease; }
-  nav .headerLogo {
-    float: left;
-    margin: 25px 25px 25px 50px;
-    display: table-cell;
-    /* Safari */
-    transition: margin 0.3s ease; }
-    nav .headerLogo img {
-      width: 230px;
-      height: auto; }
-  nav .navLinks {
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 1.2em;
-    font-weight: 100;
-    background-color: #2f2f2f;
-    width: 100%;
-    margin-top: 100px;
-    /* Safari */
-    transition: height 0.3s ease; }
-    nav .navLinks ul.nav {
-      color: #ffeec2;
-      text-transform: uppercase;
-      margin: 0; }
-      nav .navLinks ul.nav li {
-        display: inline-block; }
-      nav .navLinks ul.nav a {
-        border-top: solid 1px transparent;
-        padding: 10px 40px;
-        /* Safari */
-        transition: border-top 0.5s ease; }
-      nav .navLinks ul.nav a:hover {
-        border-top: solid 1.5px #ff6e3f;
-        background-color: #242424 !important; }
-      nav .navLinks ul.nav a:focus {
-        background-color: #242424; }
-  nav #hamburgerIcon {
-    display: none;
-    cursor: pointer; }
-
-/* ########## END NAVBAR ######### */
-/* ############################### */
 .searchBar {
   /*margin-top: 100px;*/
   width: 400px; }
@@ -6959,20 +6909,36 @@ textarea#description {
     padding: 10px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px; }
+    .panel.panel-custom .panel-heading .subheading {
+      color: #71CBD9;
+      font-weight: 700;
+      font-size: 16px;
+      text-transform: uppercase; }
   .panel.panel-custom .well-custom {
     font-size: 1.1em;
     background: #3a3a3a;
     border: none; }
 
-.alert.alert-custom {
-  background: #ff6e3f;
-  color: #ffeec2;
-  padding-left: 2em; }
+.panel img {
+  max-width: 100%; }
 
-.alert.alert-success {
-  background: #55c04d;
-  border: #3f9f38;
-  color: white; }
+.alert {
+  font-size: 18px; }
+  .alert.alert-custom {
+    background: #ff6e3f;
+    color: #ffeec2;
+    padding-left: 2em; }
+  .alert.alert-success {
+    background: #55c04d;
+    border: #3f9f38;
+    color: white; }
+  .alert.alert-top {
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 0; }
 
 .btn {
   padding: 0;
@@ -7137,5 +7103,139 @@ ul.pagination {
 
 .m-b-2 {
   margin-bottom: 2rem; }
+
+nav {
+  display: table;
+  width: 100%;
+  background-color: #242424 !important;
+  height: 120px;
+  /* Safari */
+  transition: height 0.3s ease; }
+  nav .headerLogo {
+    float: left;
+    margin: 25px 25px 25px 50px;
+    display: table-cell;
+    /* Safari */
+    transition: margin 0.3s ease; }
+    nav .headerLogo img {
+      width: 230px;
+      height: auto; }
+  nav .navLinks {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 100;
+    background-color: #2f2f2f;
+    width: 100%;
+    margin-top: 100px;
+    /* Safari */
+    transition: height 0.3s ease; }
+    nav .navLinks ul.nav {
+      color: #ffeec2;
+      text-transform: uppercase;
+      margin: 0; }
+      nav .navLinks ul.nav li {
+        display: inline-block; }
+      nav .navLinks ul.nav a {
+        border-top: solid 1px transparent;
+        padding: 10px 40px;
+        /* Safari */
+        transition: border-top 0.5s ease; }
+      nav .navLinks ul.nav a:hover {
+        border-top: solid 1.5px #ff6e3f;
+        background-color: #242424 !important; }
+      nav .navLinks ul.nav a:focus {
+        background-color: #242424; }
+  nav #hamburgerIcon {
+    display: none;
+    cursor: pointer; }
+
+.puff {
+  border-radius: 3px;
+  margin: 2rem 0;
+  width: 100%; }
+  .puff.puff-featured {
+    position: relative;
+    top: 0;
+    height: 120px;
+    background: #ff6e3f;
+    box-shadow: 0 6px 0 #d45d36, 0 3px 15px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transition: box-shadow 0.1s, background 0.2s, top 0.1s; }
+    .puff.puff-featured .puff-heading {
+      height: 100%;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+      .puff.puff-featured .puff-heading .logo-holder {
+        height: 100px;
+        padding: 10px;
+        -ms-flex-item-align: center;
+        align-self: center;
+        background: white;
+        width: 100%; }
+    .puff.puff-featured:hover {
+      cursor: pointer;
+      background: #ff794e; }
+    .puff.puff-featured:active {
+      position: relative;
+      top: 4px;
+      background: #d45d36;
+      box-shadow: 0 2px 0 #d45d36, 0 3px 15px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3); }
+  .puff .puff-heading {
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 500;
+    font-size: 2.3rem;
+    width: 100%; }
+    .puff .puff-heading .subheading {
+      color: #71CBD9;
+      padding-top: 1rem;
+      text-transform: none;
+      font-size: 1.5rem;
+      font-style: italic; }
+    .puff .puff-heading .heading-img {
+      height: 100px;
+      padding: 10px;
+      margin-top: -10px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat; }
+  .puff .puff-body {
+    position: relative;
+    padding: 0 1rem 2rem; }
+  .puff .puff-footer {
+    position: relative;
+    bottom: 0; }
+
+.job-counter {
+  display: inline-block;
+  text-align: center;
+  color: white;
+  font-size: 2.5rem; }
+  .job-counter span {
+    display: inline-block;
+    font-family: 'Abel', sans-serif;
+    padding: 0 6px;
+    background: #ff6e3f;
+    border-right: 2px solid #d45d36; }
+    .job-counter span:first-of-type {
+      border-bottom-left-radius: 4px;
+      border-top-left-radius: 4px; }
+    .job-counter span:last-of-type {
+      border-right: none;
+      border-bottom-right-radius: 4px;
+      border-top-right-radius: 4px; }
+  .job-counter div {
+    display: inline-block; }
+    .job-counter div h3 {
+      color: white;
+      display: inline-block;
+      margin: 0;
+      text-shadow: 1px 1px 3px #000; }
 
 /*# sourceMappingURL=app.css.map */
