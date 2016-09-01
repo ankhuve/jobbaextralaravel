@@ -7140,7 +7140,9 @@ nav {
       -ms-flex-align: center;
       align-items: center;
       -ms-flex-pack: center;
-      justify-content: center; }
+      justify-content: center;
+      -ms-word-wrap: break-word;
+      word-wrap: break-word; }
       .puff.puff-featured .puff-heading .logo-holder {
         height: 100px;
         padding: 10px;
