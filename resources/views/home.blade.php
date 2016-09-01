@@ -57,16 +57,20 @@
             @endforeach
 
         </div>
-    </div>
 
-    <div class="latestJobs">
-        <div id="jobsTitle">
-            <h3 class="infoTitle underlined">Våra senaste jobb</h3>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="latestJobs">
+                    <div id="jobsTitle">
+                        <h3 class="infoTitle underlined">Våra senaste jobb</h3>
+                    </div>
+                    @foreach($newJobs as $job)
+                        @include('pages.partials.jobbaextrapuff')
+                    @endforeach
+                </div>
+            </div>
         </div>
-        @foreach($newJobs as $job)
-            @include('pages.partials.jobbaextrapuff')
-        @endforeach
-    </div>
     </div>
 
 @endsection
