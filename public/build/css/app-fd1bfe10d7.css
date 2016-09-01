@@ -6636,11 +6636,6 @@ textarea#description {
     display: block; }
   #placeholder {
     font-size: 40px; }
-  .registerButton {
-    margin-right: 0;
-    margin-left: 0; }
-  .registerButtons {
-    padding-top: 20px; }
   #registerCompany {
     float: none; }
   .container {
