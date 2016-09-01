@@ -19,6 +19,7 @@
         }
 
         .well-custom{
+            padding-top: 0;
             font-size: 1.1em;
             background: scale_color($bg-color-primary, $lightness: +10%);
             border: none;

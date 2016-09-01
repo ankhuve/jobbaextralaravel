@@ -121,7 +121,7 @@ class JobController extends Controller
 
         if($mailSent){
             return \Redirect::to($jobUrl)
-                ->with('message', 'Tack för din ansökan! Vi hör av oss så fort vi kan.');
+                ->with('message', 'Tack för din ansökan!');
         } else{
             return \Redirect::to($jobUrl)
                 ->with('contactError', 'Hoppsan! Något gick snett när din ansökan skulle skickas. <br><br>Försök igen!')

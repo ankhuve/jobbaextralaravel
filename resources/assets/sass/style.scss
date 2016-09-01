@@ -1,425 +1,425 @@
 body{
-  background-size: 1920px auto;
-  background: #242424 url("../img/jobbaextra_bg_web.jpg") no-repeat center top 120px;
-  font-family: 'Roboto', sans-serif;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  font-size: 1.4em;
+    background-size: 1920px auto;
+    background: #242424 url("../img/jobbaextra_bg_web.jpg") no-repeat center top 120px;
+    font-family: 'Roboto', sans-serif;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    font-size: 1.4em;
 }
 
 a{
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 a:hover{
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 a:focus{
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 .container{
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 h1{
-  font-size: 40pt;
+    font-size: 40pt;
 }
 
 h2{
-  text-transform: uppercase;
-  color: #ffeec2;
-  font-size: 30pt;
-  font-weight: 100;
-  margin: 0;
-  -webkit-transition: font-size 0.3s ease; /* Safari */
-  transition: font-size 0.3s ease;
+    text-transform: uppercase;
+    color: #ffeec2;
+    font-size: 30pt;
+    font-weight: 100;
+    margin: 0;
+    -webkit-transition: font-size 0.3s ease; /* Safari */
+    transition: font-size 0.3s ease;
 }
 
 h4{
-  font-size: 1.2em;
-  color: #ffeec2;
-  font-weight: 100;
+    font-size: 1.2em;
+    color: #ffeec2;
+    font-weight: 100;
 }
 
 .dropdown{
-  background-color: rgba(30,30,30,0.8);
-  color: #ffeec2;
-  width: 234px;
-  border: none;
-  margin-bottom: 10px;
-  height: 30px;
-  padding-left:20px;
-  /* Om man vill gömma den fula vita grejen i Firefox kan man ha denna */
-  /*-moz-appearance: none;*/
+    background-color: rgba(30,30,30,0.8);
+    color: #ffeec2;
+    width: 234px;
+    border: none;
+    margin-bottom: 10px;
+    height: 30px;
+    padding-left:20px;
+    /* Om man vill gömma den fula vita grejen i Firefox kan man ha denna */
+    /*-moz-appearance: none;*/
 }
 
 .view{
-  padding-top: 100px;
-  min-height: 80vh;
+    padding-top: 100px;
+    min-height: 80vh;
 }
 
 .searchBar{
-  /*margin-top: 100px;*/
-  width: 400px;
+    /*margin-top: 100px;*/
+    width: 400px;
 }
 
 .searchBar.searchPage{
-  margin: 0 auto;
-  width: 100%;
-  max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 700px;
 }
 
 #orangeBG.searchPage{
-  width: 100%;
-  height: 70px;
-  border-radius: 3px;
+    width: 100%;
+    height: 70px;
+    border-radius: 3px;
 }
 
 .jobSearchForm.searchPage{
-  height: 64px;
-  font-size: 28px;
-  line-height: 62px;
-  width: 80%;
-  border-radius: 3px;
-  text-indent: 10px;
+    height: 64px;
+    font-size: 28px;
+    line-height: 62px;
+    width: 80%;
+    border-radius: 3px;
+    text-indent: 10px;
 }
 
 .searchButton{
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .searchButton.searchPage{
-  position: absolute;
-  height: 70px;
-  font-size: 30px;
-  margin-left: -20px;
-  width: 130px;
-  float: none;
+    position: absolute;
+    height: 70px;
+    font-size: 30px;
+    margin-left: -20px;
+    width: 130px;
+    float: none;
 }
 
 #searchBarIcon.searchPage{
-  position: relative;
-  top: 25px;
-  left: -78%;
+    position: relative;
+    top: 25px;
+    left: -78%;
 }
 
 .filterButtons{
-  display: table;
-  width: 100%;
+    display: table;
+    width: 100%;
 }
 
 .searchButton.resetFilters{
-  position: relative;
-  top: -40px;
-  text-align: center;
-  background-color: #DF582D;
-  width: 50px;
-  min-width: 30px;
-  height: 40px;
-  margin: 0 15% 0 0;
-  display: none;
-  font-size: 130%;
-  float: right;
-  padding-top: 10px;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+    position: relative;
+    top: -40px;
+    text-align: center;
+    background-color: #DF582D;
+    width: 50px;
+    min-width: 30px;
+    height: 40px;
+    margin: 0 15% 0 0;
+    display: none;
+    font-size: 130%;
+    float: right;
+    padding-top: 10px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 .resetFiltersAnimation{
-  margin-bottom: 8px;
-  margin-left: 5px;
-  margin-right: 4px;
-  height: 30px;
-  -webkit-transition: 0.3s ease; /* Safari */
-  transition: 0.3s ease;
+    margin-bottom: 8px;
+    margin-left: 5px;
+    margin-right: 4px;
+    height: 30px;
+    -webkit-transition: 0.3s ease; /* Safari */
+    transition: 0.3s ease;
 }
 
 .filterButton.searchButton{
-  position: relative;
-  display: block;
-  height: 40px;
-  line-height:14px;
-  text-align: center;
-  padding-top: 8px;
-  font-size: 16px;
-  margin: 0 auto;
-  background-color: #DF582D;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  -moz-box-shadow: inset 0 5px 10px -5px #000000;
-  -webkit-box-shadow: inset 0 5px 10px -5px #000000;
-  box-shadow: inset 0 5px 10px -5px #000000;
-  /*-webkit-transition: 0.3s ease; /* Safari */
-  /*transition: 0.3s ease;*/
+    position: relative;
+    display: block;
+    height: 40px;
+    line-height:14px;
+    text-align: center;
+    padding-top: 8px;
+    font-size: 16px;
+    margin: 0 auto;
+    background-color: #DF582D;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    -moz-box-shadow: inset 0 5px 10px -5px #000000;
+    -webkit-box-shadow: inset 0 5px 10px -5px #000000;
+    box-shadow: inset 0 5px 10px -5px #000000;
+    /*-webkit-transition: 0.3s ease; /* Safari */
+    /*transition: 0.3s ease;*/
 }
 
 .filterButton.searchButton span{
-  font-size: 10px;
-  top: -15px;
+    font-size: 10px;
+    top: -15px;
 }
 
 .filterButton.searchButton p{
-  margin: 0px 5px 2px 5px;
+    margin: 0px 5px 2px 5px;
 }
 
 .filters{
-  display: inline-table;
-  background-color: #303030;
-  width: 90%;
-  color:#FFEEC2;
-  margin-left: 5%;
-  padding-top: 0;
-  height: auto;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-top: 0;
-  float: left;
-  transition: 0.3s ease;
-  -webkit-transition: 0.3s ease;
+    display: inline-table;
+    background-color: #303030;
+    width: 90%;
+    color:#FFEEC2;
+    margin-left: 5%;
+    padding-top: 0;
+    height: auto;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top: 0;
+    float: left;
+    transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
 }
 
 .searchFilter{
-  background-color: rgba(221, 86, 37, 0.8);
-  display: table-cell;
-  float: left;
-  width: 171px;
-  margin: 0 0 0 4px;
-  height: 0;
-  padding: 0 0 0 15px;
-  border-radius: 3px;
-  -webkit-transition: 0.3s ease; /* Safari */
-  transition: 0.3s ease;
-  /* Om man vill gömma den fula vita grejen i Firefox kan man ha denna */
-  /*-moz-appearance: none;*/
+    background-color: rgba(221, 86, 37, 0.8);
+    display: table-cell;
+    float: left;
+    width: 171px;
+    margin: 0 0 0 4px;
+    height: 0;
+    padding: 0 0 0 15px;
+    border-radius: 3px;
+    -webkit-transition: 0.3s ease; /* Safari */
+    transition: 0.3s ease;
+    /* Om man vill gömma den fula vita grejen i Firefox kan man ha denna */
+    /*-moz-appearance: none;*/
 }
 
 .searchFilter:hover{
-  background-color: rgba(255, 105, 51, 0.8);
+    background-color: rgba(255, 105, 51, 0.8);
 }
 
 .searchFilterAnimation{
-  margin-bottom: 8px;
-//  margin-right: 4px;
-  margin-left: 4px;
-  padding-left:15px;
-  height: 30px;
-  -webkit-transition: 0.3s ease; /* Safari */
-  transition: 0.3s ease;
+    margin-bottom: 8px;
+    //  margin-right: 4px;
+    margin-left: 4px;
+    padding-left:15px;
+    height: 30px;
+    -webkit-transition: 0.3s ease; /* Safari */
+    transition: 0.3s ease;
 }
 
 .pageSelector{
-  color: white;
-  font-size: 12pt;
-  display: inline-block;
-  text-align: center;
-  margin: 30px auto;
+    color: white;
+    font-size: 12pt;
+    display: inline-block;
+    text-align: center;
+    margin: 30px auto;
 }
 
 .pageSelectorButton{
-  background-color:rgb(221, 86, 37);
-  border:none;
-  padding:10px;
-  border-radius: 5px;
+    background-color:rgb(221, 86, 37);
+    border:none;
+    padding:10px;
+    border-radius: 5px;
 }
 
 .viewingPageNumber{
-  margin-left:10px;
-  margin-right:20px;
+    margin-left:10px;
+    margin-right:20px;
 }
 
 .pageSelectorButton:disabled{
-  background-color: #535353;
-  color:#8A8A8A;
+    background-color: #535353;
+    color:#8A8A8A;
 }
 
 .filtersAnimation{
-  padding-top: 10px;
-  -webkit-transition: 0.3s ease; /* Safari */
-  transition: 0.3s ease;
+    padding-top: 10px;
+    -webkit-transition: 0.3s ease; /* Safari */
+    transition: 0.3s ease;
 }
 
 #orangeBG{
-  background-color: #ff6e3f;
-  width: 400px;
-  height: 50px;
-  border-radius: 50px;
+    background-color: #ff6e3f;
+    width: 400px;
+    height: 50px;
+    border-radius: 50px;
 }
 
 #searchBarIcon{
-  background-image: url(../img/search_icon.png);
-  position: relative;
-  background-size: 20px 20px;
-  height: 20px;
-  width: 20px;
-  top: -35px;
-  left: 15px;
-  float: left;
+    background-image: url(../img/search_icon.png);
+    position: relative;
+    background-size: 20px 20px;
+    height: 20px;
+    width: 20px;
+    top: -35px;
+    left: 15px;
+    float: left;
 }
 
 .jobSearchForm{
-  text-align: left;
-  height: 44px;
-  width: 310px;
-  float: left;
-  font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
-  line-height: 44px;
-  font-weight: 300;
-  margin: 3px;
-  border-radius: 50px;
-  background-color: rgba(255,255,255,1);
-  font-size: 20px;
-  padding-left: 40px;
-  border: 0;
+    text-align: left;
+    height: 44px;
+    width: 310px;
+    float: left;
+    font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+    line-height: 44px;
+    font-weight: 300;
+    margin: 3px;
+    border-radius: 50px;
+    background-color: rgba(255,255,255,1);
+    font-size: 20px;
+    padding-left: 40px;
+    border: 0;
 }
 
 .jobSearchForm:focus {
-  outline-color: transparent;
-  outline-style: none;
+    outline-color: transparent;
+    outline-style: none;
 }
 
 .searchButton{
-  width: 70px;
-  height: 50px;
-  margin-left: -5px;
-  background-color: rgba(0,0,0,0);
-  border: 0;
-  font-size: 24px;
-  font-family: 'Raleway';
-  font-weight: 700;
-  color: #ffeec2;
-  float: left;
+    width: 70px;
+    height: 50px;
+    margin-left: -5px;
+    background-color: rgba(0,0,0,0);
+    border: 0;
+    font-size: 24px;
+    font-family: 'Raleway';
+    font-weight: 700;
+    color: #ffeec2;
+    float: left;
 }
 
 .searchButton:focus {
-  outline: transparent none;
+    outline: transparent none;
 }
 
 .searchResults{
-  margin-top: 30px;
+    margin-top: 30px;
 }
 
 #numSearchResults {
-  text-align: center;
-  margin: 20px auto 0;
-  width: 200px;
-  }
+    text-align: center;
+    margin: 20px auto 0;
+    width: 200px;
+}
 
 #numSearchResults h4{
-  display: block;
-  font-weight: 500;
-  background-color:rgba(47,47,47,0.95);
-  padding: 12px 15px;
-  border-radius: 1.7em;
-  color:#FFFFE6;
-  margin: 0;
+    display: block;
+    font-weight: 500;
+    background-color:rgba(47,47,47,0.95);
+    padding: 12px 15px;
+    border-radius: 1.7em;
+    color:#FFFFE6;
+    margin: 0;
 }
 
 .aboutInfo {
-  color: rgb(255, 238, 194);
-  background-color: rgb(36,36,36);
-  width: 60%;
-  margin-left: 20%;
-  margin-right: 20%;
-  //text-align: center;
-  margin-top:20px;
-  padding:20px;
-  font-size: 1.2em;
+    color: rgb(255, 238, 194);
+    background-color: rgb(36,36,36);
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    //text-align: center;
+    margin-top:20px;
+    padding:20px;
+    font-size: 1.2em;
 }
 
 .aboutHeader{
-  text-align: center;
-  text-transform: uppercase;
-  font-weight:400;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight:400;
 }
 
 .aboutDivider {
-  width:100%;
-  border-color:rgb(255,110,63);
+    width:100%;
+    border-color:rgb(255,110,63);
 }
 
 
 /* ############### START LOADING ANIMATION ###############*/
 
 .loadingAnimation{
-  position: absolute;
-  background-color: rgba(36, 36, 36, 0.8);
-  width: 200px;
-  height: 140px;
-  border-radius: 10px;
-  display: inline-block;
-  margin-left: -98px;
+    position: absolute;
+    background-color: rgba(36, 36, 36, 0.8);
+    width: 200px;
+    height: 140px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-left: -98px;
 }
 
 .spinner {
-  position: relative;
-  left: 74%;
-  top: 24px;
+    position: relative;
+    left: 74%;
+    top: 24px;
 }
 
 .spinner.job{
-  position: relative;
-  left: 65px;
-  top: 35px;
+    position: relative;
+    left: 65px;
+    top: 35px;
 }
 
 .container1 > div, .container2 > div, .container3 > div {
-  width: 6px;
-  height: 6px;
-  background-color: #6e6e6e;
-  border-radius: 100%;
-  position: absolute;
-  -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
-  animation: bouncedelay 1.2s infinite ease-in-out;
-  /* Prevent first frame from flickering when animation starts */
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+    width: 6px;
+    height: 6px;
+    background-color: #6e6e6e;
+    border-radius: 100%;
+    position: absolute;
+    -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+    animation: bouncedelay 1.2s infinite ease-in-out;
+    /* Prevent first frame from flickering when animation starts */
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
 }
 
 .spinner-container div.lightBlue{
-  background-color: #71CBD9;
+    background-color: #71CBD9;
 }
 
 .spinner-container.job div{
-  width: 15px;
-  height: 15px;
+    width: 15px;
+    height: 15px;
 }
 
 .spinner .spinner-container {
-  position: absolute;
-  width: 20px;
-  height: 20px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
 }
 
 .jobDescLoader .spinner-container {
-  position: absolute;
-  width: 20px;
-  height: 20px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
 }
 
 .spinner .spinner-container.job {
-  position: absolute;
-  width: 70px;
-  height: 70px;
+    position: absolute;
+    width: 70px;
+    height: 70px;
 }
 
 .container2 {
-  -webkit-transform: rotateZ(45deg);
-  transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
 }
 
 .container3 {
-  -webkit-transform: rotateZ(90deg);
-  transform: rotateZ(90deg);
+    -webkit-transform: rotateZ(90deg);
+    transform: rotateZ(90deg);
 }
 
 .circle1 { top: 0; left: 0; }
@@ -428,819 +428,379 @@ h4{
 .circle4 { left: 0; bottom: 0; }
 
 .container2 .circle1 {
-  -webkit-animation-delay: -1.1s;
-  animation-delay: -1.1s;
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
 }
 
 .container3 .circle1 {
-  -webkit-animation-delay: -1.0s;
-  animation-delay: -1.0s;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
 }
 
 .container1 .circle2 {
-  -webkit-animation-delay: -0.9s;
-  animation-delay: -0.9s;
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
 }
 
 .container2 .circle2 {
-  -webkit-animation-delay: -0.8s;
-  animation-delay: -0.8s;
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
 }
 
 .container3 .circle2 {
-  -webkit-animation-delay: -0.7s;
-  animation-delay: -0.7s;
+    -webkit-animation-delay: -0.7s;
+    animation-delay: -0.7s;
 }
 
 .container1 .circle3 {
-  -webkit-animation-delay: -0.6s;
-  animation-delay: -0.6s;
+    -webkit-animation-delay: -0.6s;
+    animation-delay: -0.6s;
 }
 
 .container2 .circle3 {
-  -webkit-animation-delay: -0.5s;
-  animation-delay: -0.5s;
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
 }
 
 .container3 .circle3 {
-  -webkit-animation-delay: -0.4s;
-  animation-delay: -0.4s;
+    -webkit-animation-delay: -0.4s;
+    animation-delay: -0.4s;
 }
 
 .container1 .circle4 {
-  -webkit-animation-delay: -0.3s;
-  animation-delay: -0.3s;
+    -webkit-animation-delay: -0.3s;
+    animation-delay: -0.3s;
 }
 
 .container2 .circle4 {
-  -webkit-animation-delay: -0.2s;
-  animation-delay: -0.2s;
+    -webkit-animation-delay: -0.2s;
+    animation-delay: -0.2s;
 }
 
 .container3 .circle4 {
-  -webkit-animation-delay: -0.1s;
-  animation-delay: -0.1s;
+    -webkit-animation-delay: -0.1s;
+    animation-delay: -0.1s;
 }
 
 @-webkit-keyframes bouncedelay {
-  0%, 80%, 100% { -webkit-transform: scale(0.0) }
-  40% { -webkit-transform: scale(1.0) }
+    0%, 80%, 100% { -webkit-transform: scale(0.0) }
+    40% { -webkit-transform: scale(1.0) }
 }
 
 @keyframes bouncedelay {
-  0%, 80%, 100% {
-    transform: scale(0.0);
-    -webkit-transform: scale(0.0);
-  } 40% {
-      transform: scale(1.0);
-      -webkit-transform: scale(1.0);
-    }
+    0%, 80%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 40% {
+          transform: scale(1.0);
+          -webkit-transform: scale(1.0);
+      }
 }
 /* ############## END LOADING ANIMATION ##############*/
 
 
 #splash{
-  background-color: #ff6e3f;
-  padding: 10px;
-  width: 500px;
-  vertical-align: middle;
-  margin-top: 100px;
-  -webkit-transition: height, width 0.3s; /* Safari */
-  transition: height, width 0.3s;
-  transition-timing-function: ease;
+    background-color: #ff6e3f;
+    padding: 10px;
+    width: 500px;
+    vertical-align: middle;
+    margin-top: 100px;
+    -webkit-transition: height, width 0.3s; /* Safari */
+    transition: height, width 0.3s;
+    transition-timing-function: ease;
 
 }
 
 #splashText{
-  margin: 0;
+    margin: 0;
 
 }
 
 .infoBoxes{
-  padding-top: 60px;
-  width: 800px;
-  margin-bottom: 50px;
-  //height: 400px;
+    padding-top: 60px;
+    width: 800px;
+    margin-bottom: 50px;
+    //height: 400px;
 }
 
 .infoBox{
-  /*position: relative;*/
-  padding: 40px;
-  padding-top: 0px;
-  width: 360px;
-  background-color: #ffeec2;
-  -webkit-transition: width 0.3s ease; /* Safari */
-  transition: width 0.3s ease;
+    padding: 40px;
+    padding-top: 0;
+    background-color: #ffeec2;
+    -webkit-transition: width 0.3s ease; /* Safari */
+    transition: width 0.3s ease;
 }
 
 .links{
-  padding-top: 20px;
-}
-
-#userInfo{
-  float: left;
-}
-
-#companyInfo{
-  float: right;
+    padding-top: 20px;
 }
 
 .infoTitle{
-  font-family: 'Raleway';
-  font-size: 32px;
-  font-weight: 100;
-  text-transform: uppercase;
-  padding-top: 25px;
-  color: #71CBD9;
+    font-family: 'Raleway', serif;
+    font-size: 32px;
+    font-weight: 100;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 25px;
+    color: #71CBD9;
 }
 
 .underlined{
-  border-bottom: solid #ff6e3f 2px;
-}
-
-.infoDescription{
-  text-align: left;
-  padding-top: 15px;
+    border-bottom: solid #ff6e3f 2px;
 }
 
 .registerButton{
-  border: 0;
-  background-color: #ff6e3f;
-  transition: 0.3s ease;
-  -webkit-transition: 0.3s ease;
-  -webkit-transition: background-color 0.5s ease; /* Safari */
-  transition: background-color 0.5s ease;
-  border-radius: 45px;
-  padding: 10px 14px;
-  height: 45px;
-  width: 330px;
-  margin-top: 35px;
-  margin-right: 15px;
-  margin-left: 15px;
-  margin-bottom: 8px;
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.4em;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: #ffeec2;
+    border: 0;
+    background-color: #ff6e3f;
+    transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+    -webkit-transition: background-color 0.5s ease; /* Safari */
+    transition: background-color 0.5s ease;
+    border-radius: 45px;
+    padding: 10px 14px;
+    height: 45px;
+    width: 90%;
+    margin-top: 35px;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 8px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.4em;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #ffeec2;
 }
 
 .registerButton:hover{
-  background-color: #FF460A;
-}
-
-#registerUser{
-  /*float: left;*/
-}
-
-#registerCompany{
-  /*float: right;*/
+    background-color: #FF460A;
 }
 
 .alreadyJoined{
-  color: #71CBD9;
-  font-size: 1em;
-  text-transform: uppercase;
-  margin-top: 2em;
+    color: #71CBD9;
+    font-size: 1em;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .loginLink{
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  color: inherit;
-  -webkit-transition: color 0.2s; /* Safari */
-  transition: color 0.2s;
-  transition-timing-function: ease;
-  text-decoration: none;
-  margin-left: 0.8em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: inherit;
+    -webkit-transition: color 0.2s; /* Safari */
+    transition: color 0.2s;
+    transition-timing-function: ease;
+    text-decoration: none;
+    margin-left: 0.8em;
 }
 
 .loginLink:hover, .forgotPassword:hover, .loginFormLink:hover{
-  text-decoration: none;
-  color: #44E6FF;
+    text-decoration: none;
+    color: #44E6FF;
 }
 
 .forgotPassword{
-  color: #71CBD9;
-  font-size: 1em;
-  text-transform: uppercase;
-  margin-top: 0.7em;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 600;
-  -webkit-transition: color 0.2s; /* Safari */
-  transition: color 0.2s;
-  transition-timing-function: ease;
-  text-decoration: none;
-  float: right;
+    color: #71CBD9;
+    font-size: 1em;
+    text-transform: uppercase;
+    margin-top: 0.7em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    -webkit-transition: color 0.2s; /* Safari */
+    transition: color 0.2s;
+    transition-timing-function: ease;
+    text-decoration: none;
+    float: right;
 }
 
 .loginFormLink{
-  color: #71CBD9;
-  font-size: 1em;
-  text-transform: uppercase;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 600;
-  -webkit-transition: color 0.2s; /* Safari */
-  transition: color 0.2s;
-  transition-timing-function: ease;
-  text-decoration: none;
-  float: right;
+    color: #71CBD9;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    -webkit-transition: color 0.2s; /* Safari */
+    transition: color 0.2s;
+    transition-timing-function: ease;
+    text-decoration: none;
+    float: right;
 }
 
 .latestJobs{
-  margin-top: 50px;
-  min-height: 300px;
+    margin-top: 50px;
+    min-height: 300px;
 }
 
 #placeholder{
-  font-size: 90px;
+    font-size: 90px;
 }
 
 footer{
-  width: 100%;
-  background-color: #202020;
-  min-height: 300px;
+    width: 100%;
+    background-color: #202020;
+    min-height: 300px;
 }
 
 .footerContent{
-  margin-left: auto;
-  margin-right: auto;
-  display: table;
-  width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+    width: 800px;
 }
 
 #footerLogo{
-  height: 90px;
-  width: auto;
-  margin-top: 60px;
-  margin-left: (800/2)-85px;
-  margin-right: auto;
-  img{
-    width: 170px;
-  }
+    height: 90px;
+    width: auto;
+    margin-top: 60px;
+    margin-left: (800/2)-85px;
+    margin-right: auto;
+    img{
+        width: 170px;
+    }
 }
 
 #footerLinks{
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: solid #2e2e2e 2px;
-  display: table;
-  text-transform: uppercase;
-  color: #ffeec2;
-  margin-left: auto;
-  margin-right: auto;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: solid #2e2e2e 2px;
+    display: table;
+    text-transform: uppercase;
+    color: #ffeec2;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .footerLink{
-  display: inline;
-  padding: 10px 70px 10px 70px;
-  -webkit-transition: padding 0.3s; /* Safari */
-  transition: padding 0.3s;
-  transition-timing-function: ease;
+    display: inline;
+    padding: 10px 70px 10px 70px;
+    -webkit-transition: padding 0.3s; /* Safari */
+    transition: padding 0.3s;
+    transition-timing-function: ease;
 }
 
 #customSearch {
-  background-color:rgb(36,36,36);
-  height:45px;
+    background-color:rgb(36,36,36);
+    height:45px;
 }
 
 #customSearchbar {
-  background-color:rgba(30,30,30,0.5);
-  color:#FFEEC2;
-  width: 55%;
-  height: 35px;
-  margin-top: 5px;
-  margin-left: 3%;
-  /*border-radius: 30px;*/
-  border: none;
-  text-align: center;
+    background-color:rgba(30,30,30,0.5);
+    color:#FFEEC2;
+    width: 55%;
+    height: 35px;
+    margin-top: 5px;
+    margin-left: 3%;
+    /*border-radius: 30px;*/
+    border: none;
+    text-align: center;
 }
 
 #customSearchButton {
-  width: 17%;
-  background-color:#242424;
-  border: 1px solid;
-  color: #FF7519;
-  height: 35px;
-  margin-top: 5px;
-  padding: 0px;
+    width: 17%;
+    background-color:#242424;
+    border: 1px solid;
+    color: #FF7519;
+    height: 35px;
+    margin-top: 5px;
+    padding: 0px;
 }
 
 #customFilterButton {
-  width: 90px;
-  background-color: rgb(36,36,36);
-  border:none;
-  color: #FF7519;
-  height: 35px;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  padding: 0px;
+    width: 90px;
+    background-color: rgb(36,36,36);
+    border:none;
+    color: #FF7519;
+    height: 35px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 0px;
 }
 
 #customFilterButton:focus{
-  outline-color: transparent;
-  outline-style: none;
+    outline-color: transparent;
+    outline-style: none;
 }
 
 .sidePicker {
-  cursor:pointer;
-  color:blue;
+    cursor:pointer;
+    color:blue;
 }
 
 .singleJob{
-  width: 80%;
-  font-size: 16px;
-  max-width: 1000px;
-  color:#E9DEBE;
-  background-color: #ff6e3f;
-  margin-left: auto;
-  margin-right: auto;
-  /*margin-bottom: 100px;*/
-  border-top-right-radius:31px;
-  border-top-left-radius: 31px;
+    width: 80%;
+    font-size: 16px;
+    max-width: 1000px;
+    color:#E9DEBE;
+    background-color: #ff6e3f;
+    margin-left: auto;
+    margin-right: auto;
+    /*margin-bottom: 100px;*/
+    border-top-right-radius:31px;
+    border-top-left-radius: 31px;
 }
 
 .jobInfo{
-  padding: 20px;
+    padding: 20px;
 }
 
 .jobInfo h2{
-  padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .moreInfo{
-  padding: 30px;
-  background-color: #BD4C27;
+    padding: 30px;
+    background-color: #BD4C27;
 }
 
 .jobButtons{
-  background-color:rgb(47,47,47);
-  border-top-right-radius:25px;
-  border-top-left-radius: 25px;
+    background-color:rgb(47,47,47);
+    border-top-right-radius:25px;
+    border-top-left-radius: 25px;
 }
 
 .singleJobButton{
-  padding: 0;
-  width: 50px;
-  line-height: 45px;
-//  display: block;
-  float: left;
-  border-radius: 3px;
-  border: 0;
-  background-color: #454545;
-  -webkit-transition: background-color 0.5s ease; /* Safari */
-  transition: background-color 0.5s ease;
-  height: 40px;
-  font-family: 'Raleway', sans-serif;
-  font-size: 0.8em;
-  color: #ff6e3f;
-  top: 4px;
-  position: relative;
-  margin-right: 20px;
+    padding: 0;
+    width: 50px;
+    line-height: 45px;
+    //  display: block;
+    float: left;
+    border-radius: 3px;
+    border: 0;
+    background-color: #454545;
+    -webkit-transition: background-color 0.5s ease; /* Safari */
+    transition: background-color 0.5s ease;
+    height: 40px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.8em;
+    color: #ff6e3f;
+    top: 4px;
+    position: relative;
+    margin-right: 20px;
 }
 
 .singleJobButton:hover{
-  background-color: #565656;
+    background-color: #565656;
 }
 
 .singleJobButton.save {
-  border-left:1px solid #FF6E3F;
+    border-left:1px solid #FF6E3F;
 }
 
 .singleJobButton.removeSaved{
-  border-left:1px solid #FF6E3F;
+    border-left:1px solid #FF6E3F;
 }
 
 .form-horizontal{
-  label{
-    font-size: 1.2em;
-    font-weight: 300;
-  }
+    label{
+        font-size: 1.2em;
+        font-weight: 300;
+    }
 
-  select.dropdown{
+    select.dropdown{
 
-  }
+    }
 }
 
 .registerFormSubmitButton{
-  padding: 0;
-  min-width: 250px;
-  display: block;
-  border-radius: 3px;
-  border: 0;
-  background-color: #ff6e3f;
-  -webkit-transition: background-color 0.5s ease; /* Safari */
-  transition: background-color 0.5s ease;
-  height: 45px;
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.4em;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: #ffeec2;
-}
-
-.registerFormSubmitButton:hover{
-  background-color: #FF460A;
-}
-
-.validationError{
-  color: #FFFFFF;
-  background-color: #FF6E3F;
-}
-
-
-.loginContainer{
-  height:auto;
-  padding-bottom: 15px;
-  width:300px;
-  background-color:#242424;
-}
-
-.loginInput {
-  width: 80%;
-  background-color: rgba(30,30,30,0.8);
-  border: none;
-  margin-bottom: 10px;
-  height: 30px;
-  color: #ffeec2;
-  padding-left: 20px;
-  padding-right:20px;
-}
-
-.loginInput#loginSubmit{
-  background-color: #FF6E3F;
-  padding:0px;
-}
-
-.registerInput {
-  width: 70%;
-  background-color: rgba(30,30,30,0.8);
-  border: none;
-  margin-bottom: 10px;
-  height: 30px;
-  color: #ffeec2;
-  text-indent: 20px;
-  padding-right: 10px;
-}
-
-.verifiedInput{
-  color:#219321;
-}
-
-.registerInput#register{
-  background-color: #FF6E3F;
-  text-align: center;
-  text-indent: 0;
-  padding:0px;
-  margin-left: -20px;
-  width: 70%;
-}
-
-
-
-.registerInput#register:disabled{
-  background-color: #535353;
-  color: #323232;
-}
-
-#registerSpinner{
-  height: 14px;
-  top: 5px;
-  left: -38px;
-}
-
-.validFeedback{
-  margin-left:10px;
-}
-
-#loginHeader {
-  padding-top:10px;
-  margin-bottom:30px;
-}
-
-
-
-textarea#description{
-  height: 250px;
-  min-height: 30px;
-  min-width: 100%;
-  max-width: 100%;
-}
-
-.validationInput{
-  color: #FFEEC2;
-  background-color: transparent;
-  border: none;
-  font-size: 1.2em;
-  box-shadow: 0px 0px 8px 0px rgba(255, 110, 63, 0.5);
-
-  option{
-    background-color: rgb(255, 110, 63);
-  }
-
-  @media (max-width: 991px) {
-    margin-bottom: 15px;
-  }
-}
-
-.validationInput[name=title]{
-  font-size: 2em;
-  padding: 0;
-}
-
-.basicJobInfoContainer{
-  padding: 20px 0 10px 0;
-//  margin: 0 8.333%;
-  margin-bottom: 15px;
-//  background-color: #4a4a4a;
-}
-
-.loggedInUser{
-  font-size: 0.6em;
-  color: rgba(156, 139, 116, 0.6);
-  text-transform: lowercase;
-  font-weight: 300;
-
-  .orange{
-    color: #ff6e3f;
-  }
-}
-
-.messageBox{
-  background-color:rgba(36,36,36,0.9);
-  margin-left: auto;
-  margin-right: auto;
-  width:80%;
-  max-width: 600px;
-  min-width:400px;
-  color:#FFEEC2;
-  margin-bottom:30px;
-}
-
-.messageBoxHeading{
-  text-align: center;
-  background-color: rgb(36,36,36);
-  font-size: 2em;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 100;
-  border-bottom: solid 1.5px #ff6e3f;
-  padding: 10px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-}
-
-.registerText {
-  color:#ffeec2;
-  margin-top:95px;
-}
-
-.publishDate{
-  position:absolute;
-  bottom:5px;
-}
-
-.savedJobs {
-  background-color:rgb(36,36,36);
-  color:#FFEEC2;
-  width:80%;
-  padding-left:10px;
-  padding-right: 10px;
-  padding-bottom:10px;
-  padding-top: 5px;
-  margin-top:25px;
-}
-
-.savedJob {
-  text-align: left;
-  margin-left: 10px;
-}
-
-.removeSavedJob{
-  padding-right: 5px;
-  cursor: pointer;
-  color: rgb(192, 48, 29);
-}
-
-#splash.sideHeader {
-  margin-top:0px;
-}
-#profileUsername{
-  width: 80%;
-  border-top: solid 2px rgba(47,47,47,0.4);
-  color: #ffeec2;
-  margin-top:10px;
-  padding-top: 10px;
-  margin-bottom: 5px;
-}
-
-.loggedInHeader{
-  background-color:#242424;
-  color:#FFEEC2;
-  text-align:right;
-  padding-right:20px;
-  padding-top:10px;
-}
-
-#confirmBox{
-  -webkit-transition: width 0.3s;
-  -moz-transition: width 0.3s;
-  -ms-transition: width 0.3s;
-  -o-transition: width 0.3s;
-  transition: width 0.3s;
-  border-radius: 5px;
-  width: 50%;
-  margin: 50px auto 0;
-  font-size: 14px;
-  margin-bottom: 100px;
-
-  .messageBoxHeading{
-    background-color: #484848;
-  }
-}
-
-.confirmationForm{
-
-  form{
-    display: none;
-  }
-}
-
-.responsiveButton{
-  @extend .registerFormSubmitButton;
-  min-width: unset;
-}
-
-.cancelButton{
-  background-color: rgb(192, 11, 25);
-}
-
-.confirmButton{
-  background-color: rgb(85, 192, 77);
-}
-
-/* #################################################### */
-/* ############## START OF RESPONSIVENESS ############# */
-/* #################################################### */
-
-
-@media (max-width: 980px){
-  nav{
-    height: 130px;
-  }
-
-  body{
-    background-position: center top 156px;
-  }
-
-  .headerLogo{
-    margin: 35px;
-  }
-
-  .navLinks{
-    position: relative;
-    float: right;
-    width: 250px;
-    top: 0;
-    font-size: 1.2em;
-  }
-
-  .linkBox{
-    float: left;
-    height: auto;
-    padding-left: 0;
-    padding-right: 35px;
-  }
-
-  #splash{
-    width: 400px;
-  }
-
-  #splashText{
-    font-size: 2.5em;
-  }
-}
-
-@media (max-width: 878px){ /* Tablet-ish */
-  .infoBoxes{
-    width: inherit;
-    //height: 750px;
-  }
-
-  .infoBox{
-    //    width: 100%;
-  }
-
-  .infoTitle {
-    padding-top: 25px;
-  }
-
-  #userInfo{
-    float: none;
-  }
-
-  #companyInfo{
-    float: none;
-  }
-
-  .footerLink {
-    padding: 5px;
-    display: block;
-  }
-
-  #placeholder{
-    font-size: 40px;
-  }
-
-  .registerButton {
-    margin-right: 0;
-    margin-left: 0;
-  }
-
-  .registerButtons{
-    /*width: inherit;*/
-    padding-top: 20px;
-  }
-
-  #registerCompany{
-    float: none;
-  }
-
-  .container{
-    padding: 0;
-  }
-}
-
-@media (max-width: 685px){
-  .jobBlock{
-    width:90%;
-    margin-left:5%;
-    margin-right:5%;
-    margin-top:0px;
-    min-width:250px;
-  }
-
-
-}
-
-@media (max-width: 503px){ /* Mobile */
-  .view{
-    padding-top: 50px;
-  }
-
-  .aboutInfo {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding:10px;
-  }
-
-  .aboutDivider{
-    width:90%;
-  }
-
-  #splash{
-    width: 100%;
-  }
-
-  #orangeBG{
-    width: 340px;
-  }
-
-  .searchBar{
-    width: 340px;
-  }
-
-  #searchBarIcon{
-    left: 18px;
-  }
-
-  .searchButton.searchPage{
-    font-size: 26px;
-  }
-
-  .searchButton.searchPage.filterButton{
-    font-size: 16px;
-  }
-
-  .jobSearchForm{
-    width: 260px;
-  }
-
-  .spinner {
-    left: 70%;
-  }
-
-  .dropdown.searchFilter{
-    width: 46%;
-    font-size: 12px;
-  }
-
-  .singleJob{
-    width: 100%;
-  }
-
-  .singleJobButton{
     padding: 0;
     min-width: 250px;
     display: block;
@@ -1255,103 +815,503 @@ textarea#description{
     font-weight: 400;
     text-transform: uppercase;
     color: #ffeec2;
-  }
+}
 
-  body {
-    background-position: center top 50px;
-  }
+.registerFormSubmitButton:hover{
+    background-color: #FF460A;
+}
 
-  nav{
-    height: 50px;
-    /*position: fixed;*/
-    z-index: 100;
-  }
+.validationError{
+    color: #FFFFFF;
+    background-color: #FF6E3F;
+}
 
-  .headerLogo {
-    margin: 10px;
-  }
 
-  .headerLogo img {
+.loginContainer{
+    height:auto;
+    padding-bottom: 15px;
+    width:300px;
+    background-color:#242424;
+}
+
+.loginInput {
+    width: 80%;
+    background-color: rgba(30,30,30,0.8);
+    border: none;
+    margin-bottom: 10px;
     height: 30px;
-  }
+    color: #ffeec2;
+    padding-left: 20px;
+    padding-right:20px;
+}
 
-  #hamburgerIcon{
-    display: inline;
+.loginInput#loginSubmit{
+    background-color: #FF6E3F;
+    padding:0px;
+}
+
+.registerInput {
+    width: 70%;
+    background-color: rgba(30,30,30,0.8);
+    border: none;
+    margin-bottom: 10px;
     height: 30px;
-    margin: 10px;
-    float: right;
-    /*background-image: url("../img/hamburger.png");*/
-  }
+    color: #ffeec2;
+    text-indent: 20px;
+    padding-right: 10px;
+}
 
-  .navLinks{
-    /*display: none;*/
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-    width: 100%;
-    height: 0;
-    overflow: hidden;
-  }
+.verifiedInput{
+    color:#219321;
+}
 
-  .navLinksAnimation{
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-    height: auto;
-  }
+.registerInput#register{
+    background-color: #FF6E3F;
+    text-align: center;
+    text-indent: 0;
+    padding:0px;
+    margin-left: -20px;
+    width: 70%;
+}
 
-  .linkBox{
-    display: block;
-    float: none;
-    /*padding-top: 5px;*/
-  }
 
-  #linksRow{
+
+.registerInput#register:disabled{
+    background-color: #535353;
+    color: #323232;
+}
+
+#registerSpinner{
+    height: 14px;
+    top: 5px;
+    left: -38px;
+}
+
+.validFeedback{
+    margin-left:10px;
+}
+
+#loginHeader {
+    padding-top:10px;
+    margin-bottom:30px;
+}
+
+
+
+textarea#description{
+    height: 250px;
+    min-height: 30px;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.validationInput{
+    color: #FFEEC2;
+    background-color: transparent;
+    border: none;
+    font-size: 1.2em;
+    box-shadow: 0px 0px 8px 0px rgba(255, 110, 63, 0.5);
+
+    option{
+        background-color: rgb(255, 110, 63);
+    }
+
+    @media (max-width: 991px) {
+        margin-bottom: 15px;
+    }
+}
+
+.validationInput[name=title]{
+    font-size: 2em;
+    padding: 0;
+}
+
+.basicJobInfoContainer{
+    padding: 20px 0 10px 0;
+    //  margin: 0 8.333%;
+    margin-bottom: 15px;
+    //  background-color: #4a4a4a;
+}
+
+.loggedInUser{
+    font-size: 0.6em;
+    color: rgba(156, 139, 116, 0.6);
+    text-transform: lowercase;
+    font-weight: 300;
+
+    .orange{
+        color: #ff6e3f;
+    }
+}
+
+.messageBox{
+    background-color:rgba(36,36,36,0.9);
+    margin-left: auto;
+    margin-right: auto;
+    width:80%;
+    max-width: 600px;
+    min-width:400px;
+    color:#FFEEC2;
+    margin-bottom:30px;
+}
+
+.messageBoxHeading{
+    text-align: center;
+    background-color: rgb(36,36,36);
+    font-size: 2em;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 100;
+    border-bottom: solid 1.5px #ff6e3f;
+    padding: 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.registerText {
+    color:#ffeec2;
+    margin-top:95px;
+}
+
+.publishDate{
+    position:absolute;
+    bottom:5px;
+}
+
+.savedJobs {
+    background-color:rgb(36,36,36);
+    color:#FFEEC2;
+    width:80%;
+    padding-left:10px;
+    padding-right: 10px;
+    padding-bottom:10px;
+    padding-top: 5px;
+    margin-top:25px;
+}
+
+.savedJob {
     text-align: left;
-  }
+    margin-left: 10px;
+}
+
+.removeSavedJob{
+    padding-right: 5px;
+    cursor: pointer;
+    color: rgb(192, 48, 29);
+}
+
+#splash.sideHeader {
+    margin-top:0px;
+}
+#profileUsername{
+    width: 80%;
+    border-top: solid 2px rgba(47,47,47,0.4);
+    color: #ffeec2;
+    margin-top:10px;
+    padding-top: 10px;
+    margin-bottom: 5px;
+}
+
+.loggedInHeader{
+    background-color:#242424;
+    color:#FFEEC2;
+    text-align:right;
+    padding-right:20px;
+    padding-top:10px;
+}
+
+#confirmBox{
+    -webkit-transition: width 0.3s;
+    -moz-transition: width 0.3s;
+    -ms-transition: width 0.3s;
+    -o-transition: width 0.3s;
+    transition: width 0.3s;
+    border-radius: 5px;
+    width: 50%;
+    margin: 50px auto 0;
+    font-size: 14px;
+    margin-bottom: 100px;
+
+    .messageBoxHeading{
+        background-color: #484848;
+    }
+}
+
+.confirmationForm{
+
+    form{
+        display: none;
+    }
+}
+
+.responsiveButton{
+    @extend .registerFormSubmitButton;
+    min-width: unset;
+}
+
+.cancelButton{
+    background-color: rgb(192, 11, 25);
+}
+
+.confirmButton{
+    background-color: rgb(85, 192, 77);
+}
+
+/* #################################################### */
+/* ############## START OF RESPONSIVENESS ############# */
+/* #################################################### */
+
+
+@media (max-width: 980px){
+    nav{
+        height: 130px;
+    }
+
+    body{
+        background-position: center top 156px;
+    }
+
+    .headerLogo{
+        margin: 35px;
+    }
+
+    .navLinks{
+        position: relative;
+        float: right;
+        width: 250px;
+        top: 0;
+        font-size: 1.2em;
+    }
+
+    .linkBox{
+        float: left;
+        height: auto;
+        padding-left: 0;
+        padding-right: 35px;
+    }
+
+    #splash{
+        width: 400px;
+    }
+
+    #splashText{
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 878px){ /* Tablet-ish */
+    .infoTitle {
+        padding-top: 25px;
+    }
+
+    .footerLink {
+        padding: 5px;
+        display: block;
+    }
+
+    #placeholder{
+        font-size: 40px;
+    }
+
+    .registerButton {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .registerButtons{
+        padding-top: 20px;
+    }
+
+    #registerCompany{
+        float: none;
+    }
+
+    .container{
+        padding: 0;
+    }
+}
+
+@media (max-width: 685px){
+    .jobBlock{
+        width:90%;
+        margin-left:5%;
+        margin-right:5%;
+        margin-top:0px;
+        min-width:250px;
+    }
+
+
+}
+
+@media (max-width: 503px){ /* Mobile */
+    .view{
+        padding-top: 50px;
+    }
+
+    .aboutInfo {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding:10px;
+    }
+
+    .aboutDivider{
+        width:90%;
+    }
+
+    #splash{
+        width: 100%;
+    }
+
+    #orangeBG{
+        width: 340px;
+    }
+
+    .searchBar{
+        width: 340px;
+    }
+
+    #searchBarIcon{
+        left: 18px;
+    }
+
+    .searchButton.searchPage{
+        font-size: 26px;
+    }
+
+    .searchButton.searchPage.filterButton{
+        font-size: 16px;
+    }
+
+    .jobSearchForm{
+        width: 260px;
+    }
+
+    .spinner {
+        left: 70%;
+    }
+
+    .dropdown.searchFilter{
+        width: 46%;
+        font-size: 12px;
+    }
+
+    .singleJob{
+        width: 100%;
+    }
+
+    .singleJobButton{
+        padding: 0;
+        min-width: 250px;
+        display: block;
+        border-radius: 3px;
+        border: 0;
+        background-color: #ff6e3f;
+        -webkit-transition: background-color 0.5s ease; /* Safari */
+        transition: background-color 0.5s ease;
+        height: 45px;
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.4em;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #ffeec2;
+    }
+
+    body {
+        background-position: center top 50px;
+    }
+
+    nav{
+        height: 50px;
+        /*position: fixed;*/
+        z-index: 100;
+    }
+
+    .headerLogo {
+        margin: 10px;
+    }
+
+    .headerLogo img {
+        height: 30px;
+    }
+
+    #hamburgerIcon{
+        display: inline;
+        height: 30px;
+        margin: 10px;
+        float: right;
+        /*background-image: url("../img/hamburger.png");*/
+    }
+
+    .navLinks{
+        /*display: none;*/
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .navLinksAnimation{
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        height: auto;
+    }
+
+    .linkBox{
+        display: block;
+        float: none;
+        /*padding-top: 5px;*/
+    }
+
+    #linksRow{
+        text-align: left;
+    }
 }
 
 @media (max-width: 360px){
-  h2{
-    font-size: 25pt;
-  }
+    h2{
+        font-size: 25pt;
+    }
 
-  .jobInfo {
-    padding: 10px;
-  }
+    .jobInfo {
+        padding: 10px;
+    }
 
-  .singleJobButton{
-    font-size: 12px;
-  }
+    .singleJobButton{
+        font-size: 12px;
+    }
 
-  #orangeBG{
-    width: 95%;
-  }
+    #orangeBG{
+        width: 95%;
+    }
 
-  #orangeBG.searchPage{
-    width: 100%;
-  }
+    #orangeBG.searchPage{
+        width: 100%;
+    }
 
-  .searchBar{
-    width: 95%;
-  }
+    .searchBar{
+        width: 95%;
+    }
 
-  .dropdown.searchFilter{
-    font-size: 12px;
-  }
+    .dropdown.searchFilter{
+        font-size: 12px;
+    }
 
-  #searchBarIcon{
-    left: 18px;
-  }
+    #searchBarIcon{
+        left: 18px;
+    }
 
-  .jobSearchForm{
-    width: 75%;
-  }
+    .jobSearchForm{
+        width: 75%;
+    }
 
-  .registerButton{
-    width: 290px;
-    font-size: 1.3em;
-  }
+    .registerButton{
+        width: 290px;
+        font-size: 1.3em;
+    }
 }
 
 .btn-link{
-  color: $accent-color;
+    color: $accent-color;
 }

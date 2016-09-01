@@ -6165,10 +6165,8 @@ h4 {
   margin-bottom: 50px; }
 
 .infoBox {
-  /*position: relative;*/
   padding: 40px;
-  padding-top: 0px;
-  width: 360px;
+  padding-top: 0;
   background-color: #ffeec2;
   /* Safari */
   transition: width 0.3s ease; }
@@ -6176,26 +6174,17 @@ h4 {
 .links {
   padding-top: 20px; }
 
-#userInfo {
-  float: left; }
-
-#companyInfo {
-  float: right; }
-
 .infoTitle {
-  font-family: 'Raleway';
+  font-family: 'Raleway', serif;
   font-size: 32px;
   font-weight: 100;
   text-transform: uppercase;
+  text-align: center;
   padding-top: 25px;
   color: #71CBD9; }
 
 .underlined {
   border-bottom: solid #ff6e3f 2px; }
-
-.infoDescription {
-  text-align: left;
-  padding-top: 15px; }
 
 .registerButton {
   border: 0;
@@ -6206,10 +6195,10 @@ h4 {
   border-radius: 45px;
   padding: 10px 14px;
   height: 45px;
-  width: 330px;
+  width: 90%;
   margin-top: 35px;
-  margin-right: 15px;
-  margin-left: 15px;
+  margin-right: 5%;
+  margin-left: 5%;
   margin-bottom: 8px;
   font-family: 'Raleway', sans-serif;
   font-size: 1.4em;
@@ -6220,17 +6209,11 @@ h4 {
 .registerButton:hover {
   background-color: #FF460A; }
 
-#registerUser {
-  /*float: left;*/ }
-
-#registerCompany {
-  /*float: right;*/ }
-
 .alreadyJoined {
   color: #71CBD9;
   font-size: 1em;
   text-transform: uppercase;
-  margin-top: 2em; }
+  text-align: center; }
 
 .loginLink {
   font-family: 'Roboto', sans-serif;
@@ -6646,14 +6629,8 @@ textarea#description {
 
 @media (max-width: 878px) {
   /* Tablet-ish */
-  .infoBoxes {
-    width: inherit; }
   .infoTitle {
     padding-top: 25px; }
-  #userInfo {
-    float: none; }
-  #companyInfo {
-    float: none; }
   .footerLink {
     padding: 5px;
     display: block; }
@@ -6663,7 +6640,6 @@ textarea#description {
     margin-right: 0;
     margin-left: 0; }
   .registerButtons {
-    /*width: inherit;*/
     padding-top: 20px; }
   #registerCompany {
     float: none; }
@@ -6915,6 +6891,7 @@ textarea#description {
       font-size: 16px;
       text-transform: uppercase; }
   .panel.panel-custom .well-custom {
+    padding-top: 0;
     font-size: 1.1em;
     background: #3a3a3a;
     border: none; }

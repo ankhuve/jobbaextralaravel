@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactFormRequest;
+use App\Page;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -13,7 +14,9 @@ class ContactController extends Controller
 {
     public function create()
     {
-        return view('pages.contact');
+        $page = Page::find(5);
+        $pageContent = $page->content;
+        return view('pages.contact', ['page' => $page, 'content' => $pageContent]);
     }
 
     public function store(ContactFormRequest $request)
