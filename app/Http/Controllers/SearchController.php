@@ -331,11 +331,11 @@ class SearchController extends Controller
 
         // Hämta antal träffar för sökmeta
         $allMatches = Searchy::search('jobs')
-            ->fields('title', 'description')
+            ->fields('title')
             ->query($searchQuery)
             ->getQuery()
-            ->having('relevance', '>', 20)
-            ->orderBy('published_at', 'desc');
+            ->having('relevance', '>', 30)
+            ->orderBy('relevance', 'desc');
 
         $numTotalMatches = count($allMatches->get());
 

@@ -5,8 +5,8 @@
                 <a href="/job/{{ $job->annonsid }}" >
                     <div class="row">
                         <div class="titles col-xs-12">
-                            <h1 class="text-left">{{ $job->arbetsplatsnamn }}</h1>
-                            <h2 class="text-left"><i>{{ $job->annonsrubrik }}</i></h2>
+                            <h1 class="text-left">{{ $job->annonsrubrik }}</h1>
+                            <h2 class="text-left"><i>{{ $job->arbetsplatsnamn }}</i></h2>
                         </div>
                     </div>
                 </a>

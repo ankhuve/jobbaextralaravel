@@ -5731,12 +5731,9 @@ button.close {
     display: none !important; } }
 
 body {
-  background-size: 1920px auto;
   background: #242424 url("../img/jobbaextra_bg_web.jpg") no-repeat center top 120px;
+  background-size: cover;
   font-family: 'Roboto', sans-serif;
-  transition: 0.3s;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
   font-size: 1.4em; }
 
 a {
@@ -6604,19 +6601,9 @@ textarea#description {
 /* #################################################### */
 /* ############## START OF RESPONSIVENESS ############# */
 /* #################################################### */
-@media (max-width: 980px) {
-  nav {
-    height: 130px; }
+@media (max-width: 767px) {
   body {
-    background-position: center top 156px; }
-  .headerLogo {
-    margin: 35px; }
-  .navLinks {
-    position: relative;
-    float: right;
-    width: 250px;
-    top: 0;
-    font-size: 1.2em; }
+    background-position: center top 65px; }
   .linkBox {
     float: left;
     height: auto;
@@ -6696,31 +6683,6 @@ textarea#description {
     font-weight: 400;
     text-transform: uppercase;
     color: #ffeec2; }
-  body {
-    background-position: center top 50px; }
-  nav {
-    height: 50px;
-    /*position: fixed;*/
-    z-index: 100; }
-  .headerLogo {
-    margin: 10px; }
-  .headerLogo img {
-    height: 30px; }
-  #hamburgerIcon {
-    display: inline;
-    height: 30px;
-    margin: 10px;
-    float: right;
-    /*background-image: url("../img/hamburger.png");*/ }
-  .navLinks {
-    /*display: none;*/
-    transition: 0.3s;
-    width: 100%;
-    height: 0;
-    overflow: hidden; }
-  .navLinksAnimation {
-    transition: 0.3s;
-    height: auto; }
   .linkBox {
     display: block;
     float: none;
@@ -7076,51 +7038,109 @@ ul.pagination {
 .m-b-2 {
   margin-bottom: 2rem; }
 
-nav {
-  display: table;
-  width: 100%;
-  background-color: #242424 !important;
-  height: 120px;
-  /* Safari */
-  transition: height 0.3s ease; }
-  nav .headerLogo {
-    float: left;
-    margin: 25px 25px 25px 50px;
-    display: table-cell;
-    /* Safari */
-    transition: margin 0.3s ease; }
-    nav .headerLogo img {
+header .navbar-brand {
+  height: 65px;
+  padding: 15px 0 0 15px; }
+  header .navbar-brand img {
+    width: auto;
+    height: 35px; }
+
+header .navbar-toggle {
+  margin-top: 15px;
+  margin-right: 15px;
+  background: #242424; }
+  header .navbar-toggle .icon-bar {
+    background: #ffeec2; }
+
+nav.navbar-custom {
+  background: #2f2f2f;
+  border: 0;
+  border-radius: 0;
+  min-height: inherit;
+  margin-bottom: 0; }
+  nav.navbar-custom .navbar-collapse {
+    text-align: center; }
+    nav.navbar-custom .navbar-collapse ul.navbar-nav {
+      display: inline-block;
+      float: none;
+      width: 100%; }
+      nav.navbar-custom .navbar-collapse ul.navbar-nav li {
+        margin-left: -15px;
+        margin-right: -15px; }
+        nav.navbar-custom .navbar-collapse ul.navbar-nav li > a {
+          color: #ffeec2;
+          font-size: 1.2em;
+          font-weight: 100;
+          text-transform: uppercase;
+          border-top: 1.5px solid #2f2f2f;
+          transition: background 0.3s, border 0.3s; }
+          nav.navbar-custom .navbar-collapse ul.navbar-nav li > a:hover {
+            color: #ffeec2;
+            background: #242424;
+            border-top-color: #ff6e3f; }
+          nav.navbar-custom .navbar-collapse ul.navbar-nav li > a:focus {
+            color: #ffeec2;
+            background: #242424;
+            border-top-color: #ff6e3f; }
+      nav.navbar-custom .navbar-collapse ul.navbar-nav .dropdown {
+        padding-left: 0;
+        background: inherit;
+        width: auto; }
+        nav.navbar-custom .navbar-collapse ul.navbar-nav .dropdown a {
+          background: #2f2f2f; }
+          nav.navbar-custom .navbar-collapse ul.navbar-nav .dropdown a:focus {
+            background: #2f2f2f; }
+          nav.navbar-custom .navbar-collapse ul.navbar-nav .dropdown a:hover {
+            background: #242424; }
+        nav.navbar-custom .navbar-collapse ul.navbar-nav .dropdown .dropdown-menu {
+          font-size: 0.96em;
+          font-weight: 100;
+          border: none;
+          background: #242424;
+          width: 100%;
+          top: 41px;
+          padding: 0;
+          margin: 0; }
+          nav.navbar-custom .navbar-collapse ul.navbar-nav .dropdown .dropdown-menu a {
+            border: none; }
+            nav.navbar-custom .navbar-collapse ul.navbar-nav .dropdown .dropdown-menu a:hover {
+              background: #242424; }
+
+@media (min-width: 768px) {
+  header .navbar-brand {
+    height: 100px;
+    padding: 25px 0 0 35px; }
+    header .navbar-brand img {
       width: 230px;
       height: auto; }
-  nav .navLinks {
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 1.2em;
-    font-weight: 100;
-    background-color: #2f2f2f;
-    width: 100%;
-    margin-top: 100px;
-    /* Safari */
-    transition: height 0.3s ease; }
-    nav .navLinks ul.nav {
-      color: #ffeec2;
-      text-transform: uppercase;
-      margin: 0; }
-      nav .navLinks ul.nav li {
-        display: inline-block; }
-      nav .navLinks ul.nav a {
-        border-top: solid 1px transparent;
-        padding: 10px 40px;
-        /* Safari */
-        transition: border-top 0.5s ease; }
-      nav .navLinks ul.nav a:hover {
-        border-top: solid 1.5px #ff6e3f;
-        background-color: #242424 !important; }
-      nav .navLinks ul.nav a:focus {
-        background-color: #242424; }
-  nav #hamburgerIcon {
-    display: none;
-    cursor: pointer; }
+  nav.navbar-custom .navbar-collapse ul.navbar-nav {
+    width: auto;
+    display: inline-block;
+    float: none; }
+    nav.navbar-custom .navbar-collapse ul.navbar-nav li {
+      margin-left: 0;
+      margin-right: 0; }
+      nav.navbar-custom .navbar-collapse ul.navbar-nav li > a {
+        padding: 10px 20px;
+        width: auto; } }
+
+@media (min-width: 990px) {
+  nav.navbar-custom .navbar-collapse {
+    width: auto;
+    border-top: 0;
+    box-shadow: none; }
+  nav.navbar-custom .navbar-collapse.collapse {
+    display: block !important;
+    height: 41px !important;
+    padding-bottom: 0;
+    overflow: visible !important; }
+  nav.navbar-custom .navbar-collapse.in {
+    overflow-y: visible; }
+  nav.navbar-custom .navbar-fixed-top .navbar-collapse,
+  nav.navbar-custom .navbar-static-top .navbar-collapse,
+  nav.navbar-custom .navbar-fixed-bottom .navbar-collapse {
+    padding-left: 0;
+    padding-right: 0; } }
 
 .puff {
   border-radius: 3px;

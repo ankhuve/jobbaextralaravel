@@ -1,11 +1,7 @@
 body{
-    background-size: 1920px auto;
     background: #242424 url("../img/jobbaextra_bg_web.jpg") no-repeat center top 120px;
+    background-size: cover;
     font-family: 'Roboto', sans-serif;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
     font-size: 1.4em;
 }
 
@@ -1062,25 +1058,9 @@ textarea#description{
 /* #################################################### */
 
 
-@media (max-width: 980px){
-    nav{
-        height: 130px;
-    }
-
+@media (max-width: 767px){
     body{
-        background-position: center top 156px;
-    }
-
-    .headerLogo{
-        margin: 35px;
-    }
-
-    .navLinks{
-        position: relative;
-        float: right;
-        width: 250px;
-        top: 0;
-        font-size: 1.2em;
+        background-position: center top 65px;
     }
 
     .linkBox{
@@ -1206,47 +1186,6 @@ textarea#description{
         font-weight: 400;
         text-transform: uppercase;
         color: #ffeec2;
-    }
-
-    body {
-        background-position: center top 50px;
-    }
-
-    nav{
-        height: 50px;
-        /*position: fixed;*/
-        z-index: 100;
-    }
-
-    .headerLogo {
-        margin: 10px;
-    }
-
-    .headerLogo img {
-        height: 30px;
-    }
-
-    #hamburgerIcon{
-        display: inline;
-        height: 30px;
-        margin: 10px;
-        float: right;
-        /*background-image: url("../img/hamburger.png");*/
-    }
-
-    .navLinks{
-        /*display: none;*/
-        -webkit-transition: 0.3s;
-        transition: 0.3s;
-        width: 100%;
-        height: 0;
-        overflow: hidden;
-    }
-
-    .navLinksAnimation{
-        -webkit-transition: 0.3s;
-        transition: 0.3s;
-        height: auto;
     }
 
     .linkBox{

@@ -20,6 +20,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,700|Raleway:400' rel='stylesheet' type='text/css'>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -33,35 +34,85 @@
         </script>
     </head>
     <body>
-        <nav>
-            <a class="headerLogo" href="/"><img src="{{ asset('build/img/jobbrek.png') }}"/></a>
-            <img id="hamburgerIcon" src="{{ asset('build/img/thin_burger.png') }}">
-            <div class="navLinks">
-                <ul class="nav">
-                    <li>
-                        <a href="/">Start</a>
-                    </li><li>
-                        <a href="{{ URL::action('SearchController@index') }}">Leta jobb</a>
-                    </li><li>
-                        <a href="{{ URL::action('CompanyController@index') }}">Hitta arbetskraft</a>
-                    </li><li>
-                        <a href="{{ URL::action('FeaturedController@index') }}">Attraktiva arbetsgivare</a>
-                    </li><li>
-                        <a href="{{ URL::action('AboutController@index') }}">Om oss</a>
-                    </li><li>
-                        <a href="{{ URL::action('ContactController@create') }}">Kontakt</a>
-                    </li>@if(Auth::check())<li>
-                            <a href="{{ URL::action('Auth\AuthController@getLogout') }}">Logga ut</a>
-                        </li>
-                    @else<li>
-                            <a href="{{ URL::action('Auth\AuthController@getLogin') }}">Logga in</a>
-                        </li><li>
-                            <a href="{{ URL::action('RegisterController@index') }}">Registrera</a>
-                        </li>
-                    @endif
-                </ul>
-            </div>
 
+        <header class="container-fluid">
+            <a href="{{ action('HomeController@index') }}">
+                <div class="navbar-brand">
+                    <img src="{{ asset('build/img/jobbrek.png') }}"/>
+                </div>
+            </a>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        </header>
+
+        <nav class="navbar navbar-custom">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="{{ action('HomeController@index') }}">
+                                Start
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ URL::action('SearchController@index') }}">
+                                Leta jobb
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ URL::action('CompanyController@index') }}">
+                                Hitta arbetskraft
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ URL::action('FeaturedController@index') }}">
+                                Attraktiva arbetsgivare
+                            </a>
+                        </li>
+                        <li class="visible-xs">
+                            <a href="{{ URL::action('AboutController@index') }}">
+                                Om oss
+                            </a>
+                        </li>
+                        <li class="visible-xs">
+                            <a href="{{ URL::action('ContactController@create') }}">Kontakt</a>
+                        </li>
+                        <li class="dropdown hidden-xs">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Om oss <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ URL::action('AboutController@index') }}">
+                                        Om oss
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ URL::action('ContactController@create') }}">Kontakt</a>
+                                </li>
+                            </ul>
+                        </li>
+                        @if(Auth::check())
+                            <li>
+                                <a href="{{ URL::action('Auth\AuthController@getLogout') }}">Logga ut</a>
+                            </li>
+                        @else
+                            <li>
+                                <a href="{{ URL::action('Auth\AuthController@getLogin') }}">Logga in</a>
+                            </li>
+                            <li>
+                                <a href="{{ URL::action('RegisterController@index') }}">Registrera</a>
+                            </li>
+                        @endif
+                    </ul>
+                </div>
+            </div>
         </nav>
 
         @if (isset($afApiError))
