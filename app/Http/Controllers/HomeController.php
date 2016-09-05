@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Job;
+use App\Page;
 use Carbon\Carbon;
 
 class HomeController extends Controller {
@@ -25,8 +26,11 @@ class HomeController extends Controller {
 	{
 		$numJobs = $this->getTotalNumberOfJobs();
         $newJobs = $this->getNewestJobs();
+
+		$page = Page::find(3);
+		$pageContent = $page->content;
 //        dd($newJobs->all());
-		return view('home', ['newJobs' => $newJobs->all(), 'numJobs' => $numJobs]);
+		return view('home', ['newJobs' => $newJobs->all(), 'numJobs' => $numJobs, 'page' => $page, 'content' => $pageContent]);
 	}
 
     public function getNewestJobs()

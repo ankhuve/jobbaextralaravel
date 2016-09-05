@@ -3,16 +3,16 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Page;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller {
 
 	public function index()
     {
-        $data = [];
-        $data['first'] = "Jobba";
-        $data['last'] = "Extra";
-        return view("pages.about", ['first' => $data['first'], 'last' => $data['last']]);
+        $page = Page::find(4);
+        $pageContent = $page->content;
+        return view("pages.about", ['page' => $page, 'content' => $pageContent]);
     }
 
 }

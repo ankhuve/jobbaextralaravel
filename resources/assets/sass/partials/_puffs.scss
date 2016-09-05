@@ -24,6 +24,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            -ms-word-wrap: break-word;
+            word-wrap: break-word;
 
             .logo-holder{
                 height: 100px;

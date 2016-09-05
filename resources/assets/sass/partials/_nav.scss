@@ -1,62 +1,176 @@
+header{
+    .navbar-brand {
+        height: 65px;
+        padding: 15px 0 0 15px;
+
+        img {
+            width: auto;
+            height: 35px;
+        }
+    }
+
+    .navbar-toggle{
+        margin-top: 15px;
+        margin-right: 15px;
+        background: $bg-color-primary;
+
+        .icon-bar{
+            background: $font-color-primary;
+
+        }
+    }
+}
+
+$nav-font-size: 1.2em;
+$nav-font-weight: 100;
+
 nav{
-    display: table;
-    width: 100%;
-    background-color: #242424 !important;
-    height: 120px;
-    -webkit-transition: height 0.3s ease; /* Safari */
-    transition: height 0.3s ease;
+    &.navbar-custom{
+        background: $nav-bg-color;
+        border: 0;
+        border-radius: 0;
+        min-height: inherit;
+        margin-bottom: 0;
 
-    .headerLogo{
-        float: left;
-        margin: 25px 25px 25px 50px;
-        display: table-cell;
-        -webkit-transition: margin 0.3s ease; /* Safari */
-        transition: margin 0.3s ease;
+        .navbar-collapse {
+            text-align: center;
 
-        img{
-            width: 230px;
-            height: auto;
-        }
-    }
-
-    .navLinks{
-        text-transform: uppercase;
-        text-align: center;
-        font-size: 1.2em;
-        font-weight: 100;
-        background-color: rgb(47,47,47);
-        width: 100%;
-        margin-top: 100px;
-        -webkit-transition: height 0.3s ease; /* Safari */
-        transition: height 0.3s ease;
-
-        ul.nav{
-            color: #ffeec2;
-            text-transform: uppercase;
-            margin: 0;
-
-            li{
+            ul.navbar-nav {
                 display: inline-block;
+                float: none;
+                width: 100%;
+
+                li{
+                    margin-left: -15px;
+                    margin-right: -15px;
+
+                    > a {
+                        color: $font-color-primary;
+                        font-size: $nav-font-size;
+                        font-weight: $nav-font-weight;
+                        text-transform: uppercase;
+                        border-top: 1.5px solid $nav-bg-color;
+                        -webkit-transition: background 0.3s, border 0.3s;
+                        -moz-transition: background 0.3s, border 0.3s;
+                        -ms-transition: background 0.3s, border 0.3s;
+                        -o-transition: background 0.3s, border 0.3s;
+                        transition: background 0.3s, border 0.3s;
+
+                        &:hover {
+                            color: $font-color-primary;
+                            background: $bg-color-primary;
+                            border-top-color: $accent-color;
+                        }
+                        &:focus {
+                            color: $font-color-primary;
+                            background: $bg-color-primary;
+                            border-top-color: $accent-color;
+                        }
+                    }
+                }
+
+                .dropdown{
+                    padding-left: 0;
+                    background: inherit;
+                    width: auto;
+
+                    a{
+                        background: $nav-bg-color;
+                        &:focus{
+                            background: $nav-bg-color;
+                        }
+                        &:hover{
+                            background: $bg-color-primary;
+                        }
+
+                    }
+
+
+                    .dropdown-menu{
+                        font-size: $nav-font-size * 0.8;
+                        font-weight: $nav-font-weight;
+                        border: none;
+                        background: $bg-color-primary;
+                        width: 100%;
+                        top: 41px;
+                        padding: 0;
+                        margin: 0;
+
+                        a{
+                            border: none;
+
+                            &:hover{
+                                background: $bg-color-primary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media (min-width: 768px) {
+    header{
+        .navbar-brand {
+            height: 100px;
+            padding: 25px 0 0 35px;
+
+            img {
+                width: 230px;
+                height: auto;
             }
 
-            a{
-                border-top: solid 1px rgba(0,0,0,0);
-                padding: 10px 40px;
-                -webkit-transition: border-top 0.5s ease; /* Safari */
-                transition: border-top 0.5s ease;
-            }
-            a:hover{
-                border-top: solid 1.5px #ff6e3f;
-                background-color: #242424 !important;
-            }
-            a:focus{
-                background-color: #242424;
-            }
         }
     }
 
-    #hamburgerIcon{
-        display: none;
-        cursor: pointer;
+    nav {
+        &.navbar-custom {
+            .navbar-collapse{
+                ul.navbar-nav {
+                    width: auto;
+                    display: inline-block;
+                    float: none;
+
+                    li {
+
+                        margin-left: 0;
+                        margin-right: 0;
+                        > a {
+                            padding: 10px 20px;
+                            width: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 990px) {
+    nav {
+        &.navbar-custom {
+            .navbar-collapse {
+                width: auto;
+                border-top: 0;
+                box-shadow: none;
+            }
+            .navbar-collapse.collapse {
+                display: block !important;
+                height: 41px !important;
+                padding-bottom: 0;
+                overflow: visible !important;
+            }
+            .navbar-collapse.in {
+                overflow-y: visible;
+            }
+            .navbar-fixed-top .navbar-collapse,
+            .navbar-static-top .navbar-collapse,
+            .navbar-fixed-bottom .navbar-collapse {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
     }
 }

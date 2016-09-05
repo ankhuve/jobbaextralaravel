@@ -10,10 +10,12 @@
 
                     {!! Form::open(['method' => 'POST', 'action' => 'CompanyController@confirm', 'class'=>'form-horizontal']) !!}
 
+
+
                         <div class="form-group">
-                            <label class="col-md-2 control-label">Arbetsplats <span class="required">*</span></label>
+                            <label for="title" class="col-md-2 control-label">Jobbtitel <span class="required">*</span></label>
                             <div class="col-md-9">
-                                {!! Form::text('work_place', Request::get('work_place'), ['class' => 'form-control input-lg']) !!}
+                                {!! Form::input('text', 'title', Request::get('title'), ['class' => 'form-control input-lg', 'placeholder' => 'Kökspersonal på restaurang, telefonförsäljare..']) !!}
                             </div>
                         </div>
 
@@ -54,10 +56,10 @@
                             <div class="col-md-3">
                                 {!! Form::input('text', 'municipality', Request::get('municipality'), ['class' => 'form-control']) !!}
                             </div>
-
-                            <label for="title" class="control-label col-md-2">Jobbtitel <span class="required">*</span></label>
+                            
+                            <label class="control-label col-md-2">Arbetsplats <span class="required">*</span></label>
                             <div class="col-md-4">
-                                {!! Form::input('text', 'title', Request::get('title'), ['class' => 'form-control', 'placeholder' => 'Kökspersonal på restaurang, telefonförsäljare..']) !!}
+                                {!! Form::text('work_place', Request::get('work_place'), ['class' => 'form-control']) !!}
                             </div>
                         </div>
 
