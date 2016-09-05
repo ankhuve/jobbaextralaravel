@@ -121,7 +121,7 @@
                     <div class="alert alert-custom alert-top">
                         <p>
                             <strong>Ajdå!</strong>
-                            Just nu verkar vi har lite problem med att hämta information från Arbetsförmedlingen.
+                            Just nu verkar vi har lite problem med vår sökfunktion. Prova igen om ett litet tag!
                         </p>
                         <div class="hidden">
                             <ul>
