@@ -1,4 +1,4 @@
-<a href="job/{{ $job->id }}">
+<a href="{{ action('JobController@index', $job->id) }}">
     <div class="jobBlock col-md-6">
         <div class="upperInfo">
             <h1 class="text-center">{{ $job->title }}</h1>

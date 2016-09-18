@@ -13,22 +13,28 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('about', 'AboutController@index');
-Route::get('contact', 'ContactController@create');
-Route::post('contact', 'ContactController@store');
-Route::get('featured', 'FeaturedController@index');
-Route::get('featured/{id}', 'FeaturedController@featured');
-Route::get('company', 'CompanyController@index');
-Route::get('company/create', 'CompanyController@show');
-Route::post('company/create', 'CompanyController@create');
-Route::post('company/create/confirm', 'CompanyController@confirm');
-Route::get('register', 'RegisterController@index');
+Route::get('om-oss', 'AboutController@index');
+
+Route::get('kontakt', 'ContactController@create');
+Route::post('kontakt', 'ContactController@store');
+
+Route::get('arbetsgivare', 'FeaturedController@index');
+Route::get('arbetsgivare/{id}', 'FeaturedController@featured');
+
+Route::get('foretag', 'CompanyController@index');
+Route::get('foretag/skapa', 'CompanyController@show');
+Route::post('foretag/skapa', 'CompanyController@create');
+Route::post('foretag/skapa/confirm', 'CompanyController@confirm');
+
+Route::get('registrera', 'RegisterController@index');
 //Route::get('search/{keyword?}', 'SearchController@index');
-Route::get('search', 'SearchController@index');
+Route::get('hitta', 'SearchController@index');
+
 Route::get('getJobInfo/{jobid}', 'JobController@getJob');
-Route::get('job/{id}/{slug}', 'JobController@customJob');
-Route::get('job/{id}', 'JobController@index');
-Route::post('job/{id}/{slug?}/apply', 'JobController@apply');
+Route::get('jobb/{id}/{slug}', 'JobController@customJob');
+Route::get('jobb/{id}', 'JobController@index');
+Route::post('jobb/{id}/{slug?}/apply', 'JobController@apply');
+
 // uncaught route
 Route::get('{any}', function(){
 	return(redirect(URL::action('HomeController@index')));
@@ -43,7 +49,7 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-Route::resource('company', 'CompanyController');
+Route::resource('foretag', 'CompanyController');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

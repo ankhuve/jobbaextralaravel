@@ -32,11 +32,11 @@ class SearchController extends Controller
             $keyword = null;
         }
 
-        // om inte Input::get('page') finns, defaulta till 1
-        if(is_null(Input::get('page')) || Input::get('page') <= 1){
+        // om inte Input::get('sida') finns, defaulta till 1
+        if(is_null(Input::get('sida')) || Input::get('sida') <= 1){
             $askedPage = 1;
         } else{
-            $askedPage = (int)Input::get('page');
+            $askedPage = (int)Input::get('sida');
         }
 
         // hämta våra jobb
@@ -184,12 +184,15 @@ class SearchController extends Controller
 
 
         // Make a paginator to paginate the search results
-        $currPage = Input::get('page') ?: null;
+        $currPage = Input::get('sida') ?: null;
         $paginator = new LengthAwarePaginator($allJobs, $searchMeta['all'], $this->numPerPage, $currPage,
             [
-                'path' => 'search',
+                'path' => 'hitta',
                 'query' => $request->query()
             ]);
+
+//        dd($paginator->setPageName('sida'));
+        $paginator->setPageName('sida');
 
 //        dd($allJobs, $paginator, $searchMeta);
 
@@ -382,7 +385,7 @@ class SearchController extends Controller
         $pageResults = DB::table('jobs')
             ->where('latest_application_date', '>', Carbon::now())
             ->orderBy('published_at', 'desc')
-            ->paginate($this->numPerPage)
+            ->paginate($this->numPerPage, ['*'], $pageName = 'sida')
             ->all();
 
         $numTotalMatches = Job::numActiveJobs();
