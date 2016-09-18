@@ -4,7 +4,7 @@
     <center>
         <div class="searchBar">
             <div id="orangeBG">
-                {!! Form::open(array('url' => 'search', 'method' => 'get')) !!}
+                {!! Form::open(array('url' => action('SearchController@index'), 'method' => 'get')) !!}
                 {!! Form::text('q', null, array('class'=>'jobSearchForm', 'placeholder'=>'Hitta ett jobb', 'autofocus'=>'autofocus')) !!}
                 {!! Form::submit('SÖK', array('class'=>'searchButton')) !!}
                 {!! Form::close() !!}

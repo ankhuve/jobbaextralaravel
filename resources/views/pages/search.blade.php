@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            {!! Form::open(array('url' => 'search', 'method' => 'get', 'id' => 'searchForm')) !!}
+            {!! Form::open(array('url' => action('SearchController@index'), 'method' => 'get', 'id' => 'searchForm')) !!}
             <div class="searchBar searchPage">
                 <div id="orangeBG" class="searchPage">
                     {!! Form::text('q', '', array('class'=>'jobSearchForm searchPage', 'placeholder'=>'Hitta ett jobb',
