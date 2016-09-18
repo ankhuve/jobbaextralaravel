@@ -40,8 +40,8 @@ class SearchController extends Controller
         }
 
         // hämta våra jobb
-        if (!is_null($keyword)) {
-            // om vi har ett sökord
+        if (!is_null($keyword) || Input::get('lan') != "" || Input::get('yrkesomraden') != "") {
+            // om vi har ett sökord eller parametrar
             $customResults = $this->searchCustomJobs($keyword, $request, $askedPage);
         } else {
             // om vi inte har ett sökord i requesten
@@ -329,13 +329,37 @@ class SearchController extends Controller
         // Sets the parameters from the get request to the variables.
         $searchQuery = $keyword;
 
-        // Hämta antal träffar för sökmeta
-        $allMatches = Searchy::search('jobs')
-            ->fields('title')
-            ->query($searchQuery)
-            ->getQuery()
-            ->having('relevance', '>', 30)
-            ->orderBy('relevance', 'desc');
+        if($keyword){
+            // Hämta antal träffar för sökmeta
+            $allMatches = Searchy::search('jobs')
+                ->fields('title')
+                ->query($searchQuery)
+                ->getQuery()
+                ->having('relevance', '>', 30)
+                ->orderBy('relevance', 'desc');
+        } else{
+            $allMatches = Job::query()->orderBy('published_at', 'desc');
+        };
+
+
+        $searchParams = [];
+
+        // filtrera resultaten
+        if(Input::get('lan') != ""){
+            $searchParams['lanid'] = Input::get('lan');
+            // Filtrera på län
+            if(isset($searchParams['lanid'])){
+                $allMatches = $allMatches->where('county', $searchParams['lanid']);
+            }
+        }
+        if(Input::get('yrkesomraden') != ""){
+            $searchParams['yrkesomraden'] = Input::get('yrkesomraden');
+            // Filtrera på arbetstyp
+            if(isset($searchParams['yrkesomraden'])){
+                $allMatches = $allMatches->where('type', $searchParams['yrkesomraden']);
+            }
+        }
+
 
         $numTotalMatches = count($allMatches->get());
 
