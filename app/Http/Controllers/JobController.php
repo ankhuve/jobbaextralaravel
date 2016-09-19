@@ -106,12 +106,15 @@ class JobController extends Controller
         if($slug && $job = Job::find($id)){
             // eget jobb
         } else{
+            $job = null;
             // AF-jobb
         }
 
         // ladda upp CV om vi har något
         if ($request->hasFile('cv')) {
             $fileData = $this->handleCVUpload($request);
+        } else{
+            $fileData = null;
         }
 
         // skicka mail

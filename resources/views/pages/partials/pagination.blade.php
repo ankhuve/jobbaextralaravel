@@ -5,7 +5,7 @@
     {{--</button>--}}
 
     @if($currentPage > 1)
-        <a href="{{ URL::action('SearchController@index', ['q' => Request::get('q'), 'lan' => Request::get('lan'), 'yrkesomraden' => Request::get('yrkesomraden'), 'page' => ($currentPage - 1)]) }}">
+        <a href="{{ action('SearchController@index', ['q' => Request::get('q'), 'lan' => Request::get('lan'), 'yrkesomraden' => Request::get('yrkesomraden'), 'sida' => ($currentPage - 1)]) }}">
     @endif
     <button class="pageSelectorButton prevButton" {{ $currentPage <= 1 ? 'disabled' : '' }}>
         <span class="glyphicon glyphicon-chevron-left"></span>
@@ -18,7 +18,7 @@
     <span class="viewingPageNumber">Sida {{ $currentPage }}</span>
     {{--{{ var_dump(Request::query()) }}--}}
 
-    <a href="{{ URL::action('SearchController@index', ['q' => Request::get('q'), 'lan' => Request::get('lan'), 'yrkesomraden' => Request::get('yrkesomraden'), 'page' => ($currentPage + 1)]) }}">
+    <a href="{{ action('SearchController@index', ['q' => Request::get('q'), 'lan' => Request::get('lan'), 'yrkesomraden' => Request::get('yrkesomraden'), 'sida' => ($currentPage + 1)]) }}">
         <button class="pageSelectorButton nextButton">
             <span class="glyphicon glyphicon-chevron-right"></span>
         </button>

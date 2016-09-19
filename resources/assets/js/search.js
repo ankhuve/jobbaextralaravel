@@ -81,7 +81,7 @@ var getNewJobData = function(){
     enableOrDisablePaginateButtons();
     setCurrentPage();
     $.ajax({
-        url: '/search',
+        url: '/hitta',
         type: 'get',
         data: searchParameters,
         success: function (data) {

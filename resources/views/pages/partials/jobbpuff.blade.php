@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="upperInfo">
-                <a href="/job/{{ $job->annonsid }}" >
+                <a href="{{ action('JobController@index', $job->annonsid) }}" >
                     <div class="row">
                         <div class="titles col-xs-12">
                             <h1 class="text-left">{{ $job->annonsrubrik }}</h1>

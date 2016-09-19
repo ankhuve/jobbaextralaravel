@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="upperInfo bordered">
-                <a href="/job/{{ $job->id }}/{{ str_slug($job->title) }}" >
+                <a href="{{ action('JobController@customJob', [$job->id, str_slug($job->title)]) }}" >
                     <div class="row">
                         <div class="titles {{ \App\User::find($job->user_id)->logo_path ? 'col-xs-8' : 'col-xs-12' }}">
                             <h1 class="text-left">{{ $job->title }}</h1>
