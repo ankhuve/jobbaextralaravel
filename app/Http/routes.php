@@ -25,6 +25,7 @@ Route::get('foretag', 'CompanyController@index');
 Route::get('foretag/skapa', 'CompanyController@show');
 Route::post('foretag/skapa', 'CompanyController@create');
 Route::post('foretag/skapa/confirm', 'CompanyController@confirm');
+Route::post('foretag/skapa/store', 'CompanyController@store');
 
 Route::get('registrera', 'RegisterController@index');
 //Route::get('search/{keyword?}', 'SearchController@index');
@@ -49,7 +50,7 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-Route::resource('foretag', 'CompanyController');
+//Route::resource('foretag', 'CompanyController');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

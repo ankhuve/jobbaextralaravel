@@ -341,7 +341,7 @@ class SearchController extends Controller
                 ->having('relevance', '>', 30)
                 ->orderBy('relevance', 'desc');
         } else{
-            $allMatches = Job::query()->orderBy('published_at', 'desc');
+            $allMatches = Job::query()->where('latest_application_date', '>', Carbon::now())->orderBy('published_at', 'desc');
         };
 
 

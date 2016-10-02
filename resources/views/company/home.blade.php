@@ -29,7 +29,7 @@
                     @endif
                     @if($user->role === 3)
                         <div class="col-md-4 col-md-offset-4">
-                            <a href="{{ url('company/create') }}">
+                            <a href="{{ action('CompanyController@show') }}">
                                 <button class="registerFormSubmitButton col-md-12">
                                     Skapa en annons
                                 </button>

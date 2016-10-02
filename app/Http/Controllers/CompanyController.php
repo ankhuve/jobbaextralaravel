@@ -42,7 +42,7 @@ class CompanyController extends Controller
      * Create a new job ad.
      *
      * @param  array  $data
-     * @return Job
+     * @return Job|\Illuminate\View\View
      */
     public function create(array $data = null)
     {
