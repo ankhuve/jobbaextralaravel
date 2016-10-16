@@ -37,7 +37,7 @@
                                         <div class="col-md-3">
                                             <select name="county" class="form-control">
                                                 <option value=''>Välj ett län..</option>
-                                                <option value='Norge'>Norge</option>
+                                                <option value=155>Norge</option>
                                                 <option value='' disabled>--------</option>
 
                                 @endif

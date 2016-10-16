@@ -21,6 +21,8 @@
                             @elseif($category->soklista->listnamn==='lan')
                                 <select name="{{ $category->soklista->listnamn }}" class="dropdown searchFilter" id="county">
                                     <option class="defaultOption" value=''>Välj ett län..</option>
+                                    <option value=155>Norge</option>
+                                    <option value='' disabled>--------</option>
                             @endif
                             @foreach($category->soklista->sokdata as $option)
                                 <option value={{ $option->id }} label='{{ $option->namn }}'
