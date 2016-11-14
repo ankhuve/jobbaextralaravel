@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\User;
@@ -23,16 +24,18 @@ class AuthController extends Controller {
 	use AuthenticatesAndRegistersUsers;
 
     protected $redirectPath = '/hitta';
+    protected $request;
 
-	/**
-	 * Create a new authentication controller instance.
-	 *
-	 * @param  \Illuminate\Contracts\Auth\Guard  $auth
-	 * @param  \Illuminate\Contracts\Auth\Registrar  $registrar
-	 * @return void
-	 */
-	public function __construct()
+    /**
+     * Create a new authentication controller instance.
+     *
+     * @param Request $request
+     * @internal param \Illuminate\Contracts\Auth\Guard $auth
+     * @internal param \Illuminate\Contracts\Auth\Registrar $registrar
+     */
+	public function __construct(Request $request)
 	{
+        $this->request = $request;
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
 
@@ -48,6 +51,7 @@ class AuthController extends Controller {
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
+            'cv' => 'max:3072|mimes:doc,docx,pdf,rtf,txt',
 //            'role' => 'required|integer|in:1',
         ]);
     }
@@ -60,12 +64,53 @@ class AuthController extends Controller {
      */
     public function create(array $data)
     {
+        // ladda upp CV om vi har något
+        if (array_key_exists('cv', $data)) {
+            $fileName = $this->handleCVUpload($this->request);
+            $data['cv_path'] = $fileName;
+        } else{
+            $data['cv_path'] = null;
+        }
+
         return User::create([
             'email' => $data['email'],
             'name' => $data['name'],
             'role' => 1, // TEMP: sätt registrering till endast användare för tillfället
             'password' => bcrypt($data['password']),
+            'cv_path' => $data['cv_path'],
         ]);
+    }
+
+    /**
+     *
+     * Handle a CV upload request.
+     *
+     * @param Request $request
+     * @return bool
+     * @internal param Request $request
+     */
+    public function handleCVUpload(Request $request)
+    {
+        if ($request->file('cv')->isValid()) {
+
+            $pathToCVFolder = 'user-cvs/';
+
+            // prepare for upload
+            $file = $request->file('cv');
+            $userName = str_slug($request->get('name'));
+            $disk = Storage::disk('s3');
+            $ext = $file->guessExtension();
+            $fileName = $userName . '-' . time() . '-CV.' . $ext;
+
+            // Ladda upp filen
+            $disk->put($pathToCVFolder . $fileName, file_get_contents($file->getRealPath()));
+
+            return $fileName;
+
+        } else{
+            // failed to validate upload, broken file?
+            return null;
+        }
     }
 
     /**

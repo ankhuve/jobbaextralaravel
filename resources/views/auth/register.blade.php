@@ -15,7 +15,7 @@
 
                     @if(empty($user))
 
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             {{--<div class="form-group{{ $errors->has('role') ? ' has-error' : '' }}">--}}
@@ -54,6 +54,19 @@
                                 <div class="col-md-6">
                                     <input type="password" class="form-control" name="password_confirmation">
                                 </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('cv') ? ' has-error' : '' }}">
+                                {!! Form::label('cv', 'CV (.doc, .docx, .pdf, .rtf, .txt, max 3MB)', ['class' => 'control-label col-md-4']) !!}
+
+                                <div class="col-md-6">
+                                    {!! Form::file('cv', array('class'=>'form-control bordered')) !!}
+                                </div>
+                                @if ($errors->has('cv'))
+                                    <span class="help-block">
+                                            <strong>{{ $errors->first('cv') }}</strong>
+                                        </span>
+                                @endif
                             </div>
 
                             <div class="form-group">
