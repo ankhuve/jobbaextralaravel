@@ -31,3 +31,14 @@
         }
     }
 }
+
+.share-buttons{
+    a{
+        display: inline-block;
+        margin: 1rem;
+        > img{
+            height: 50px;
+            width: 50px;
+        }
+    }
+}

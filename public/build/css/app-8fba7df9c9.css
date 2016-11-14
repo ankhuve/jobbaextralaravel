@@ -6835,7 +6835,8 @@ textarea#description {
 
 .panel.panel-custom {
   background: #242424;
-  color: #ffeec2; }
+  color: #ffeec2;
+  border: none; }
   .panel.panel-custom .panel-heading {
     border-bottom: 1.5px solid #ff6e3f;
     text-align: center;
@@ -6898,6 +6899,13 @@ textarea#description {
     background: #55c04d; }
     .btn.btn-confirm:hover {
       background: #3f9f38; }
+
+.share-buttons a {
+  display: inline-block;
+  margin: 1rem; }
+  .share-buttons a > img {
+    height: 50px;
+    width: 50px; }
 
 ul.pagination {
   display: -ms-flexbox;
