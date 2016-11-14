@@ -28,7 +28,7 @@ class ContactController extends Controller
                 'user_message' => $request->get('message')
             ), function($message)
             {
-                $message->from('postmaster@jobbrek.se');
+                $message->from(env('MAIL_USERNAME'));
                 $message->to('info@jobbrek.se', 'Jobbrek.se')->subject('Kontakt via Jobbrek.se');
             });
 
