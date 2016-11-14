@@ -13,17 +13,6 @@
             </div>
         @endif
 
-        @if(Session::has('message'))
-            <div class="row">
-                <div class="col-md-offset-1 col-md-10">
-                    <div class="alert alert-success">
-                        {!! Session::get('message') !!}
-                    </div>
-                </div>
-            </div>
-        @endif
-
-
         <div class="col-md-10 col-md-offset-1 newJobContainer">
             <div class="messageBoxHeading">
                 <a href="{{ URL::previous() }}">

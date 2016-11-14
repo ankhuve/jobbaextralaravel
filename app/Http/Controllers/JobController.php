@@ -96,7 +96,7 @@ class JobController extends Controller
      *
      * @param JobApplicationRequest|Request $request
      * @param $id
-     * @return array
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function apply(JobApplicationRequest $request, $id, $slug = null)
     {
@@ -105,6 +105,8 @@ class JobController extends Controller
         // kolla om det är en AF-annons eller en egen
         if($slug && $job = Job::find($id)){
             // eget jobb
+            $job->application_clicks++;
+            $job->save();
         } else{
             $job = null;
             // AF-jobb
@@ -117,15 +119,20 @@ class JobController extends Controller
             $fileData = null;
         }
 
+
         // skicka mail
-        $mailSent = $this->sendApplicationMail($request, $fileData ?: null, $job ?: null);
-
-
-
-        if($mailSent){
-            return \Redirect::to($jobUrl)
-                ->with('message', 'Tack för din ansökan!');
-        } else{
+        try{
+            $mailSent = $this->sendApplicationMail($request, $fileData ?: null, $job ?: null);
+            if($mailSent){
+                return \Redirect::to($jobUrl)
+                    ->with('message', 'Tack för din ansökan!');
+            } else{
+                return \Redirect::to($jobUrl)
+                    ->with('contactError', 'Hoppsan! Något gick snett när din ansökan skulle skickas. <br><br>Försök igen!')
+                    ->withInput();
+            }
+        }
+        catch(\Exception $e){
             return \Redirect::to($jobUrl)
                 ->with('contactError', 'Hoppsan! Något gick snett när din ansökan skulle skickas. <br><br>Försök igen!')
                 ->withInput();
@@ -144,7 +151,7 @@ class JobController extends Controller
                 'user_message' => $request->get('message')
             ), function($message) use ($attachmentData, $request, $job)
             {
-                $message->from('postmaster@jobbrek.se', 'Jobbrek.se');
+                $message->from(env('MAIL_USERNAME'), 'Jobbrek.se');
 
                 // lägg till annonsens kontaktemail som mottagare
                 $message->to($job ? $job->contact_email : 'info@jobbrek.se', 'Jobbrek.se')->subject('Jobbansökan: ' . $request->get('jobTitle') . ', via Jobbrek.se');
