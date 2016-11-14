@@ -335,7 +335,7 @@ class SearchController extends Controller
         if($keyword){
             // Hämta antal träffar för sökmeta
             $allMatches = Searchy::search('jobs')
-                ->fields('title')
+                ->fields('title', 'work_place')
                 ->query($searchQuery)
                 ->getQuery()
                 ->having('relevance', '>', 30)
