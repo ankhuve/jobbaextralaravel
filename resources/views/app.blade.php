@@ -103,9 +103,9 @@
                                 <a href="{{ URL::action('Auth\AuthController@getLogout') }}">Logga ut</a>
                             </li>
                         @else
-                            <li>
-                                <a href="{{ URL::action('Auth\AuthController@getLogin') }}">Logga in</a>
-                            </li>
+                            {{--<li>--}}
+                                {{--<a href="{{ URL::action('Auth\AuthController@getLogin') }}">Logga in</a>--}}
+                            {{--</li>--}}
                             <li>
                                 <a href="{{ URL::action('RegisterController@index') }}">Registrera</a>
                             </li>
@@ -130,6 +130,16 @@
                                 @endforeach
                             </ul>
                         </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+
+        @if(Session::has('message'))
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 col-xs-12 m-t-2">
+                    <div class="alert alert-success">
+                        {!! Session::get('message') !!}
                     </div>
                 </div>
             </div>
