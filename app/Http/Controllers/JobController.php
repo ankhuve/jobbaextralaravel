@@ -52,11 +52,12 @@ class JobController extends Controller
     public function customJob($jobid, $slug)
     {
         $jobMatch = Job::find($jobid);
+        $jobMatch->page_views++;
+        $jobMatch->save();
         $now = time();
         $date = strtotime($jobMatch->published_at);
         $datediff = (int)(floor(($now - $date)/(60*60*24)));
         return view('pages.customjob', ['jobMatch' => $jobMatch, 'daysSincePublished' => $datediff]);
-
     }
 
 

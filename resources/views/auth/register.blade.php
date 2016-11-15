@@ -19,9 +19,9 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">E-Mail</label>
+                                <label for="email" class="col-md-4 control-label">E-Mail</label>
                                 <div class="col-md-6">
-                                    <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
                                 </div>
                             </div>
 
@@ -33,16 +33,16 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">Lösenord</label>
+                                <label for="password" class="col-md-4 control-label">Lösenord</label>
                                 <div class="col-md-6">
-                                    <input type="password" class="form-control" name="password">
+                                    <input id="password" type="password" class="form-control" name="password">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label">Repetera lösenord</label>
+                                <label for="password_confirmation" class="col-md-4 control-label">Repetera lösenord</label>
                                 <div class="col-md-6">
-                                    <input type="password" class="form-control" name="password_confirmation">
+                                    <input id="password_confirmation" type="password" class="form-control" name="password_confirmation">
                                 </div>
                             </div>
 
@@ -99,40 +99,169 @@
                             <div class="form-group{{ $errors->has('category') ? ' has-error' : '' }} m-b-2">
                                 {!! Form::label('category', 'Yrkesgrupp', ['class' => 'control-label col-md-4']) !!}
 
+                                @if ($errors->has('category'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('category') }}</strong>
+                                    </span>
+                                @endif
+
                                 <div class="col-md-8">
                                     <label class="sr-only" for="job-group">Yrkesgrupp</label>
+
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="category[]" value="1" class="input--large">
+                                            &nbsp;Administration, ekonomi, juridik
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="category[]" value="2" class="input--large">
+                                            &nbsp;Bygg och anläggning
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="category[]" value="20" class="input--large">
+                                            &nbsp;Chefer och verksamhetsledare
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="category[]" value="3" class="input--large">
+                                            &nbsp;Data/IT
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="category[]" value="5" class="input--large">
+                                            &nbsp;Försäljning, inköp, marknadsföring
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="category[]" value="6" class="input--large">
+                                            &nbsp;Hantverksyrken
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="category[]" value="7" class="input--large">
+                                            &nbsp;Hotell, restaurang, storhushåll
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="category[]" value="8" class="input--large">
+                                            &nbsp;Hälso- och sjukvård
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="category[]" value="9" class="input--large">
+                                            &nbsp;Industriell tillverkning
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="category[]" value="10" class="input--large">
+                                            &nbsp;Installation, drift, underhåll
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="category[]" value="4" class="input--large">
+                                            &nbsp;Kropps- och skönhetsvård
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="category[]" value="11" class="input--large">
+                                            &nbsp;Kultur, media, design
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="category[]" value="22" class="input--large">
+                                            &nbsp;Militärt arbete
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="category[]" value="13" class="input--large">
+                                            &nbsp;Naturbruk
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="category[]" value="14" class="input--large">
+                                            &nbsp;Naturvetenskapligt arbete
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="category[]" value="15" class="input--large">
+                                            &nbsp;Pedagogiskt arbete
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="category[]" value="12" class="input--large">
+                                            &nbsp;Sanering och renhållning
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="category[]" value="16" class="input--large">
+                                            &nbsp;Socialt arbete
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="category[]" value="17" class="input--large">
+                                            &nbsp;Säkerhetsarbete
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="category[]" value="18" class="input--large">
+                                            &nbsp;Tekniskt arbete
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="category[]" value="19" class="input--large">
+                                            &nbsp;Transport
+                                        </label>
+                                    </div>
+
 
 
                                     {{--Om vi vill hämta kategorierna direkt från AF--}}
 
-                                    @if (isset($searchOptions[1]))
-                                            <label class="sr-only" for="job-group">Yrkesgrupp</label>
+                                    {{--@if (isset($searchOptions[1]))--}}
+                                    {{--<label class="sr-only" for="job-group">Yrkesgrupp</label>--}}
 
-                                            @foreach($searchOptions[1]->soklista->sokdata as $option)
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="category[]" value="{{ $option->id }}" class="input--large">
-                                                        &nbsp;{{ $option->namn }}
-                                                    </label>
-                                                </div>
-                                            @endforeach
-                                    @endif
+                                    {{--@foreach($searchOptions[1]->soklista->sokdata as $option)--}}
+                                    {{--<div class="checkbox">--}}
+                                    {{--<label>--}}
+                                    {{--<input type="checkbox" name="category[]" value="{{ $option->id }}" class="input--large">--}}
+                                    {{--&nbsp;{{ $option->namn }}--}}
+                                    {{--</label>--}}
+                                    {{--</div>--}}
+                                    {{--@endforeach--}}
+                                    {{--@endif--}}
 
-                                    @if ($errors->has('category'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('category') }}</strong>
-                                        </span>
-                                    @endif
                                 </div>
                             </div>
 
-                                <div class="form-group">
-                                    <div class="col-md-6 col-md-offset-4">
-                                        <button type="submit" class="registerFormSubmitButton col-md-12">
-                                            Registrera
-                                        </button>
-                                    </div>
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <button type="submit" class="registerFormSubmitButton col-md-12">
+                                        Registrera
+                                    </button>
                                 </div>
+                            </div>
                         </form>
                     @endif
                 </div>

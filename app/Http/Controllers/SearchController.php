@@ -17,7 +17,7 @@ use TomLingham\Searchy\Facades\Searchy;
 class SearchController extends Controller
 {
 
-    protected $numPerPage = 10;
+    protected $numPerPage = 16;
 
     public function index(Request $request)
     {
@@ -53,7 +53,7 @@ class SearchController extends Controller
         $totalCustomJobs = $customResults['searchMeta'];
 //        var_dump($totalCustomJobs);
         $offset = $totalCustomJobs % $this->numPerPage;
-        $numToGetFromAF = (10-$offset);
+        $numToGetFromAF = ($this->numPerPage - $offset);
 
         if($offset === 0 && $totalCustomJobs > 0){
             $firstPageWithAFJobs = (int)ceil($totalCustomJobs / $this->numPerPage) + 1;
