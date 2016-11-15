@@ -17,7 +17,7 @@ use TomLingham\Searchy\Facades\Searchy;
 class SearchController extends Controller
 {
 
-    protected $numPerPage = 10;
+    protected $numPerPage = 16;
 
     public function index(Request $request)
     {
@@ -53,7 +53,7 @@ class SearchController extends Controller
         $totalCustomJobs = $customResults['searchMeta'];
 //        var_dump($totalCustomJobs);
         $offset = $totalCustomJobs % $this->numPerPage;
-        $numToGetFromAF = (10-$offset);
+        $numToGetFromAF = ($this->numPerPage - $offset);
 
         if($offset === 0 && $totalCustomJobs > 0){
             $firstPageWithAFJobs = (int)ceil($totalCustomJobs / $this->numPerPage) + 1;
@@ -335,7 +335,7 @@ class SearchController extends Controller
         if($keyword){
             // Hämta antal träffar för sökmeta
             $allMatches = Searchy::search('jobs')
-                ->fields('title')
+                ->fields('title', 'work_place')
                 ->query($searchQuery)
                 ->getQuery()
                 ->having('relevance', '>', 30)

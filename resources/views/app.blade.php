@@ -4,11 +4,18 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" minimal-ui>
-        <meta name="description" content="Jobbrek.se | Lediga jobb inom skola, sjukvård, IT, m.m." />
+        <meta name="description" content="@yield('meta-description', 'Jobbrek.se | Lediga jobb inom skola, sjukvård, IT, m.m.')" />
         <meta name="keywords" content="Lediga jobb, jobb, skola, sjukvård, IT, jobbrek, extrajobb, deltidsjobb, jobba extra" />
         <meta name="_token" content="{!! csrf_token() !!}"/>
 
-        <title>Jobbrek | Lediga jobb i Sverige och Norge</title>
+        <meta property="og:title" content="@yield('og-title', 'Jobbrek.se | Lediga jobb inom skola, sjukvård, IT, m.m.')" />
+        <meta property="og:description" content="@yield('og-description', 'Här kan du söka bland tusentals jobb! Oavsett om du är nyutexaminerad eller helt enkelt vill vidare i karriären kan vi hjälpa dig att hitta rätt. Vi jobbar rikstäckande och hjälper allt i från enskilda firmor till stora koncerner, kommuner och myndigheter med att hitta rätt personal. ')" />
+        {{--Använd om man vill ha företagets logga för annons (kan bli konstiga proportioner)--}}
+        {{--    <meta property="og:image" content="@yield('og-image', asset('img/jobbrek-og.png'))" />--}}
+        <meta property="og:image" content={{ asset('img/jobbrek-og.png') }} />
+        <meta property="og:url" content={{ URL::current() }} />
+
+        <title>@yield('title', env('APP_NAME', 'Jobbrek | Lediga jobb i Sverige och Norge'))</title>
         {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">--}}
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -103,9 +110,9 @@
                                 <a href="{{ URL::action('Auth\AuthController@getLogout') }}">Logga ut</a>
                             </li>
                         @else
-                            <li>
-                                <a href="{{ URL::action('Auth\AuthController@getLogin') }}">Logga in</a>
-                            </li>
+                            {{--<li>--}}
+                                {{--<a href="{{ URL::action('Auth\AuthController@getLogin') }}">Logga in</a>--}}
+                            {{--</li>--}}
                             <li>
                                 <a href="{{ URL::action('RegisterController@index') }}">Registrera</a>
                             </li>
@@ -130,6 +137,16 @@
                                 @endforeach
                             </ul>
                         </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+
+        @if(Session::has('message'))
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 col-xs-12 m-t-2">
+                    <div class="alert alert-success">
+                        {!! Session::get('message') !!}
                     </div>
                 </div>
             </div>
