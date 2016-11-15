@@ -52,7 +52,8 @@ class AuthController extends Controller {
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
             'cv' => 'max:3072|mimes:doc,docx,pdf,rtf,txt',
-//            'role' => 'required|integer|in:1',
+            'lan' => 'required|numeric',
+            'category' => 'required|min:1'
         ]);
     }
 
@@ -78,6 +79,8 @@ class AuthController extends Controller {
             'role' => 1, // TEMP: sätt registrering till endast användare för tillfället
             'password' => bcrypt($data['password']),
             'cv_path' => $data['cv_path'],
+            'county' => $data['lan'],
+            'categories' => json_encode($data['category'])
         ]);
     }
 
