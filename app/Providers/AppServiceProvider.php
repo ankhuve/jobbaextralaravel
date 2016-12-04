@@ -3,6 +3,7 @@
 use GuzzleHttp\Exception\ServerException;
 use Illuminate\Support\ServiceProvider;
 use GuzzleHttp\Client;
+use stdClass;
 
 class AppServiceProvider extends ServiceProvider {
 
@@ -33,12 +34,16 @@ class AppServiceProvider extends ServiceProvider {
 				]
 			])->getBody()->getContents();
 			$results = json_decode($results);
+
+            $results->soklista->sokdata = $this->addCustomJobTypes($results->soklista->sokdata);
+
 			array_push($searchOptions, $results);
 			view()->share('searchOptions', $searchOptions);
 		} catch(\Exception $e){
 			view()->share('afApiError', $e);
 		}
 	}
+
 
 	/**
 	 * Register any application services.
@@ -56,5 +61,27 @@ class AppServiceProvider extends ServiceProvider {
 			'App\Services\Registrar'
 		);
 	}
+
+    private function addCustomJobTypes(array $afJobTypesArray)
+    {
+        $customJobTypes = array();
+
+        // Övrigt
+        $type = new stdClass();
+        $type->id = '9000';
+        $type->namn = 'Övrigt';
+        array_push($customJobTypes, $type);
+
+        // Add all the custom job types
+        foreach ($customJobTypes as $type){
+            array_push($afJobTypesArray, $type);
+        }
+
+        $afJobTypesArray = array_values(array_sort($afJobTypesArray, function ($value) {
+            return $value->namn;
+        }));
+
+        return $afJobTypesArray;
+    }
 
 }
