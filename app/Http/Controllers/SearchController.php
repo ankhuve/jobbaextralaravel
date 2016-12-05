@@ -175,6 +175,9 @@ class SearchController extends Controller
         if(isset($afSearchMeta)){
             $searchMeta['afJobs'] = $afSearchMeta['antal_platsannonser'];
             $searchMeta['all'] += isset($searchMeta['afJobs']) ? $searchMeta['afJobs'] : 0;
+        } else if(!isset($afSearchMeta) && Input::get('yrkesomraden') != "") {
+            // om vi gjort en sökning med en custom yrkesgrupp som då inte returnerar någon $afSearchMeta
+            // vi behöver inte göra något här
         } else{
             $numberOfAfJobs = $this->getNumberOfAfJobs($keyword);
             $searchMeta['afJobs'] = $numberOfAfJobs;
