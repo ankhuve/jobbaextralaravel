@@ -44,7 +44,7 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
-                                <a href="{{ URL::action('RegisterController@index') }}"><button class="registerButton" >Skapa din profil</button></a>
+                                <a href="{{ $key === 0 ? URL::action('RegisterController@index') : URL::action('CompanyController@index')  }}"><button class="registerButton" >Skapa din profil</button></a>
                                 <br/>
                                 <div class="alreadyJoined">Redan medlem? <a class="loginLink" href="auth/login">Logga in!</a></div>
                             </div>

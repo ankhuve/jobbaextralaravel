@@ -34,7 +34,7 @@ class CompanyController extends Controller
                 return view('company.home', compact('user'));
             }
         } else{
-            return view('auth.register')->with(['user' => $user]);
+            return view('auth.registercompany')->with(['user' => $user]);
         }
     }
 
