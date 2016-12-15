@@ -13,11 +13,6 @@
                 </div>
 
                 <div class="panel-body">
-                    @if(Session::has('message'))
-                        <div class="alert alert-success">
-                            {{Session::get('message')}}
-                        </div>
-                    @endif
                     <div class="well well-custom">
                         <p style="white-space: pre-line">
                             {{ $block->content }}
