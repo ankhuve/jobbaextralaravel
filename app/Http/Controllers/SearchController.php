@@ -17,7 +17,7 @@ use TomLingham\Searchy\Facades\Searchy;
 class SearchController extends Controller
 {
 
-    protected $numPerPage = 16;
+    protected $numPerPage = 20;
 
     public function index(Request $request)
     {
