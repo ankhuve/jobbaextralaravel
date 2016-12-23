@@ -12,7 +12,7 @@
         <meta property="og:description" content="@yield('og-description', 'Här kan du söka bland tusentals jobb! Oavsett om du är nyutexaminerad eller helt enkelt vill vidare i karriären kan vi hjälpa dig att hitta rätt. Vi jobbar rikstäckande och hjälper allt i från enskilda firmor till stora koncerner, kommuner och myndigheter med att hitta rätt personal. ')" />
         {{--Använd om man vill ha företagets logga för annons (kan bli konstiga proportioner)--}}
         {{--    <meta property="og:image" content="@yield('og-image', asset('img/jobbrek-og.png'))" />--}}
-        <meta property="og:image" content={{ asset('img/jobbrek-og.png') }} />
+        <meta property="og:image" content={{ asset('build/img/jobbrek-og.png') }} />
         <meta property="og:url" content={{ URL::current() }} />
 
         <title>@yield('title', env('APP_NAME', 'Jobbrek | Lediga jobb i Sverige och Norge'))</title>
