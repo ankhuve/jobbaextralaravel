@@ -10,9 +10,9 @@ use App\User;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
 use Mail;
-use Storage;
 
 class JobController extends Controller
 {
@@ -34,12 +34,20 @@ class JobController extends Controller
     public function index($jobid)
     {
         $jobMatch = $this->getJob($jobid);
+
         $now = time();
         $date = strtotime($jobMatch->annons->publiceraddatum);
         $datediff = (int)(floor(($now - $date)/(60*60*24)));
         return view('pages.job', ['jobMatch' => $jobMatch, 'daysSincePublished' => $datediff]);
     }
 
+
+    public function checkOgImageSize($logo) {
+        $minHeight = 200;
+        $minWidth = 200;
+        list($width, $height) = getimagesize($logo);
+        return ( ($width >= $minWidth) && ($height >= $minHeight) );
+    }
 
     /**
      *
@@ -52,12 +60,20 @@ class JobController extends Controller
     public function customJob($jobid, $slug)
     {
         $jobMatch = Job::find($jobid);
+
+        // decide if we're going to use a custom logo for og-image tag
+        $customOgImage = ($jobMatch->user->logo_accepted_as_og_image && $jobMatch->user->logo_path) ?: false;
+
+        // increment page views
         $jobMatch->page_views++;
         $jobMatch->save();
+
+        // calculate days since published
         $now = time();
         $date = strtotime($jobMatch->published_at);
         $datediff = (int)(floor(($now - $date)/(60*60*24)));
-        return view('pages.customjob', ['jobMatch' => $jobMatch, 'daysSincePublished' => $datediff]);
+
+        return view('pages.customjob', ['jobMatch' => $jobMatch, 'daysSincePublished' => $datediff, 'customOgImage' => $customOgImage]);
     }
 
 
