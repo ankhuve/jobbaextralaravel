@@ -5,7 +5,7 @@
 
 @section('og-title', $jobMatch->title)
 @section('og-description', (strlen(strip_tags($jobMatch->description))<200) ? strip_tags($jobMatch->description) : substr(strip_tags($jobMatch->description), 0, 200)." ...")
-@section('og-image', $jobMatch->user->logo_path ? env("UPLOADS_URL") . "/" . $jobMatch->user->logo_path : asset('build/img/jobbrek-og.png'))
+@section('og-image', $customOgImage ? env("UPLOADS_URL") . "/" . $jobMatch->user->logo_path : asset('build/img/jobbrek-og.png'))
 
 @section('content')
     <div class="container">
