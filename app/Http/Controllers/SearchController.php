@@ -344,7 +344,7 @@ class SearchController extends Controller
                 ->having('relevance', '>', 30)
                 ->orderBy('relevance', 'desc');
         } else{
-            $allMatches = Job::query()->where('latest_application_date', '>', Carbon::now())->orderBy('published_at', 'desc');
+            $allMatches = Job::query()->where('latest_application_date', '>=', Carbon::today()->toDateString())->orderBy('published_at', 'desc');
         };
 
 
@@ -366,8 +366,10 @@ class SearchController extends Controller
             }
         }
 
+        // Filtrera bort jobb som haft sin sista ansökan
+        $activeMatches = $allMatches->where('latest_application_date', '>=', Carbon::today()->toDateString());
 
-        $numTotalMatches = count($allMatches->get());
+        $numTotalMatches = count($activeMatches->get());
 
         // Hämta träffarna för sidan
         $pageResults = $allMatches
@@ -386,7 +388,7 @@ class SearchController extends Controller
     public function getNewestCustomJobs()
     {
         $pageResults = DB::table('jobs')
-            ->where('latest_application_date', '>', Carbon::now())
+            ->where('latest_application_date', '>=', Carbon::today()->toDateString())
             ->orderBy('published_at', 'desc')
             ->paginate($this->numPerPage, ['*'], $pageName = 'sida')
             ->all();

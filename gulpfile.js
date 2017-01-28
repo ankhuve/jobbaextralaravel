@@ -54,7 +54,8 @@ elixir(function(mix) {
     mix.sass('app.scss')
         .browserify('search.js')
         .browserSync({
-            proxy: 'jobbaextra.app'
+            proxy: 'jobbrek.app',
+            port: 5002
         });
 
     mix.version(['css/app.css', 'js/search.js']);
