@@ -24,5 +24,22 @@
                 </div>
             </div>
         </div>
+
+        @if (isset($jobs))
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="latestJobs">
+                        <div id="jobsTitle">
+                            <h3 class="infoTitle underlined">Våra senaste jobb</h3>
+                        </div>
+                        @foreach($jobs as $job)
+                            @include('pages.partials.jobbaextrapuff')
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        @endif
     </div>
+
+
 @endsection

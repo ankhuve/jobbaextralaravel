@@ -1,5 +1,6 @@
 <?php namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -45,6 +46,15 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasMany('App\Job');
     }
 
+    /**
+     * Get the active jobs, if the user has any
+     *
+     * @return mixed
+     */
+    public function activeJobs()
+    {
+        return $this->jobs()->where('latest_application_date', '>=', Carbon::today()->toDateString());
+    }
 
 	/**
 	 *
