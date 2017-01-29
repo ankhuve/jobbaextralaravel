@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\FeaturedCompany;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -29,7 +30,17 @@ class FeaturedController extends Controller
      */
     public function featured($id)
     {
-        $featured = FeaturedCompany::find($id);
-        return view('pages.featured.singlefeatured', compact('featured'));
+        $featured = FeaturedCompany::where('id', '=', $id)
+            ->where('end_date', '>=', Carbon::now())
+            ->first();
+
+        if(collect($featured)->isEmpty()){
+            return redirect('home');
+        } else{
+            // Hämta företagets jobbannonser
+            $jobs = $featured->user->activeJobs()->get();
+
+            return view('pages.featured.singlefeatured', compact('featured', !$jobs->isEmpty() ? 'jobs' : ''));
+        }
     }
 }

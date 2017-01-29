@@ -10,7 +10,7 @@
                     <div class="messageBoxHeading">Registrera ny användare</div>
                 @endif
                 <div class="panel-body">
-                    @include('errors.wrongusertype')
+                    {{--@include('errors.wrongusertype')--}}
                     @include('errors.validation')
 
                     @if(empty($user))
