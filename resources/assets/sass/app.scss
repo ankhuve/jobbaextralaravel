@@ -1,11 +1,17 @@
 $icon-font-path: "../fonts/";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Flickity
+@import "node_modules/flickity/dist/flickity";
+
 @import "partials/colors";
 @import "style";
 @import "partials/search-page";
 @import "partials/company";
 @import "partials/job-block";
+@import "partials/profiled-job-block";
 @import "partials/job";
+@import "partials/slider-jobs";
 @import "partials/panel";
 @import "partials/alert";
 @import "partials/buttons";

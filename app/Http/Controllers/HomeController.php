@@ -2,6 +2,7 @@
 
 use App\Job;
 use App\Page;
+use App\ProfiledJob;
 use Carbon\Carbon;
 
 class HomeController extends Controller {
@@ -22,29 +23,34 @@ class HomeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
-	{
-		$numJobs = $this->getTotalNumberOfJobs();
+    public function index()
+    {
+        $numJobs = $this->getTotalNumberOfJobs();
         $newJobs = $this->getNewestJobs();
+        $profiledJobs = $this->getProfiledJobs();
 
-		$page = Page::find(3);
-		$pageContent = $page->content;
-//        dd($newJobs->all());
-		return view('home', ['newJobs' => $newJobs->all(), 'numJobs' => $numJobs, 'page' => $page, 'content' => $pageContent]);
-	}
+        $page = Page::find(3);
+        $pageContent = $page->content;
+
+        return view('home', ['newJobs' => $newJobs->all(), 'numJobs' => $numJobs, 'page' => $page, 'content' => $pageContent, 'profiledJobs' => $profiledJobs]);
+    }
 
     public function getNewestJobs()
     {
         $data = Job::all()->sortByDesc('published_at')->take(2);
-//        dd($data);
         return $data;
     }
 
-	public function getTotalNumberOfJobs()
-	{
-		$numOfAFJobs = SearchController::getNumberOfAfJobs();
-		$numCustomJobs = Job::where('latest_application_date', '>', Carbon::now())->count();
-		return $numOfAFJobs + $numCustomJobs;
-	}
+    public function getProfiledJobs()
+    {
+        $data = ProfiledJob::where('end_date', '>', Carbon::now())->get()->sortByDesc('start_date');
+        return $data;
+    }
 
+    public function getTotalNumberOfJobs()
+    {
+        $numOfAFJobs = SearchController::getNumberOfAfJobs();
+        $numCustomJobs = Job::where('latest_application_date', '>', Carbon::now())->count();
+        return $numOfAFJobs + $numCustomJobs;
+    }
 }

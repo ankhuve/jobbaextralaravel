@@ -30,6 +30,12 @@
             background: $success-color-dark;
         }
     }
+
+    &.btn-sm{
+        width: auto;
+        height: auto;
+        padding: 0.5rem 1rem;
+    }
 }
 
 .share-buttons{
