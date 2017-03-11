@@ -29,6 +29,16 @@
     </center>
 
     <div class="container m-t-2">
+        <div class="col-xs-12">
+            <div class="row">
+                @if (!$profiledJobs->isEmpty())
+                    @include('pages.partials.profiled-jobs')
+                @endif
+            </div>
+        </div>
+    </div>
+
+    <div class="container m-t-2">
         <div class="row m-t-2">
 
             @foreach($content as $key => $block)

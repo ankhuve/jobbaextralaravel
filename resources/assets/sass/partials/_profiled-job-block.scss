@@ -1,0 +1,127 @@
+.block--profiled-job{
+    margin: 15px 0;
+    height: 200px;
+
+    .block__tag--top{
+        background: $accent-color-dark;
+        color: #fff;
+        padding: 0 2rem 0 2rem;
+        border-top-right-radius: 5rem;
+        border-top-left-radius: 5rem;
+        text-align: center;
+    }
+
+    .block__title{
+        word-wrap: break-word;
+        max-height: 60px;
+        overflow: hidden;
+        color: #fff;
+
+        h2{
+            font-size: 1.6rem;
+            line-height: 1.8rem;
+            margin-top: 0.8rem;
+            color: #fff;
+            margin-bottom: 0;
+        }
+    }
+
+    .logo{
+        height: 100%;
+        width: 100%;
+        padding: 1rem 2rem;
+
+        .logo-img{
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: no-repeat center center;
+            background-size: contain;
+        }
+    }
+
+    .icon--small{
+        height: 15px;
+        width: auto;
+        margin-right: 0.8rem;
+    }
+
+    .block__upper{
+        position: relative;
+        height: 50%;
+        background: #fff;
+    }
+
+    .block__lower{
+        position: relative;
+        height: 50%;
+        background: $nav-bg-color;
+        padding: 0 1rem 0;
+        width: 100%;
+        box-shadow: inset 0 15px 15px -14px rgba(0,0,0,0.4);
+
+
+        .block__bottom-info--left{
+            width: 90%;
+            position: absolute;
+            left: auto;
+            bottom: 1.2rem;
+            right: 1.2rem;
+            text-align: right;
+        }
+        .block__bottom-info--right{
+            width: 90%;
+            position: absolute;
+            left: auto;
+            bottom: 3.2rem;
+            right: 1.2rem;
+            text-align: right;
+        }
+
+        @media (min-width: $screen-xs) {
+            .block__bottom-info--left{
+                width: auto;
+                position: absolute;
+                left: 2rem;
+                right: auto;
+                bottom: 1.5rem;
+                text-align: left;
+            }
+            .block__bottom-info--right{
+                width: auto;
+                position: absolute;
+                right: 2rem;
+                bottom: 1.5rem;
+                text-align: left;
+            }
+        }
+    }
+
+    @media (min-width: $screen-xs) {
+        .block__lower{
+            padding: 0 2rem 0;
+
+            .block__title > h2{
+                font-size: 1.9rem;
+                line-height: normal;
+            }
+        }
+
+        .block__title{
+            word-wrap: break-word;
+            max-height: 60px;
+            overflow: hidden;
+            color: #fff;
+
+            h2{
+                font-size: 1.6rem;
+                text-transform: none;
+
+                line-height: 1.8rem;
+                color: #fff;
+            }
+        }
+    }
+}
+
