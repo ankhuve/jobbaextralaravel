@@ -7138,6 +7138,10 @@ textarea#description {
     width: auto;
     height: auto;
     padding: 0.5rem 1rem; }
+  .btn.btn-primary {
+    background: #ff6e3f; }
+    .btn.btn-primary:hover {
+      background: #d45d36; }
 
 .share-buttons a {
   display: inline-block;
