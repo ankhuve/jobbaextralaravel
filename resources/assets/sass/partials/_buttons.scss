@@ -36,6 +36,14 @@
         height: auto;
         padding: 0.5rem 1rem;
     }
+
+    &.btn-primary{
+        background: $accent-color;
+
+        &:hover{
+            background: $accent-color-dark;
+        }
+    }
 }
 
 .share-buttons{
