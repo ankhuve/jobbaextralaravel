@@ -38,8 +38,8 @@
         </div>
     </div>
 
-    <div class="container m-t-2">
-        <div class="row m-t-2">
+    <div class="container m-t-2 m-b-2">
+        <div class="row m-t-2 m-b-2">
 
             @foreach($content as $key => $block)
                 <div class="col-md-5 col-lg-4 {{ $key === 0 ? 'col-md-offset-1 col-lg-offset-2' : '' }}">
@@ -66,18 +66,18 @@
         </div>
 
 
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="latestJobs">
-                    <div id="jobsTitle">
-                        <h3 class="infoTitle underlined">Våra senaste jobb</h3>
-                    </div>
-                    @foreach($newJobs as $job)
-                        @include('pages.partials.jobbaextrapuff')
-                    @endforeach
-                </div>
-            </div>
-        </div>
+        {{--<div class="row">--}}
+            {{--<div class="col-xs-12">--}}
+                {{--<div class="latestJobs">--}}
+                    {{--<div id="jobsTitle">--}}
+                        {{--<h3 class="infoTitle underlined">Våra senaste jobb</h3>--}}
+                    {{--</div>--}}
+                    {{--@foreach($newJobs as $job)--}}
+                        {{--@include('pages.partials.jobbaextrapuff')--}}
+                    {{--@endforeach--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
     </div>
 
 @endsection
