@@ -26,13 +26,18 @@ class HomeController extends Controller {
     public function index()
     {
         $numJobs = $this->getTotalNumberOfJobs();
-        $newJobs = $this->getNewestJobs();
+//        $newJobs = $this->getNewestJobs();
         $profiledJobs = $this->getProfiledJobs();
 
         $page = Page::find(3);
         $pageContent = $page->content;
 
-        return view('home', ['newJobs' => $newJobs->all(), 'numJobs' => $numJobs, 'page' => $page, 'content' => $pageContent, 'profiledJobs' => $profiledJobs]);
+        return view('home', [
+//            'newJobs' => $newJobs->all(),
+            'numJobs' => $numJobs,
+            'page' => $page,
+            'content' => $pageContent,
+            'profiledJobs' => $profiledJobs]);
     }
 
     public function getNewestJobs()
