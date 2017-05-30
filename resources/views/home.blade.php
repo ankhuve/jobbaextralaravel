@@ -40,44 +40,31 @@
 
     <div class="container m-t-2 m-b-2">
         <div class="row m-t-2 m-b-2">
-
-            @foreach($content as $key => $block)
-                <div class="col-md-5 col-lg-4 {{ $key === 0 ? 'col-md-offset-1 col-lg-offset-2' : '' }}">
-                    <div class="boxAndButton" id="userInfo">
-                        <div class="infoBox" >
-                            <div id="infoBoxTitle">
-                                <h3 class="infoTitle"><span class="underlined">{{ $block->title }}</span>?</h3>
+            @if(!is_null($content))
+                @foreach($content as $key => $block)
+                    <div class="col-md-5 col-lg-4 {{ $key === 0 ? 'col-md-offset-1 col-lg-offset-2' : '' }}">
+                        <div class="boxAndButton" id="userInfo">
+                            <div class="infoBox" >
+                                <div id="infoBoxTitle">
+                                    <h3 class="infoTitle"><span class="underlined">{{ $block->title }}</span>?</h3>
+                                </div>
+                                <p style="white-space: pre-line">
+                                    {{ $block->content }}
+                                </p>
                             </div>
-                            <p style="white-space: pre-line">
-                                {{ $block->content }}
-                            </p>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <a href="{{ $key === 0 ? URL::action('RegisterController@index') : URL::action('CompanyController@index')  }}"><button class="registerButton" >Skapa din profil</button></a>
-                                <br/>
-                                <div class="alreadyJoined">Redan medlem? <a class="loginLink" href="auth/login">Logga in!</a></div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <a href="{{ $key === 0 ? URL::action('RegisterController@index') : URL::action('CompanyController@index')  }}"><button class="registerButton" >Skapa din profil</button></a>
+                                    <br/>
+                                    <div class="alreadyJoined">Redan medlem? <a class="loginLink" href="auth/login">Logga in!</a></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
-
+                @endforeach
+            @endif
         </div>
 
-
-        {{--<div class="row">--}}
-            {{--<div class="col-xs-12">--}}
-                {{--<div class="latestJobs">--}}
-                    {{--<div id="jobsTitle">--}}
-                        {{--<h3 class="infoTitle underlined">Våra senaste jobb</h3>--}}
-                    {{--</div>--}}
-                    {{--@foreach($newJobs as $job)--}}
-                        {{--@include('pages.partials.jobbaextrapuff')--}}
-                    {{--@endforeach--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
     </div>
 
 @endsection

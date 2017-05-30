@@ -10,9 +10,13 @@ class AboutController extends Controller {
 
 	public function index()
     {
-        $page = Page::find(4);
-        $pageContent = $page->content;
-        return view("pages.about", ['page' => $page, 'content' => $pageContent]);
+        if($page = Page::find(4)){
+            $pageContent = $page->content;
+            return view("pages.about", ['page' => $page, 'content' => $pageContent]);
+        }
+        else{
+            return view("pages.about", ['page' => null, 'content' => null]);
+        }
     }
 
 }

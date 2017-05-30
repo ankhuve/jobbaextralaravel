@@ -35,6 +35,7 @@ Route::get('getJobInfo/{jobid}', 'JobController@getJob');
 Route::get('jobb/{id}/{slug}', 'JobController@customJob');
 Route::get('jobb/{id}', 'JobController@index');
 Route::post('jobb/{id}/{slug?}/apply', 'JobController@apply');
+Route::get('ansok/{id}', 'JobController@redirectToApplicationURL');
 
 // uncaught route
 Route::get('{any}', function(){

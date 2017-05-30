@@ -76,7 +76,7 @@
                         @if(empty($jobMatch->external_link))
                             <button class="btn btn-confirm" data-action="contactForm">Ansök</button>
                         @else
-                            <a target="_blank" href="{{ $jobMatch->external_link }}">
+                            <a target="_blank" href="{{ env('APP_URL') }}/ansok/{{ $jobMatch->id }}">
                                 <button class="btn btn-confirm">Ansök</button>
                             </a>
                         @endif
