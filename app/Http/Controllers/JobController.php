@@ -41,6 +41,20 @@ class JobController extends Controller
         return view('pages.job', ['jobMatch' => $jobMatch, 'daysSincePublished' => $datediff]);
     }
 
+    public function redirectToApplicationURL($jobid)
+    {
+        // kolla om annonsen finns i vår databas
+        if($job = Job::find($jobid)){
+            // eget jobb
+            $job->application_clicks++;
+            $job->save();
+
+            return redirect()->away($job->external_link);
+        } else{
+            return redirect('/');
+        }
+
+    }
 
     public function checkOgImageSize($logo) {
         $minHeight = 200;

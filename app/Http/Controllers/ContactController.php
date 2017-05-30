@@ -14,9 +14,13 @@ class ContactController extends Controller
 {
     public function create()
     {
-        $page = Page::find(5);
-        $pageContent = $page->content;
-        return view('pages.contact', ['page' => $page, 'content' => $pageContent]);
+        if($page = Page::find(5)){
+            $pageContent = $page->content;
+            return view("pages.contact", ['page' => $page, 'content' => $pageContent]);
+        }
+        else{
+            return view("pages.contact", ['page' => null, 'content' => null]);
+        }
     }
 
     public function store(ContactFormRequest $request)
