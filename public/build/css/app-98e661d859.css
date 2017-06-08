@@ -5730,7 +5730,7 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-/*! Flickity v2.0.5
+/*! Flickity v2.0.8
 http://flickity.metafizzy.co
 ---------------------------------------------- */
 .flickity-enabled {
@@ -7493,5 +7493,52 @@ nav.navbar-custom {
       display: inline-block;
       margin: 0;
       text-shadow: 1px 1px 3px #000; }
+
+.footer {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background: #242424; }
+  .footer li {
+    padding-left: 0;
+    list-style: none;
+    line-height: 2.5rem;
+    color: #a7a897; }
+    .footer li.footer-title {
+      color: #ff6e3f;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 3rem; }
+    .footer li.social {
+      margin-bottom: 2rem; }
+      .footer li.social > a img {
+        height: 38px;
+        margin-right: 1.5rem; }
+  .footer .footer-logos li {
+    height: 20px;
+    width: 100%;
+    line-height: 30px;
+    margin-bottom: 2rem; }
+    .footer .footer-logos li:first-of-type {
+      height: 35px;
+      line-height: 45px; }
+    .footer .footer-logos li > a, .footer .footer-logos li div {
+      height: 100%;
+      background-size: contain;
+      background-repeat: no-repeat; }
+    .footer .footer-logos li .logo-hover {
+      transition: 0.5s; }
+      .footer .footer-logos li .logo-hover#jobbrek {
+        background-image: url("../img/gray/jobbrek.png"); }
+        .footer .footer-logos li .logo-hover#jobbrek:hover {
+          background-image: url("../img/colored/jobbrek.png"); }
+      .footer .footer-logos li .logo-hover#jobbiskola {
+        background-image: url("../img/gray/jobbiskola.png"); }
+        .footer .footer-logos li .logo-hover#jobbiskola:hover {
+          background-image: url("../img/colored/jobbiskola.png"); }
+      .footer .footer-logos li .logo-hover#vardvakanser {
+        background-image: url("../img/gray/vardvakanser.png"); }
+        .footer .footer-logos li .logo-hover#vardvakanser:hover {
+          background-image: url("../img/colored/vardvakanser.png"); }
 
 /*# sourceMappingURL=app.css.map */
