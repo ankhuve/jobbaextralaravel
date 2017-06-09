@@ -1,0 +1,76 @@
+.footer{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background: $bg-color-primary;
+
+    li{
+        @include list-unstyled;
+        line-height: 2.5rem;
+        color: #a7a897;
+
+        &.footer-title{
+            color: $accent-color;
+            text-transform: uppercase;
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 3rem;
+        }
+
+        &.social{
+            margin-bottom: 2rem;
+
+            > a img {
+                height: 38px;
+                margin-right: 1.5rem;
+            }
+        }
+    }
+
+    .footer-logos{
+        li{
+            height: 20px;
+            width: 100%;
+            line-height: 30px;
+            margin-bottom: 2rem;
+
+            &:first-of-type{
+                height: 35px;
+                line-height: 45px;
+            }
+
+            > a, div{
+                height: 100%;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            .logo-hover{
+                transition: 0.5s;
+
+                &#jobbrek{
+                    background-image: url('../img/gray/jobbrek.png');
+
+                    &:hover{
+                        background-image: url('../img/colored/jobbrek.png');
+                    }
+                }
+
+                &#jobbiskola{
+                    background-image: url('../img/gray/jobbiskola.png');
+
+                    &:hover{
+                        background-image: url('../img/colored/jobbiskola.png');
+                    }
+                }
+
+                &#vardvakanser{
+                    background-image: url('../img/gray/vardvakanser.png');
+
+                    &:hover{
+                        background-image: url('../img/colored/vardvakanser.png');
+                    }
+                }
+            }
+        }
+    }
+}
