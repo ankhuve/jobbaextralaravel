@@ -5730,7 +5730,7 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-/*! Flickity v2.0.8
+/*! Flickity v2.0.5
 http://flickity.metafizzy.co
 ---------------------------------------------- */
 .flickity-enabled {
@@ -6929,7 +6929,7 @@ textarea#description {
     background-color: rgba(65, 65, 65, 0.95); }
 
 .block--profiled-job {
-  margin: 15px 0;
+  margin: 15px 0 50px;
   height: 200px; }
   .block--profiled-job .block__tag--top {
     background: #d45d36;
@@ -7042,6 +7042,13 @@ textarea#description {
       width: 50px;
       background: #fd2f2f; }
 
+.slider--jobs {
+  height: 265px;
+  overflow: hidden; }
+  .slider--jobs .flickity-page-dots {
+    z-index: 10;
+    bottom: 0; }
+
 .slider--jobs__action {
   position: relative;
   width: auto;
@@ -7049,20 +7056,15 @@ textarea#description {
   list-style: none;
   text-align: center;
   line-height: 1;
-  top: 3.5rem;
+  top: 1.5rem;
   z-index: auto; }
   .slider--jobs__action button {
     font-size: 1.2rem; }
-  .slider--jobs__action h4 {
-    color: #ff6e3f; }
-
-.flickity-page-dots {
-  z-index: 10; }
 
 @media (min-width: 992px) {
   .slider--jobs__action {
     text-align: right;
-    margin-top: 1rem;
+    margin-top: -2rem;
     z-index: 10;
     top: auto; }
   .flickity-page-dots {

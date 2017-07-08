@@ -12,16 +12,13 @@ var elixir = require('laravel-elixir');
  */
 //
 elixir(function(mix) {
-
-    //mix.scriptsIn('resources/assets/js');
-
     mix.sass('app.scss')
-        .browserify('search.js')
+        .browserify('search.js');
+
+
+    mix.version(['css/app.css', 'js/search.js'])
         .browserSync({
             proxy: 'jobbrek.app',
             port: 5002
         });
-
-    mix.version(['css/app.css', 'js/search.js']);
-
 });
