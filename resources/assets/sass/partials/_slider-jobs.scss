@@ -1,3 +1,13 @@
+.slider--jobs{
+    height: 265px;
+    overflow: hidden;
+
+    .flickity-page-dots{
+        z-index: 10;
+        bottom: 0;
+    }
+}
+
 .slider--jobs__action{
     position: relative;
     width: auto;
@@ -5,27 +15,18 @@
     list-style: none;
     text-align: center;
     line-height: 1;
-    top: 3.5rem;
+    top: 1.5rem;
     z-index: auto;
 
     button{
         font-size: 1.2rem;
     }
-
-
-    h4{
-        color: $accent-color;
-    }
-}
-
-.flickity-page-dots{
-    z-index: 10;
 }
 
 @media (min-width: $screen-md){
     .slider--jobs__action{
         text-align: right;
-        margin-top: 1rem;
+        margin-top: -2rem;
         z-index: 10;
         top: auto;
     }
