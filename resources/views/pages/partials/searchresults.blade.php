@@ -29,4 +29,4 @@
     </div>
 @endif
 
-{!! $paginator->render() !!}
+{{--{!! $paginator->render() !!}--}}

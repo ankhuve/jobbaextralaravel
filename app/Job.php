@@ -21,6 +21,14 @@ class Job extends Model
         'external_link',
     ];
 
+    protected $hidden = [
+        'page_views',
+        'application_clicks',
+        'updated_at',
+        'created_at',
+        'published_on_fb'
+    ];
+
     /**
      * Open a new Job
      *

@@ -1,6 +1,5 @@
 body{
-    background: #242424 url("../img/jobbaextra_bg_web.jpg") no-repeat center top 120px;
-    background-size: cover;
+    background: #242424;
     font-family: 'Roboto', sans-serif;
     font-size: 1.4em;
 }
@@ -62,6 +61,8 @@ h4{
 .view{
     padding-top: 100px;
     min-height: 80vh;
+    background: #242424 url("../img/jobbaextra_bg_web.jpg") no-repeat center top;
+    background-size: cover;
 }
 
 .searchBar{
@@ -304,13 +305,13 @@ h4{
     margin-top: 30px;
 }
 
-#numSearchResults {
+.numSearchResults {
     text-align: center;
     margin: 20px auto 0;
     width: 200px;
 }
 
-#numSearchResults h4{
+.numSearchResults h4{
     display: block;
     font-weight: 500;
     background-color:rgba(47,47,47,0.95);

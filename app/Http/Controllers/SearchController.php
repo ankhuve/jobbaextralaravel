@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Job;
+use App\User;
 use Carbon\Carbon;
 use DB;
 use GuzzleHttp\Client;
@@ -11,6 +12,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Input;
 use Illuminate\Http\Request;
+use function MongoDB\BSON\toJSON;
 use TomLingham\Searchy\Facades\Searchy;
 
 
@@ -21,11 +23,13 @@ class SearchController extends Controller
 
     public function index(Request $request)
     {
-        // om vi inte har några parametrar för sökning
-//        if(empty($request->all())){
-//
-//        }
+        $request->flash();
+        return view('pages.search', ['request' => $request]);
 
+    }
+
+    public function getJobs(Request $request)
+    {
         if(Input::get('q')){
             $keyword = Input::get('q');
         } else{
@@ -40,24 +44,25 @@ class SearchController extends Controller
         }
 
         // hämta våra jobb
-        if (!is_null($keyword) || Input::get('lan') != "" || Input::get('yrkesomraden') != "") {
+        if (!is_null($keyword) || Input::get('lan') != "" || Input::get(config('app.job_category_name')) != "") {
             // om vi har ett sökord eller parametrar
             $customResults = $this->searchCustomJobs($keyword, $request, $askedPage);
         } else {
-            // om vi inte har ett sökord i requesten
+            // om vi inte har några filter eller sökord
             $customResults = $this->getNewestCustomJobs(); // get the newest custom jobs
         }
 
-
         // calculate at which page AF-jobs will start to paginate
         $totalCustomJobs = $customResults['searchMeta'];
-//        var_dump($totalCustomJobs);
         $offset = $totalCustomJobs % $this->numPerPage;
         $numToGetFromAF = ($this->numPerPage - $offset);
 
+        // firstPageWithAfJobs is the first page where only AF-jobs will be displayed
         if($offset === 0 && $totalCustomJobs > 0){
             $firstPageWithAFJobs = (int)ceil($totalCustomJobs / $this->numPerPage) + 1;
         } else{
+            // if we have custom job matches and are on a page with only
+            // AF jobs, or if we don't have any custom job matches
             $firstPageWithAFJobs = (int)ceil($totalCustomJobs / $this->numPerPage);
         }
 
@@ -65,52 +70,56 @@ class SearchController extends Controller
         if($totalCustomJobs === 0){
             // om vi inte har några custom jobs
             $firstPageToGetFromAF = $askedPage;
-        } elseif($offset != 0 && ($firstPageWithAFJobs + 1) === $askedPage){
+        }
+        elseif($offset != 0 && ($firstPageWithAFJobs + 1) === $askedPage){
             $firstPageToGetFromAF = $askedPage - 1;
-        } elseif($offset != 0 && $askedPage > $firstPageWithAFJobs) {
+        }
+        elseif($offset != 0 && $askedPage > $firstPageWithAFJobs) {
             $firstPageToGetFromAF--;
-        } elseif($totalCustomJobs > 0 && $offset === 0){
+        }
+        elseif($totalCustomJobs > 0 && $offset === 0){
             ($askedPage - $firstPageWithAFJobs) > 0 ? $firstPageToGetFromAF = $askedPage - $firstPageWithAFJobs + 1 : $firstPageToGetFromAF = 1;
-        } else{
+        }
+        else{
             $firstPageToGetFromAF = 1;
         }
 
 
-//        dd('page: ' . $askedPage, 'firstPageToGetFromAF: ' . $firstPageToGetFromAF, 'firstPageWithAfJobs: ' . $firstPageWithAFJobs, 'offset: ' . $offset);
+//        dd('page: ' . $askedPage, 'firstPageToGetFromAF: ' . $firstPageToGetFromAF, 'firstPageWithAfJobs: ' . $firstPageWithAFJobs, 'offset: ' . $offset, 'numToGetFromAf: ' . $numToGetFromAF);
 
         $askedPage >= $firstPageWithAFJobs ? $shouldGetAFJobs = true : $shouldGetAFJobs = false;
 
         // calculate which pages to get from AF API and then get the jobs
         if($firstPageWithAFJobs > $askedPage){
-            // om vi inte ska hämta några jobb, men vill ha stats ändå
+            // om vi inte ska hämta några jobb, men vill ha stats ändå (sida med bara custom jobs)
             $afSearchMeta['antal_platsannonser'] = $this->getNumberOfAfJobs($keyword);
-        } elseif($offset === 0 && $shouldGetAFJobs){
-            // om vi inte har offset och ska är på en sida där af-jobb ska hämtas
+        }
+        elseif(($totalCustomJobs % $this->numPerPage) === 0 && $shouldGetAFJobs){
+            // om vi inte har offset och är på en sida där af-jobb ska hämtas
             $results = $this->search($keyword, $numToGetFromAF, $firstPageToGetFromAF); // get jobs from Arbetsförmedlingen
-            $afJobs = $results['jobMatches'];
-            $afSearchMeta = $results['searchMeta'];
+            if ($results) {
+                $afJobs = $results['jobMatches'];
+                $afSearchMeta = $results['searchMeta'];
+            }
 
-        } elseif($offset != 0 && $askedPage === $firstPageWithAFJobs){
+        }
+        elseif($offset != 0 && $askedPage === $firstPageWithAFJobs){
             // om vi är på första sidan med AF-jobb och har custom jobs
             $results = $this->search($keyword, $this->numPerPage, $firstPageToGetFromAF); // get jobs from Arbetsförmedlingen
-
             if($results){
                 // ta bort överflödiga jobb som kommer visas på nästa sida (ta bort från botten)
                 $results['jobMatches']->splice($numToGetFromAF);
 
                 $afJobs = $results['jobMatches'];
                 $afSearchMeta = $results['searchMeta'];
-            } else{
+            }
+            else{
                 // om det inte hittades några AF-jobb
                 $request->flash();
             }
-
-        } elseif($offset != 0 && $askedPage > $firstPageWithAFJobs){
+        }
+        elseif($offset != 0 && $askedPage > $firstPageWithAFJobs){
             // om vi behöver slå ihop två sidor för att bilda vår egen
-
-//            dd('page: ' . $askedPage, 'firstPageToGetFromAF: ' . $firstPageToGetFromAF, 'firstPageWithAfJobs: ' . $firstPageWithAFJobs, 'offset: ' . $offset, 'numToGetFromAF: '. $numToGetFromAF);
-
-
             $secondPageToGetFromAF = $firstPageToGetFromAF + 1;
 
             $results = $this->search($keyword, $this->numPerPage, $firstPageToGetFromAF); // get jobs from Arbetsförmedlingen
@@ -130,18 +139,21 @@ class SearchController extends Controller
 
                 $afJobs = $results['jobMatches'];
                 $afSearchMeta = $results['searchMeta'];
-            } elseif($results && is_null($resultsSecond)){
+            }
+            elseif($results && is_null($resultsSecond)){
 
                 $afJobs = $results['jobMatches'];
                 $afSearchMeta = $results['searchMeta'];
-            } else {
+            }
+            else {
                 // om vi är på sista sidan
                 $results = $this->search($keyword, $this->numPerPage, $firstPageToGetFromAF); // get jobs from Arbetsförmedlingen
                 $results['jobMatches'] = $results['jobMatches']->slice($numToGetFromAF);
                 $afJobs = $results['jobMatches'];
                 $afSearchMeta = $results['searchMeta'];
             }
-        } else{
+        }
+        else{
             // om vi är på sista sidan med AF-jobb
             $results = $this->search($keyword, $this->numPerPage, $firstPageToGetFromAF); // get jobs from Arbetsförmedlingen
 
@@ -151,23 +163,21 @@ class SearchController extends Controller
 
                 $afJobs = $results['jobMatches'];
                 $afSearchMeta = $results['searchMeta'];
-//                dd($afJobs);
-            } else{
+            }
+            else{
                 // om det är slut på resultat
                 $request->flash();
                 return view('pages.search', ['jobs' => [], 'searchMeta' => [], 'currentPage' => $askedPage]);
             }
-
         }
-
 
         if(isset($afJobs)){
             // merga de två källorna med träffar till en Collection
             $allJobs = collect($customResults['jobMatches'])->merge($afJobs);
-        } else{
+        }
+        else{
             $allJobs = collect($customResults['jobMatches']);
         }
-
 
         $searchMeta = [];
         $searchMeta['customJobs'] = $customResults['searchMeta'];
@@ -175,10 +185,8 @@ class SearchController extends Controller
         if(isset($afSearchMeta)){
             $searchMeta['afJobs'] = $afSearchMeta['antal_platsannonser'];
             $searchMeta['all'] += isset($searchMeta['afJobs']) ? $searchMeta['afJobs'] : 0;
-        } else if(!isset($afSearchMeta) && Input::get('yrkesomraden') != "") {
-            // om vi gjort en sökning med en custom yrkesgrupp som då inte returnerar någon $afSearchMeta
-            // vi behöver inte göra något här
-        } else{
+        }
+        else{
             $numberOfAfJobs = $this->getNumberOfAfJobs($keyword);
             $searchMeta['afJobs'] = $numberOfAfJobs;
             $searchMeta['all'] += $numberOfAfJobs;
@@ -191,20 +199,25 @@ class SearchController extends Controller
         $paginator = new LengthAwarePaginator($allJobs, $searchMeta['all'], $this->numPerPage, $currPage,
             [
                 'path' => 'hitta',
-                'query' => $request->query()
+                'query' => $request->except('sida')
             ]);
 
-//        dd($paginator->setPageName('sida'));
         $paginator->setPageName('sida');
-
-//        dd($allJobs, $paginator, $searchMeta);
+        $paginatorMarkup = $paginator->render();
 
         if ($request->ajax()) {
-            return (json_encode($afSearchMeta));
+            return response()->json([
+                'searchMeta' => $searchMeta,
+                'allJobs' => $allJobs,
+                'paginatorMarkup' => $paginatorMarkup,
+                'paginator' => $paginator->toArray(),
+                'currentPage' => $askedPage,
+                'request' => $request
+            ]);
         }
-
-        $request->flash();
-        return view('pages.search', ['jobs' => $allJobs, 'searchMeta' => $searchMeta, 'currentPage' => $askedPage, 'request' => $request, 'paginator' => $paginator]);
+        else{
+            return ['jobs' => $allJobs, 'searchMeta' => $searchMeta, 'currentPage' => $askedPage, 'request' => $request, 'paginator' => $paginatorMarkup];
+        }
     }
 
     public static function getNumberOfAfJobs($keyword = null)
@@ -221,11 +234,17 @@ class SearchController extends Controller
         }
 
         if(Input::get('lan')){
-            $searchParams['lanid'] = Input::get('lan');
+            // om sökningen är typ 'norge'
+            if(Input::get('lan') > 120){
+                $searchParams['landid'] = Input::get('lan');
+            }
+            else{
+                $searchParams['lanid'] = Input::get('lan');
+            }
         }
 
-        if(Input::get('yrkesomraden')){
-            $searchParams['yrkesomraden'] = Input::get('yrkesomraden');
+        if(Input::get(config('app.job_category_name'))){
+            $searchParams['yrkesomradeid'] = Input::get(config('app.job_category_name'));
         }
 
         try{
@@ -278,9 +297,6 @@ class SearchController extends Controller
         $searchParams = [
             'antalrader' => $numRows,
             'anstallningstyp' => 1,
-//            'nyckelord' => $keyword,
-//            'lanid' => Input::get('lan') ?: null,
-            'yrkesomradeid' => Input::get('yrkesomraden') ?: null,
             'sida' => $pageToGet
         ];
 
@@ -289,16 +305,17 @@ class SearchController extends Controller
         }
 
         if(Input::get('lan')){
-            $searchParams['lanid'] = Input::get('lan');
+            // om sökningen är typ 'norge'
+            if(Input::get('lan') > 120){
+                $searchParams['landid'] = Input::get('lan');
+            } else{
+                $searchParams['lanid'] = Input::get('lan');
+            }
         }
 
-//        $searchParams['nyckelord'] = Input::get('q') ?: null;
-//        $searchParams['lanid'] = Input::get('lan') ?: null;
-//        $searchParams['yrkesomradeid'] = Input::get('yrkesomraden') ?: null;
-////        if (Input::get('sida') != 'null') {
-//        $searchParams['sida'] = $pageToGet;
-//        }
-//        var_dump($searchParams);
+        if(Input::get(config('app.job_category_name'))){
+            $searchParams['yrkesomradeid'] = Input::get(config('app.job_category_name'));
+        }
 
         try{
             $searchResults = $client->get('platsannonser/matchning', [
@@ -308,6 +325,7 @@ class SearchController extends Controller
                     'Accept-Language' => 'sv-se,sv'
                 ]
             ]);
+
             // Create a Collection of the results
             $response = collect(json_decode($searchResults->getBody()->getContents()));
             $searchMeta = collect($response->get('matchningslista'));
@@ -319,9 +337,15 @@ class SearchController extends Controller
             } else{
                 return false;
             }
-    //        $jobMatches = collect($response->get('matchningslista')->matchningdata); // the queried jobs
+
+            foreach ($jobMatches as $job){
+                $job->url = action('JobController@index', $job->annonsid);
+                $job->time_since_published = (Carbon::createFromFormat('Y-m-d\TH:i:se', $job->publiceraddatum)->isSameDay(Carbon::today())) ? 'Publicerad idag' : ((Carbon::createFromFormat('Y-m-d\TH:i:se', $job->publiceraddatum)->isSameDay(Carbon::yesterday())) ? 'Publicerades igår' : Carbon::createFromFormat('Y-m-d\TH:i:se', $job->publiceraddatum)->startOfDay()->diffInDays(Carbon::now()) . ' dagar sedan');
+
+            }
 
             return compact(['jobMatches', 'searchMeta']);
+
         } catch(\Exception $e){
             return compact(['jobMatches' => [], 'searchMeta' => []]);
         }
@@ -335,7 +359,7 @@ class SearchController extends Controller
         // Sets the parameters from the get request to the variables.
         $searchQuery = $keyword;
 
-        if($keyword){
+        if($searchQuery){
             // Hämta antal träffar för sökmeta
             $allMatches = Searchy::search('jobs')
                 ->fields('title', 'work_place')
@@ -347,22 +371,21 @@ class SearchController extends Controller
             $allMatches = Job::query()->where('latest_application_date', '>=', Carbon::today()->toDateString())->orderBy('published_at', 'desc');
         };
 
-
         $searchParams = [];
 
         // filtrera resultaten
-        if(Input::get('lan') != ""){
+        if (Input::get('lan') != ""){
             $searchParams['lanid'] = Input::get('lan');
             // Filtrera på län
-            if(isset($searchParams['lanid'])){
+            if (isset($searchParams['lanid'])){
                 $allMatches = $allMatches->where('county', $searchParams['lanid']);
             }
         }
-        if(Input::get('yrkesomraden') != ""){
-            $searchParams['yrkesomraden'] = Input::get('yrkesomraden');
+        if(Input::get(config('app.job_category_name')) != ""){
+            $searchParams['yrkesomraden'] = Input::get(config('app.job_category_name'));
             // Filtrera på arbetstyp
-            if(isset($searchParams['yrkesomraden'])){
-                $allMatches = $allMatches->where('type', $searchParams['yrkesomraden']);
+            if (isset($searchParams['yrkesomraden'])){
+                $allMatches = $allMatches->where('type', 'like', '%' . $searchParams['yrkesomraden'] . '%');
             }
         }
 
@@ -377,7 +400,16 @@ class SearchController extends Controller
             ->take($this->numPerPage)
             ->get();
 
-//        $request->flash(); // sätt tillbaka sökparametrarna på sidan för användaren
+        foreach ($pageResults as $job){
+            $url = action('JobController@customJob', [$job->id, str_slug($job->title)]);
+            $job->url = $url;
+
+            $logo_path = User::find($job->user_id)->logo_path;
+            $job->logo_path = $logo_path ? env("UPLOADS_URL") . '/' . $logo_path : null;
+            $job->time_since_published = Carbon::parse($job->published_at)->isSameDay(Carbon::today()) ? 'Publicerad idag' : (Carbon::parse($job->published_at)->isSameDay(Carbon::yesterday()) ? 'Publicerades igår' : (Carbon::parse($job->published_at)->startOfDay()->diffInDays(Carbon::now()) . ' dagar sedan'));
+            $job->description = (strlen(strip_tags($job->description)) < 200) ? strip_tags($job->description) : substr(strip_tags($job->description), 0, 200)." ...";
+        }
+
         $results = [
             'jobMatches'   => $pageResults,
             'searchMeta'    => $numTotalMatches
@@ -392,6 +424,17 @@ class SearchController extends Controller
             ->orderBy('published_at', 'desc')
             ->paginate($this->numPerPage, ['*'], $pageName = 'sida')
             ->all();
+
+        foreach ($pageResults as $job){
+            $url = action('JobController@customJob', [$job->id, str_slug($job->title)]);
+            $job->url = $url;
+
+            $logo_path = User::find($job->user_id)->logo_path;
+            $job->logo_path = $logo_path ? env("UPLOADS_URL") . '/' . $logo_path : null;
+            $job->time_since_published = Carbon::parse($job->published_at)->isSameDay(Carbon::today()) ? 'Publicerad idag' : (Carbon::parse($job->published_at)->isSameDay(Carbon::yesterday()) ? 'Publicerades igår' : (Carbon::parse($job->published_at)->startOfDay()->diffInDays(Carbon::now()) . ' dagar sedan'));
+            $job->description = (strlen(strip_tags($job->description)) < 200) ? strip_tags($job->description) : substr(strip_tags($job->description), 0, 200)." ...";
+        }
+
 
         $numTotalMatches = Job::numActiveJobs();
         $results = [

@@ -13,14 +13,7 @@
         </div>
 
         <div class="col-xs-12">
-            <div class="job-counter">
-                <div>
-                    <h3>Aktiva jobbannonser </h3>
-                </div>
-                @foreach(str_split($numJobs) as $number)<span>
-                        {{ $number }}
-                    </span>@endforeach
-            </div>
+            <job-counter></job-counter>
         </div>
 
         <div id="splash">

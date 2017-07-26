@@ -7,32 +7,32 @@ use Carbon\Carbon;
 
 class HomeController extends Controller {
 
-	/*
-	|--------------------------------------------------------------------------
-	| Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| This controller renders your application's "dashboard" for users that
-	| are authenticated. Of course, you are free to change or remove the
-	| controller as you wish. It is just here to get your app started!
-	|
-	*/
+    /*
+    |--------------------------------------------------------------------------
+    | Home Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller renders your application's "dashboard" for users that
+    | are authenticated. Of course, you are free to change or remove the
+    | controller as you wish. It is just here to get your app started!
+    |
+    */
 
-	/**
-	 * Show the application dashboard to the user.
-	 *
-	 * @return Response
-	 */
+    /**
+     * Show the application dashboard to the user.
+     *
+     * @return Response
+     */
     public function index()
     {
-        $numJobs = $this->getTotalNumberOfJobs();
+//		$numJobs = $this->getTotalNumberOfJobs();
         $profiledJobs = $this->getProfiledJobs();
 
         if($page = Page::find(3)){
             $pageContent = $page->content;
 
             return view('home', [
-                    'numJobs' => $numJobs,
+//                    'numJobs' => $numJobs,
                     'page' => $page,
                     'content' => $pageContent,
                     'profiledJobs' => $profiledJobs]
@@ -40,12 +40,14 @@ class HomeController extends Controller {
         }
         else{
             return view('home', [
-                    'numJobs' => $numJobs,
+//                    'numJobs' => $numJobs,
                     'page' => null,
                     'content' => null,
                     'profiledJobs' => $profiledJobs]
             );
         }
+
+
     }
 
     public function getNewestJobs()
@@ -56,7 +58,7 @@ class HomeController extends Controller {
 
     public function getProfiledJobs()
     {
-        $data = ProfiledJob::where('end_date', '>', Carbon::now())->get()->sortByDesc('start_date');
+        $data = ProfiledJob::all()->sortByDesc('start_date')->where('end_date', '>', Carbon::now());
         return $data;
     }
 
@@ -64,6 +66,8 @@ class HomeController extends Controller {
     {
         $numOfAFJobs = SearchController::getNumberOfAfJobs();
         $numCustomJobs = Job::where('latest_application_date', '>', Carbon::now())->count();
-        return $numOfAFJobs + $numCustomJobs;
+        $allJobs = $numOfAFJobs + $numCustomJobs;
+        return $allJobs;
     }
+
 }

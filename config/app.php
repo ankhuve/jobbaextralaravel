@@ -2,6 +2,8 @@
 
 return [
 
+    'job_category_name' => 'yrkesgrupper',
+
 	/*
 	|--------------------------------------------------------------------------
 	| Application Debug Mode
