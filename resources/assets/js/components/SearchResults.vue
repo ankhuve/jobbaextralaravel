@@ -20,24 +20,36 @@
         </template>
 
         <div v-show="!showJobs && !errorOccurred">
-            <div class="spinner">
-                <div class="bounce1"></div>
-                <div class="bounce2"></div>
-                <div class="bounce3"></div>
+            <div class="row">
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
             </div>
-            <div v-if="slowLoading" class="row text-center" transition="stagger">
+            <div v-if="slowLoading" class="row" transition="stagger" align="center">
                 <br>
-                <h4>(Sökningen verkar gå långsammare än vanligt..)</h4>
+                <h4 class="text-shadow">(Sökningen verkar gå långsammare än vanligt..)</h4>
                 <br>
-                <button class="btn btn-primary" @click="fetchJobs">Prova igen</button>
+                <div class="col-md-4 col-md-offset-4" >
+                    <button class="btn btn-primary btn-sm" @click="fetchJobs">Prova igen</button>
+                </div>
             </div>
         </div>
 
         <div v-if="errorOccurred" class="row text-center" transition="stagger">
-            <h3>Hoppsan!</h3>
-            <h4>Något gick visst snett vid sökningen.</h4>
-            <br>
-            <button class="btn btn-primary" @click="fetchJobs">Försök igen</button>
+            <div class="messageBox">
+                <div class="messageBoxHeading">Hoppsan!</div>
+                <div class="panel-body">
+                    <div class="h4">
+                        Något gick visst snett vid sökningen.
+                        <br><br>
+                        <div class="col-md-4 col-md-offset-4">
+                            <button class="btn btn-primary btn-sm" @click="fetchJobs">Försök igen</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div id="pagination" v-show="showPagination">
@@ -79,7 +91,7 @@
                     'sida': '',
                     'lan': '',
                     'q': '',
-                    'yrkesgrupper': ''
+                    'yrkesomradeid': ''
                 }
             }
         },

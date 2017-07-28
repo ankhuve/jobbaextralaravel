@@ -1,18 +1,13 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use App\Job;
 use App\User;
 use Carbon\Carbon;
 use DB;
 use GuzzleHttp\Client;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Pagination\Paginator;
 use Input;
 use Illuminate\Http\Request;
-use function MongoDB\BSON\toJSON;
 use TomLingham\Searchy\Facades\Searchy;
 
 
@@ -44,7 +39,7 @@ class SearchController extends Controller
         }
 
         // hämta våra jobb
-        if (!is_null($keyword) || Input::get('lan') != "" || Input::get(config('app.job_category_name')) != "") {
+        if (!is_null($keyword) || Input::get('lan') != "" || Input::get(config('app.af_type_name_minor')) != "") {
             // om vi har ett sökord eller parametrar
             $customResults = $this->searchCustomJobs($keyword, $request, $askedPage);
         } else {
@@ -113,10 +108,6 @@ class SearchController extends Controller
                 $afJobs = $results['jobMatches'];
                 $afSearchMeta = $results['searchMeta'];
             }
-            else{
-                // om det inte hittades några AF-jobb
-                $request->flash();
-            }
         }
         elseif($offset != 0 && $askedPage > $firstPageWithAFJobs){
             // om vi behöver slå ihop två sidor för att bilda vår egen
@@ -148,9 +139,12 @@ class SearchController extends Controller
             else {
                 // om vi är på sista sidan
                 $results = $this->search($keyword, $this->numPerPage, $firstPageToGetFromAF); // get jobs from Arbetsförmedlingen
-                $results['jobMatches'] = $results['jobMatches']->slice($numToGetFromAF);
-                $afJobs = $results['jobMatches'];
-                $afSearchMeta = $results['searchMeta'];
+                if($results){
+                    $results['jobMatches'] = $results['jobMatches']->slice($numToGetFromAF);
+                    $afJobs = $results['jobMatches'];
+                    $afSearchMeta = $results['searchMeta'];
+                }
+
             }
         }
         else{
@@ -216,7 +210,7 @@ class SearchController extends Controller
             ]);
         }
         else{
-            return ['jobs' => $allJobs, 'searchMeta' => $searchMeta, 'currentPage' => $askedPage, 'request' => $request, 'paginator' => $paginatorMarkup];
+            return ['jobs' => $allJobs, 'searchMeta' => $searchMeta, 'currentPage' => $askedPage, 'request' => $request, 'paginator' => $paginator];
         }
     }
 
@@ -243,8 +237,13 @@ class SearchController extends Controller
             }
         }
 
-        if(Input::get(config('app.job_category_name'))){
-            $searchParams['yrkesomradeid'] = Input::get(config('app.job_category_name'));
+        if(Input::get(config('app.af_type_name_minor'))){
+            if (Input::get(config('app.af_type_name_minor')) < 9000) {
+                $searchParams[config('app.af_type_name_minor')] = Input::get(config('app.af_type_name_minor'));
+            }
+            else {
+                return 0;
+            }
         }
 
         try{
@@ -313,8 +312,13 @@ class SearchController extends Controller
             }
         }
 
-        if(Input::get(config('app.job_category_name'))){
-            $searchParams['yrkesomradeid'] = Input::get(config('app.job_category_name'));
+        if(Input::get(config('app.af_type_name_minor'))){
+            if (Input::get(config('app.af_type_name_minor')) < 9000) {
+                $searchParams[config('app.af_type_name_minor')] = Input::get(config('app.af_type_name_minor'));
+            }
+            else {
+                return false;
+            }
         }
 
         try{
@@ -325,7 +329,6 @@ class SearchController extends Controller
                     'Accept-Language' => 'sv-se,sv'
                 ]
             ]);
-
             // Create a Collection of the results
             $response = collect(json_decode($searchResults->getBody()->getContents()));
             $searchMeta = collect($response->get('matchningslista'));
@@ -341,7 +344,6 @@ class SearchController extends Controller
             foreach ($jobMatches as $job){
                 $job->url = action('JobController@index', $job->annonsid);
                 $job->time_since_published = (Carbon::createFromFormat('Y-m-d\TH:i:se', $job->publiceraddatum)->isSameDay(Carbon::today())) ? 'Publicerad idag' : ((Carbon::createFromFormat('Y-m-d\TH:i:se', $job->publiceraddatum)->isSameDay(Carbon::yesterday())) ? 'Publicerades igår' : Carbon::createFromFormat('Y-m-d\TH:i:se', $job->publiceraddatum)->startOfDay()->diffInDays(Carbon::now()) . ' dagar sedan');
-
             }
 
             return compact(['jobMatches', 'searchMeta']);
@@ -366,7 +368,8 @@ class SearchController extends Controller
                 ->query($searchQuery)
                 ->getQuery()
                 ->having('relevance', '>', 30)
-                ->orderBy('relevance', 'desc');
+                ->orderBy('relevance', 'desc')
+                ->where('latest_application_date', '>=', Carbon::today()->toDateString());
         } else{
             $allMatches = Job::query()->where('latest_application_date', '>=', Carbon::today()->toDateString())->orderBy('published_at', 'desc');
         };
@@ -381,34 +384,33 @@ class SearchController extends Controller
                 $allMatches = $allMatches->where('county', $searchParams['lanid']);
             }
         }
-        if(Input::get(config('app.job_category_name')) != ""){
-            $searchParams['yrkesomraden'] = Input::get(config('app.job_category_name'));
-            // Filtrera på arbetstyp
-            if (isset($searchParams['yrkesomraden'])){
-                $allMatches = $allMatches->where('type', 'like', '%' . $searchParams['yrkesomraden'] . '%');
-            }
+
+        $resultsAreCollection = false;
+        if (Input::get(config('app.af_type_name_minor'))){
+            $searchParams[config('app.af_type_name_minor')] = Input::get(config('app.af_type_name_minor'));
+
+            // Get all matches so we can go through the type column
+            $matchesCollection = $allMatches->get();
+
+            // filter out the matches which have the requested type
+            $allMatches = $matchesCollection->filter(
+                function ($match) use ($searchParams) {
+                $types = collect(json_decode($match->type));
+                return ($types->contains($searchParams[config('app.af_type_name_minor')]));
+            });
+
+            $resultsAreCollection = true;
         }
 
-        // Filtrera bort jobb som haft sin sista ansökan
-        $activeMatches = $allMatches->where('latest_application_date', '>=', Carbon::today()->toDateString());
-
-        $numTotalMatches = count($activeMatches->get());
-
-        // Hämta träffarna för sidan
-        $pageResults = $allMatches
-            ->skip($rowsToSkip)
-            ->take($this->numPerPage)
-            ->get();
-
-        foreach ($pageResults as $job){
-            $url = action('JobController@customJob', [$job->id, str_slug($job->title)]);
-            $job->url = $url;
-
-            $logo_path = User::find($job->user_id)->logo_path;
-            $job->logo_path = $logo_path ? env("UPLOADS_URL") . '/' . $logo_path : null;
-            $job->time_since_published = Carbon::parse($job->published_at)->isSameDay(Carbon::today()) ? 'Publicerad idag' : (Carbon::parse($job->published_at)->isSameDay(Carbon::yesterday()) ? 'Publicerades igår' : (Carbon::parse($job->published_at)->startOfDay()->diffInDays(Carbon::now()) . ' dagar sedan'));
-            $job->description = (strlen(strip_tags($job->description)) < 200) ? strip_tags($job->description) : substr(strip_tags($job->description), 0, 200)." ...";
+        if (!$resultsAreCollection) {
+            // Hämta träffarna för sidan
+            $allMatches = $allMatches->get();
         }
+
+        $numTotalMatches = $allMatches->count();
+        $pageResults = $allMatches->splice($rowsToSkip, $this->numPerPage);
+
+        $pageResults = $this->prepareJobAttributes($pageResults);
 
         $results = [
             'jobMatches'   => $pageResults,
@@ -425,6 +427,19 @@ class SearchController extends Controller
             ->paginate($this->numPerPage, ['*'], $pageName = 'sida')
             ->all();
 
+        $pageResults = $this->prepareJobAttributes($pageResults);
+
+        $numTotalMatches = Job::numActiveJobs();
+        $results = [
+            'jobMatches'   => $pageResults,
+            'searchMeta'    => $numTotalMatches
+        ];
+
+        return $results;
+    }
+
+    private function prepareJobAttributes($pageResults)
+    {
         foreach ($pageResults as $job){
             $url = action('JobController@customJob', [$job->id, str_slug($job->title)]);
             $job->url = $url;
@@ -435,13 +450,6 @@ class SearchController extends Controller
             $job->description = (strlen(strip_tags($job->description)) < 200) ? strip_tags($job->description) : substr(strip_tags($job->description), 0, 200)." ...";
         }
 
-
-        $numTotalMatches = Job::numActiveJobs();
-        $results = [
-            'jobMatches'   => $pageResults,
-            'searchMeta'    => $numTotalMatches
-        ];
-
-        return $results;
+        return $pageResults;
     }
 }

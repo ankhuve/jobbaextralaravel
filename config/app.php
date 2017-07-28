@@ -2,7 +2,7 @@
 
 return [
 
-    'job_category_name' => 'yrkesgrupper',
+    'af_type_name_minor' => 'yrkesomradeid',
 
 	/*
 	|--------------------------------------------------------------------------

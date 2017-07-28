@@ -69,7 +69,12 @@
 
         computed: {
             lastApplicationDay: function(){
-                return this.jobData.sista_ansokningsdag.substr(0, 10);
+                if (this.jobData.sista_ansokningsdag) {
+                    return this.jobData.sista_ansokningsdag.substr(0, 10);
+                }
+                else {
+                    return '-';
+                }
             },
         }
     }

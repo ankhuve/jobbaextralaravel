@@ -41,30 +41,30 @@
                         <option {{ $request->get('lan') === "5" ? "selected" : "" }} value="5" label="Östergötlands län" name="Östergötlands län">Östergötlands län</option>
                         <option {{ $request->get('lan') === "90" ? "selected" : "" }} value="90" label="Ospecificerad arbetsort" name="Ospecificerad arbetsort">Ospecificerad arbetsort</option>
                     </select>
-                    <select name="{{ config('app.job_category_name') }}" class="dropdown searchFilter" id="workArea">
-                        <option class="defaultOption" value="">Alla {{ config('app.job_category_name') }}</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "1" ? "selected" : "" }} value="1" label="Administration, ekonomi, juridik" name="Administration, ekonomi, juridik">Administration, ekonomi, juridik</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "2" ? "selected" : "" }} value="2" label="Bygg och anläggning" name="Bygg och anläggning">Bygg och anläggning</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "20" ? "selected" : "" }} value="20" label="Chefer och verksamhetsledare" name="Chefer och verksamhetsledare">Chefer och verksamhetsledare</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "3" ? "selected" : "" }} value="3" label="Data/IT" name="Data/IT">Data/IT</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "5" ? "selected" : "" }} value="5" label="Försäljning, inköp, marknadsföring" name="Försäljning, inköp, marknadsföring">Försäljning, inköp, marknadsföring</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "6" ? "selected" : "" }} value="6" label="Hantverksyrken" name="Hantverksyrken">Hantverksyrken</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "7" ? "selected" : "" }} value="7" label="Hotell, restaurang, storhushåll" name="Hotell, restaurang, storhushåll">Hotell, restaurang, storhushåll</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "8" ? "selected" : "" }} value="8" label="Hälso- och sjukvård" name="Hälso- och sjukvård">Hälso- och sjukvård</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "9" ? "selected" : "" }} value="9" label="Industriell tillverkning" name="Industriell tillverkning">Industriell tillverkning</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "10" ? "selected" : "" }} value="10" label="Installation, drift, underhåll" name="Installation, drift, underhåll">Installation, drift, underhåll</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "4" ? "selected" : "" }} value="4" label="Kropps- och skönhetsvård" name="Kropps- och skönhetsvård">Kropps- och skönhetsvård</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "11" ? "selected" : "" }} value="11" label="Kultur, media, design" name="Kultur, media, design">Kultur, media, design</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "22" ? "selected" : "" }} value="22" label="Militärt arbete" name="Militärt arbete">Militärt arbete</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "13" ? "selected" : "" }} value="13" label="Naturbruk" name="Naturbruk">Naturbruk</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "14" ? "selected" : "" }} value="14" label="Naturvetenskapligt arbete" name="Naturvetenskapligt arbete">Naturvetenskapligt arbete</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "15" ? "selected" : "" }} value="15" label="Pedagogiskt arbete" name="Pedagogiskt arbete">Pedagogiskt arbete</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "12" ? "selected" : "" }} value="12" label="Sanering och renhållning" name="Sanering och renhållning">Sanering och renhållning</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "16" ? "selected" : "" }} value="16" label="Socialt arbete" name="Socialt arbete">Socialt arbete</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "17" ? "selected" : "" }} value="17" label="Säkerhetsarbete" name="Säkerhetsarbete">Säkerhetsarbete</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "18" ? "selected" : "" }} value="18" label="Tekniskt arbete" name="Tekniskt arbete">Tekniskt arbete</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "19" ? "selected" : "" }} value="19" label="Transport" name="Transport">Transport</option>
-                        <option {{ $request->get(config('app.job_category_name')) === "9000" ? "selected" : "" }} value="9000" label="Övrigt" name="Övrigt">Övrigt</option>
+                    <select name="{{ config('app.af_type_name_minor') }}" class="dropdown searchFilter" id="workArea">
+                        <option class="defaultOption" value="">Alla yrkesgrupper</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "1" ? "selected" : "" }} value="1" label="Administration, ekonomi, juridik" name="Administration, ekonomi, juridik">Administration, ekonomi, juridik</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "2" ? "selected" : "" }} value="2" label="Bygg och anläggning" name="Bygg och anläggning">Bygg och anläggning</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "20" ? "selected" : "" }} value="20" label="Chefer och verksamhetsledare" name="Chefer och verksamhetsledare">Chefer och verksamhetsledare</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "3" ? "selected" : "" }} value="3" label="Data/IT" name="Data/IT">Data/IT</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "5" ? "selected" : "" }} value="5" label="Försäljning, inköp, marknadsföring" name="Försäljning, inköp, marknadsföring">Försäljning, inköp, marknadsföring</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "6" ? "selected" : "" }} value="6" label="Hantverksyrken" name="Hantverksyrken">Hantverksyrken</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "7" ? "selected" : "" }} value="7" label="Hotell, restaurang, storhushåll" name="Hotell, restaurang, storhushåll">Hotell, restaurang, storhushåll</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "8" ? "selected" : "" }} value="8" label="Hälso- och sjukvård" name="Hälso- och sjukvård">Hälso- och sjukvård</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "9" ? "selected" : "" }} value="9" label="Industriell tillverkning" name="Industriell tillverkning">Industriell tillverkning</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "10" ? "selected" : "" }} value="10" label="Installation, drift, underhåll" name="Installation, drift, underhåll">Installation, drift, underhåll</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "4" ? "selected" : "" }} value="4" label="Kropps- och skönhetsvård" name="Kropps- och skönhetsvård">Kropps- och skönhetsvård</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "11" ? "selected" : "" }} value="11" label="Kultur, media, design" name="Kultur, media, design">Kultur, media, design</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "22" ? "selected" : "" }} value="22" label="Militärt arbete" name="Militärt arbete">Militärt arbete</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "13" ? "selected" : "" }} value="13" label="Naturbruk" name="Naturbruk">Naturbruk</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "14" ? "selected" : "" }} value="14" label="Naturvetenskapligt arbete" name="Naturvetenskapligt arbete">Naturvetenskapligt arbete</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "15" ? "selected" : "" }} value="15" label="Pedagogiskt arbete" name="Pedagogiskt arbete">Pedagogiskt arbete</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "12" ? "selected" : "" }} value="12" label="Sanering och renhållning" name="Sanering och renhållning">Sanering och renhållning</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "16" ? "selected" : "" }} value="16" label="Socialt arbete" name="Socialt arbete">Socialt arbete</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "17" ? "selected" : "" }} value="17" label="Säkerhetsarbete" name="Säkerhetsarbete">Säkerhetsarbete</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "18" ? "selected" : "" }} value="18" label="Tekniskt arbete" name="Tekniskt arbete">Tekniskt arbete</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "19" ? "selected" : "" }} value="19" label="Transport" name="Transport">Transport</option>
+                        <option {{ $request->get(config('app.af_type_name_minor')) === "9000" ? "selected" : "" }} value="9000" label="Övrigt" name="Övrigt">Övrigt</option>
                     </select>
                 </div>
                 <div class="filterButtons">

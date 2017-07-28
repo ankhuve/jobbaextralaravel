@@ -38,21 +38,11 @@
 
 <script>
     export default {
-        created() {
-//            console.log(this.jobData);
-        },
-
         data: function() {
             return {
             }
         },
 
         props: ['jobData'],
-
-        methods: {
-            setBackgroundUrl: function(){
-                console.log('fetching jobsObj...');
-            }
-        }
     }
 </script>
