@@ -2,6 +2,8 @@
 
 return [
 
+    'af_type_name_minor' => 'yrkesomradeid',
+
 	/*
 	|--------------------------------------------------------------------------
 	| Application Debug Mode

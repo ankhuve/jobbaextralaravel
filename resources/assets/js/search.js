@@ -87,6 +87,9 @@ var getNewJobData = function(){
         success: function (data) {
             data = JSON.parse(data);
             updateSearchResults(data);
+        },
+        fail: function (response) {
+            console.log(response);
         }
     })
 };

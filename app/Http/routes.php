@@ -51,7 +51,13 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-//Route::resource('foretag', 'CompanyController');
+// API routes
+// Get the total number of jobs currently listed on the site
+Route::get('api/numJobs', 'HomeController@getTotalNumberOfJobs');
+
+// Get all job ads
+Route::get('api/fetchJobs', 'SearchController@getJobs');
+Route::post('api/fetchJobs', 'SearchController@getJobs');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
