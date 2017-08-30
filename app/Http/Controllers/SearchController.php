@@ -404,7 +404,7 @@ class SearchController extends Controller
 
         if (!$resultsAreCollection) {
             // Hämta träffarna för sidan
-            $allMatches = $allMatches->get();
+            $allMatches = collect($allMatches->get());
         }
 
         $numTotalMatches = $allMatches->count();
