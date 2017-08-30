@@ -25,14 +25,12 @@ class HomeController extends Controller {
      */
     public function index()
     {
-//		$numJobs = $this->getTotalNumberOfJobs();
         $profiledJobs = $this->getProfiledJobs();
 
         if($page = Page::find(3)){
             $pageContent = $page->content;
 
             return view('home', [
-//                    'numJobs' => $numJobs,
                     'page' => $page,
                     'content' => $pageContent,
                     'profiledJobs' => $profiledJobs]
@@ -40,14 +38,11 @@ class HomeController extends Controller {
         }
         else{
             return view('home', [
-//                    'numJobs' => $numJobs,
                     'page' => null,
                     'content' => null,
                     'profiledJobs' => $profiledJobs]
             );
         }
-
-
     }
 
     public function getNewestJobs()
@@ -58,7 +53,7 @@ class HomeController extends Controller {
 
     public function getProfiledJobs()
     {
-        $data = ProfiledJob::all()->sortByDesc('start_date')->where('end_date', '>', Carbon::now());
+        $data = ProfiledJob::where('end_date', '>', Carbon::now())->get()->sortByDesc('start_date');
         return $data;
     }
 
