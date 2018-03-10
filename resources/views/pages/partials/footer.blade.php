@@ -38,10 +38,10 @@
                             Uppsving Sverige AB
                         </li>
                         <li>
-                            Polhemsgatan 16
+                            Fyrverkarbacken 25a
                         </li>
                         <li>
-                            112 36 Stockholm
+                            112 60 Stockholm
                         </li>
                         <li>
                             Org. nr. 559071-3722
