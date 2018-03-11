@@ -6,7 +6,7 @@
                     <ul>
                         <li>
                             <a target="_blank" href="http://www.uppsvingsverige.se/">
-                                <div class="logo" style="background-image: url('{{ asset('build/img/colored/uppsving.png') }}');"></div>
+                                <div class="logo" style="background-image: url('{{ asset('images/colored/uppsving.png') }}');"></div>
                             </a>
                         </li>
                         <li>
@@ -58,10 +58,10 @@
                     <ul>
                         <li class="social">
                             <a href="https://www.linkedin.com/company-beta/16162635/" target="_blank">
-                                <img src="{{ asset('build/img/linkedin.png') }}" alt="LinkedIn" />
+                                <img src="{{ asset('images/linkedin.png') }}" alt="LinkedIn" />
                             </a>
                             <a href="https://www.facebook.com/Uppsving-716832368491340" target="_blank">
-                                <img src="{{ asset('build/img/facebook.png') }}" alt="Facebook" />
+                                <img src="{{ asset('images/facebook.png') }}" alt="Facebook" />
                             </a>
                         </li>
                         <li class="footer-title">

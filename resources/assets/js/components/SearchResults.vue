@@ -7,10 +7,21 @@
         </div>
 
         <div class="searchResults row">
-            <div v-for="job in jobsObj.allJobs" transition="stagger" enter-stagger="25">
-                <custom-job-puff :job-data="job" v-if="!job.annonsid"></custom-job-puff>
-                <job-puff :job-data="job" v-if="job.annonsid"></job-puff>
-            </div>
+            <transition-group
+                    name="stagger"
+                    v-bind:css="false"
+                    v-on:before-enter="beforeEnter"
+                    v-on:enter="enter"
+                    v-on:leave="leave"
+            >
+                <div class="stagger" v-for="(job, index) in jobsObj.allJobs"
+                     v-bind:data-index="index"
+                     v-bind:key="index"
+                >
+                    <custom-job-puff :job-data="job" v-if="!job.annonsid"></custom-job-puff>
+                    <job-puff :job-data="job" v-if="job.annonsid"></job-puff>
+                </div>
+            </transition-group>
         </div>
 
         <template v-if="jobsObj.paginator && jobsObj.paginator.data.length === 0">
@@ -27,36 +38,38 @@
                     <div class="bounce3"></div>
                 </div>
             </div>
-            <div v-if="slowLoading" class="row" transition="stagger" align="center">
-                <br>
-                <h4 class="text-shadow">(Sökningen verkar gå långsammare än vanligt..)</h4>
-                <br>
-                <div class="col-md-4 col-md-offset-4" >
-                    <button class="btn btn-primary btn-sm" @click="fetchJobs">Prova igen</button>
+            <transition name="stagger">
+                <div v-if="slowLoading" class="row" align="center">
+                    <br>
+                    <h4 class="text-shadow">(Sökningen verkar gå långsammare än vanligt..)</h4>
+                    <br>
+                    <div class="col-md-4 col-md-offset-4" >
+                        <button class="btn btn-primary btn-sm" @click="fetchJobs">Prova igen</button>
+                    </div>
                 </div>
-            </div>
+            </transition>
         </div>
 
-        <div v-if="errorOccurred" class="row text-center" transition="stagger">
-            <div class="messageBox">
-                <div class="messageBoxHeading">Hoppsan!</div>
-                <div class="panel-body">
-                    <div class="h4">
-                        Något gick visst snett vid sökningen.
-                        <br><br>
-                        <div class="col-md-4 col-md-offset-4">
-                            <button class="btn btn-primary btn-sm" @click="fetchJobs">Försök igen</button>
+        <transition name="stagger">
+            <div v-if="errorOccurred" class="row text-center">
+                <div class="messageBox">
+                    <div class="messageBoxHeading">Hoppsan!</div>
+                    <div class="panel-body">
+                        <div class="h4">
+                            Något gick visst snett vid sökningen.
+                            <br><br>
+                            <div class="col-md-4 col-md-offset-4">
+                                <button class="btn btn-primary btn-sm" @click="fetchJobs">Försök igen</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </transition>
 
         <div id="pagination" v-show="showPagination">
             <div class="row">
-                <div class="col-xs-12" align="center">
-                    {{{ jobsObj.paginatorMarkup }}}
-                </div>
+                <div class="col-xs-12" align="center" v-html="jobsObj.paginatorMarkup"></div>
             </div>
         </div>
     </div>
@@ -65,7 +78,7 @@
 
 <script>
     export default {
-        created() {
+        mounted: function() {
             if(this.jobsObj.length === 0){
                 this.fetchJobs();
             }
@@ -76,7 +89,7 @@
             });
         },
 
-        data: function() {
+        data () {
             return {
                 jobsObj: [],
                 currPage: null,
@@ -92,11 +105,12 @@
                     'lan': '',
                     'q': '',
                     'yrkesomradeid': ''
-                }
+                },
+                cancellationToken: null
             }
         },
         methods: {
-            fetchJobs: function(){
+            fetchJobs () {
                 this.resetStates();
 
                 $('html, body').animate({
@@ -117,22 +131,22 @@
                     }
                 }, 5000);
 
-                this.fetchJobsRequest = this.$http.post(url, parameters, {
-                    // use before callback
-                    before(request) {
+                // abort previous request, if exists
+                if (this.cancellationToken) {
+                    this.cancellationToken.cancel();
+                }
 
-                        // abort previous request, if exists
-                        if (this.previousRequest) {
-                            this.previousRequest.abort();
-                        }
+                // set a new cancellationToken
+                const CancelToken = axios.CancelToken;
+                this.cancellationToken = CancelToken.source();
 
-                        // set previous request on Vue instance
-                        this.previousRequest = request;
-                    }
+                axios.post(url, parameters, {
+                    cancelToken: this.cancellationToken.token
                 }).then((response) => {
                         try {
-                            this.jobsObj = response.json();
+                            this.jobsObj = response.data;
                             this.showJobs = true;
+                            this.cancellationToken = null;
 
                             setTimeout(() => {
                                 this.showPagination = true;
@@ -145,14 +159,14 @@
                             this.errorOccurred = true;
                         }
 
-                    },
-                    (response) => {
+                    })
+                    .catch(() => {
                         console.log('Error fetching jobs');
                         this.errorOccurred = true;
                     });
             },
 
-            resetStates: function() {
+            resetStates () {
                 this.showJobs = false;
                 this.errorOccurred = false;
                 this.showPagination = false;
@@ -164,7 +178,7 @@
                 }
             },
 
-            getUrlParameterByName: function(name, url){
+            getUrlParameterByName (name, url) {
                 if (!url) url = window.location.href;
                 name = name.replace(/[\[\]]/g, "\\$&");
                 var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
@@ -174,7 +188,7 @@
                 return decodeURIComponent(results[2].replace(/\+/g, " "));
             },
 
-            setPaginationEventListeners: function(){
+            setPaginationEventListeners () {
                 var links = document.querySelectorAll("ul.pagination > li > a");
 
                 for(var i = 0; i < links.length; i++){
@@ -199,6 +213,21 @@
                         this.fetchJobs();
                     })
                 }
+            },
+            beforeEnter: function (el) {
+                el.style.opacity = 0;
+            },
+            enter: function (el) {
+                const delay = el.dataset.index * 25;
+                setTimeout(function () {
+                    el.style.opacity = 1;
+                }, delay)
+            },
+            leave: function (el) {
+                const delay = el.dataset.index * 25;
+                setTimeout(function () {
+                    el.style.opacity = 0;
+                }, delay)
             }
         }
     }

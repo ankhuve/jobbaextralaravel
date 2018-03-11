@@ -12,10 +12,11 @@ require('./bootstrap');
  * the application, or feel free to tweak this setup for your needs.
  */
 
+Vue.config.productionTip = false
+
 // uncomment these for production
 Vue.config.performance = false;
 Vue.config.devtools = false;
-Vue.config.debug = false;
 Vue.config.silent = true;
 
 // import components
@@ -25,16 +26,19 @@ Vue.component('custom-job-puff', require('./components/CustomJobPuff.vue'));
 Vue.component('job-puff', require('./components/JobPuff.vue'));
 
 const app = new Vue({
-    el: 'body',
-    data:{
-        applicationFormShowing: false
+    el: '#app',
+    data () {
+        return {
+            applicationFormShowing: false
+
+        }
     },
-    methods:{
-        toggleApplicationForm: function(){
+    methods: {
+        toggleApplicationForm () {
             this.applicationFormShowing = !this.applicationFormShowing;
         },
 
-        resetSearchFilters: function(){
+        resetSearchFilters () {
             $(".filters option[selected]").removeAttr('selected');
             $(".defaultOption").attr('selected','selected');
         }

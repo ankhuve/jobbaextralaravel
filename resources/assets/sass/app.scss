@@ -1,8 +1,8 @@
-$icon-font-path: "../fonts/";
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+$icon-font-path: "/fonts/";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
 // Flickity
-@import "node_modules/flickity/dist/flickity";
+@import "~flickity/dist/flickity";
 
 @import "partials/colors";
 @import "style";

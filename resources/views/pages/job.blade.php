@@ -37,10 +37,10 @@
             <div class="share-buttons text-right">
                 <h4>Dela jobbannons:
                     <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ env('APP_ENV') === "local" ? env('APP_URL') : URL::current() }}" target="_blank">
-                        <img src="{{ asset('build/img/linkedin.png') }}" alt="LinkedIn" />
+                        <img src="{{ asset('images/linkedin.png') }}" alt="LinkedIn" />
                     </a>
                     <a href="http://www.facebook.com/sharer.php?u={{ env('APP_ENV') === "local" ? env('APP_URL') : URL::current() }}" target="_blank">
-                        <img src="{{ asset('build/img/facebook.png') }}" alt="Facebook" />
+                        <img src="{{ asset('images/facebook.png') }}" alt="Facebook" />
                     </a>
                 </h4>
             </div>

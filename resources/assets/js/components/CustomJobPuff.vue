@@ -3,14 +3,14 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="upperInfo bordered">
-                    <a href="{{ jobData.url }}" >
+                    <a :href="jobData.url">
                         <div class="row">
-                            <div class="titles {{ jobData.logo_path ? 'col-xs-8' : 'col-xs-12' }}">
+                            <div class="titles" :class="{ 'col-xs-8': jobData.logo_path, 'col-xs-12': !jobData.logo_path }">
                                 <h1 class="text-left">{{ jobData.title }}</h1>
                                 <h2 class="text-left"><i>{{ jobData.work_place }}</i></h2>
                             </div>
                             <div v-if="jobData.logo_path" class="logo logo-job-block col-xs-4">
-                                <div class="logo logo-img" v-show="jobData.logo_path" v-bind:style="{ backgroundImage: 'url(' + jobData.logo_path + ')'}"></div>
+                                <div class="logo logo-img" v-show="jobData.logo_path" :style="{ backgroundImage: 'url(' + jobData.logo_path + ')'}"></div>
                             </div>
                         </div>
                     </a>
@@ -21,15 +21,15 @@
 
         <div class="bottomInfo">
             <div class="col-xs-5" title="Kommunen där jobbet finns.">
-                <img src="/build/img/map_pin.png"/>
+                <img src="/images/map_pin.png"/>
                 <span>{{ jobData.municipality }}</span>
             </div>
             <div class="col-xs-4" title="Dagar sedan jobbet publicerades.">
-                <img src="/build/img/time_ago.png"/>
+                <img src="/images/time_ago.png"/>
                 <span>{{ jobData.time_since_published }}</span>
             </div>
             <div class="col-xs-3" title="Sista ansökningsdatum för jobbet.">
-                <img src="/build/img/calendar.png"/>
+                <img src="/images/calendar.png"/>
                 <span>{{ jobData.latest_application_date }}</span>
             </div>
         </div>
@@ -38,7 +38,7 @@
 
 <script>
     export default {
-        data: function() {
+        data () {
             return {
             }
         },
