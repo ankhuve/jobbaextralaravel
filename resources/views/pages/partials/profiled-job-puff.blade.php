@@ -14,7 +14,7 @@
                     @if(\App\User::find($job->user_id)->logo_path)
                         <div class="logo-img" style="background-image: url('{{ env("UPLOADS_URL") }}/{{ \App\User::find($job->user_id)->logo_path }}')"></div>
                     @else
-                        <div class="logo-img" style="background-image: url('{{ asset("build/img/jobbrek.png") }}')"></div>
+                        <div class="logo-img" style="background-image: url('{{ asset("images/colored/jobbrek.png") }}')"></div>
                     @endif
 
                 </div>
@@ -27,12 +27,12 @@
             </div>
 
             <div class="block__bottom-info--left">
-                <img class="icon--small" src="{{ asset('build/img/map-pin_secondary.png') }}"/>
+                <img class="icon--small" src="{{ asset('images/map-pin_secondary.png') }}"/>
                 <span class="text-small">{{ $job->municipality }}</span>
             </div>
 
             <div class="block__bottom-info--right" title="Sista ansökningsdatum för jobbet.">
-                <img class="icon--small" src="{{ asset('build/img/calendar_secondary.png') }}"/>
+                <img class="icon--small" src="{{ asset('images/calendar_secondary.png') }}"/>
                 <span class="text-small date">{{ $job->latest_application_date }}</span>
             </div>
         </div>

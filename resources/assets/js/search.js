@@ -134,17 +134,17 @@ var createNewJobPuff = function(data){
             '</div>'+
             '<div class="bottomInfo">'+
                 '<div class="col-md-4" title="Kommunen där jobbet finns.">'+
-                    '<img src="img/map_pin.png"/>'+
+                    '<img src="images/map_pin.png"/>'+
                     '<span> '+data.kommunnamn+' </span>'+
                 '</div>'+
                 '<div class="col-md-4" title="Dagar sedan jobbet publicerades.">'+
-                    '<img src="img/time_ago.png"/>'+
+                    '<img src="images/time_ago.png"/>'+
                     '<span>'+
                         daysSincePublished(data.publiceraddatum)+
                     '</span>'+
                 '</div>'+
                 '<div class="col-md-4" title="Sista ansökningsdatum för jobbet.">'+
-                    '<img src="img/calendar.png"/>'+
+                    '<img src="images/calendar.png"/>'+
                     '<span>'+data.publiceraddatum.substr(0, 10)+'</span>'+
                 '</div>'+
             '</div>'+

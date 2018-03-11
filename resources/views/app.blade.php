@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" minimal-ui>
         <meta name="description" content="@yield('meta-description', 'Jobbrek.se | Lediga jobb inom skola, sjukvård, IT, m.m.')" />
         <meta name="keywords" content="Lediga jobb, jobb, skola, sjukvård, IT, jobbrek, extrajobb, deltidsjobb, jobba extra" />
+
+        <!-- CSRF Token -->
         <meta name="_token" content="{!! csrf_token() !!}"/>
 
         <meta property="fb:app_id" content="{{ env('FACEBOOK_APP_ID') }}" />
@@ -13,43 +15,40 @@
         <meta property="og:description" content="@yield('og-description', 'Här kan du söka bland tusentals jobb! Oavsett om du är nyutexaminerad eller helt enkelt vill vidare i karriären kan vi hjälpa dig att hitta rätt. Vi jobbar rikstäckande och hjälper allt i från enskilda firmor till stora koncerner, kommuner och myndigheter med att hitta rätt personal. ')" />
 
         {{--Använd om man vill ha företagets logga för annons (kan bli konstiga proportioner)--}}
-        <meta property="og:image" content="@yield('og-image', asset('build/img/jobbrek-og.png'))" />
-        {{--<meta property="og:image" content={{ asset('build/img/jobbrek-og.png') }} />--}}
+        <meta property="og:image" content="@yield('og-image', asset('images/jobbrek-og.png'))" />
+        {{--<meta property="og:image" content={{ asset('images/jobbrek-og.png') }} />--}}
 
         <meta property="og:url" content={{ URL::current() }} />
 
         <title>@yield('title', env('APP_NAME', 'Jobbrek | Lediga jobb i Sverige och Norge'))</title>
-        {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">--}}
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ asset('apple-touch-icon-57x57.png') }}" />
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('apple-touch-icon-114x114.png') }}" />
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('apple-touch-icon-72x72.png') }}" />
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('apple-touch-icon-144x144.png') }}" />
-        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="{{ asset('apple-touch-icon-60x60.png') }}" />
-        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ asset('apple-touch-icon-120x120.png') }}" />
-        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ asset('apple-touch-icon-76x76.png') }}" />
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ asset('apple-touch-icon-152x152.png') }}" />
-        <link rel="icon" type="image/png" href="{{ asset('favicon-196x196.png') }}" sizes="196x196" />
-        <link rel="icon" type="image/png" href="{{ asset('favicon-96x96.png') }}" sizes="96x96" />
-        <link rel="icon" type="image/png" href="{{ asset('favicon-32x32.png') }}" sizes="32x32" />
-        <link rel="icon" type="image/png" href="{{ asset('favicon-16x16.png') }}" sizes="16x16" />
-        <link rel="icon" type="image/png" href="{{ asset('favicon-128.png') }}" sizes="128x128" />
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ asset('images/favicons/apple-touch-icon-57x57.png') }}" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('images/favicons/apple-touch-icon-114x114.png') }}" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('images/favicons/apple-touch-icon-72x72.png') }}" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('images/favicons/apple-touch-icon-144x144.png') }}" />
+        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="{{ asset('images/favicons/apple-touch-icon-60x60.png') }}" />
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ asset('images/favicons/apple-touch-icon-120x120.png') }}" />
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ asset('images/favicons/apple-touch-icon-76x76.png') }}" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ asset('images/favicons/apple-touch-icon-152x152.png') }}" />
+        <link rel="icon" type="image/png" href="{{ asset('images/favicons/favicon-196x196.png') }}" sizes="196x196" />
+        <link rel="icon" type="image/png" href="{{ asset('images/favicons/favicon-96x96.png') }}" sizes="96x96" />
+        <link rel="icon" type="image/png" href="{{ asset('images/favicons/favicon-32x32.png') }}" sizes="32x32" />
+        <link rel="icon" type="image/png" href="{{ asset('images/favicons/favicon-16x16.png') }}" sizes="16x16" />
+        <link rel="icon" type="image/png" href="{{ asset('images/favicons/favicon-128.png') }}" sizes="128x128" />
         <meta name="application-name" content="{{ env('APP_NAME', 'Jobbrek.se') }}"/>
         <meta name="msapplication-TileColor" content="#FFFFFF" />
-        <meta name="msapplication-TileImage" content="{{ asset('mstile-144x144.png') }}" />
-        <meta name="msapplication-square70x70logo" content="{{ asset('mstile-70x70.png') }}" />
-        <meta name="msapplication-square150x150logo" content="{{ asset('mstile-150x150.png') }}" />
-        <meta name="msapplication-wide310x150logo" content="{{ asset('stile-310x150.png') }}" />
-        <meta name="msapplication-square310x310logo" content="{{ asset('stile-310x310.png') }}" />
+        <meta name="msapplication-TileImage" content="{{ asset('images/favicons/mstile-144x144.png') }}" />
+        <meta name="msapplication-square70x70logo" content="{{ asset('images/favicons/mstile-70x70.png') }}" />
+        <meta name="msapplication-square150x150logo" content="{{ asset('images/favicons/mstile-150x150.png') }}" />
+        <meta name="msapplication-wide310x150logo" content="{{ asset('images/favicons/stile-310x150.png') }}" />
+        <meta name="msapplication-square310x310logo" content="{{ asset('images/favicons/stile-310x310.png') }}" />
 
 
-        <link rel="stylesheet" href="{{ elixir('css/app.css') }}"/>
-        {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">--}}
-        {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">--}}
+        <link rel="stylesheet" href="/css/app.css"/>
         <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,700|Raleway:400' rel='stylesheet' type='text/css'>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
@@ -76,7 +75,7 @@
         <header class="container-fluid">
             <a href="{{ action('HomeController@index') }}">
                 <div class="navbar-brand">
-                    <img src="{{ asset('build/img/jobbrek.png') }}"/>
+                    <img src="{{ asset('images/jobbrek.png') }}"/>
                 </div>
             </a>
             <div class="navbar-header">
@@ -183,18 +182,14 @@
             </div>
         @endif
 
-        <div class="view">
+        <div class="view" id="app">
             @yield('content')
         </div>
 
         @include('pages.partials.footer')
     </body>
 
-    {{--<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>--}}
-    {{--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>--}}
-    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.min.js"></script>--}}
-    {{--<script src="{{ asset('js/summernote/lang/summernote-sv-SE.js') }}"></script>--}}
-    {{--<script src="{{ asset('js/flickity.pkgd.js') }}"></script>--}}
-    {{--<script src="{{ asset('js/search.js') }}"></script>--}}
-    <script src="{{ elixir('js/app.js') }}"></script>
+    <script src="{{ mix('js/manifest.js') }}"></script>
+    <script src="{{ mix('js/vendor.js') }}"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
 </html>

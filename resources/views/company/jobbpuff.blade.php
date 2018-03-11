@@ -8,15 +8,15 @@
 
         <div class="bottomInfo">
             <div class="col-xs-4">
-                <img src="img/map_pin.png"/>
+                <img src="images/map_pin.png"/>
                 <span>{{ $job->municipality }}</span>
             </div>
             <div class="col-xs-4">
-                <img src="img/time_ago.png"/>
+                <img src="images/time_ago.png"/>
                 <span>{{ $job->created_at->format('Y-m-d') }}</span>
             </div>
             <div class="col-xs-4">
-                <img src="img/calendar.png"/>
+                <img src="images/calendar.png"/>
                 <span>{{ $job->created_at->format('Y-m-d') }}</span>
             </div>
         </div>

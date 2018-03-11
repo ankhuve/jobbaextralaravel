@@ -48,26 +48,26 @@
                 transition: 0.5s;
 
                 &#jobbrek{
-                    background-image: url('../img/gray/jobbrek.png');
+                    background-image: url('/images/gray/jobbrek.png');
 
                     &:hover{
-                        background-image: url('../img/colored/jobbrek.png');
+                        background-image: url('/images/colored/jobbrek.png');
                     }
                 }
 
                 &#jobbiskola{
-                    background-image: url('../img/gray/jobbiskola.png');
+                    background-image: url('/images/gray/jobbiskola.png');
 
                     &:hover{
-                        background-image: url('../img/colored/jobbiskola.png');
+                        background-image: url('/images/colored/jobbiskola.png');
                     }
                 }
 
                 &#vardvakanser{
-                    background-image: url('../img/gray/vardvakanser.png');
+                    background-image: url('/images/gray/vardvakanser.png');
 
                     &:hover{
-                        background-image: url('../img/colored/vardvakanser.png');
+                        background-image: url('/images/colored/vardvakanser.png');
                     }
                 }
             }
