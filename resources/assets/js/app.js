@@ -79,6 +79,13 @@ var resetFilters = function(){
     $(".defaultOption").attr('selected','selected');
 };
 
+var requireCaptcha = function () {
+    let $recaptcha = document.querySelector('#g-recaptcha-response');
+    if($recaptcha) {
+        $recaptcha.setAttribute("required", "required");
+    }
+}
+
 $(document).ready(function () {
     toggleFilters();
 
@@ -107,5 +114,7 @@ $(document).ready(function () {
             $('#contactForm').hide(300);
         }
     })
+
+    requireCaptcha();
 
 });
