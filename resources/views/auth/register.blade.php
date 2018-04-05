@@ -1,5 +1,9 @@
 @extends('app')
 
+@section('scripts')
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+@endsection
+
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -252,6 +256,12 @@
                                     {{--@endforeach--}}
                                     {{--@endif--}}
 
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <div class="g-recaptcha" data-sitekey="{{ env('CAPTCHA_KEY') }}"></div>
                                 </div>
                             </div>
 
