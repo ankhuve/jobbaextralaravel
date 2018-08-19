@@ -186,9 +186,11 @@
 
         <div class="view" id="app">
             @yield('content')
+            <cookie-info></cookie-info>
         </div>
 
         @include('pages.partials.footer')
+
     </body>
 
     <script src="{{ mix('js/manifest.js') }}"></script>
