@@ -24,6 +24,7 @@ Vue.component('job-counter', require('./components/JobCounter.vue'));
 Vue.component('search-results', require('./components/SearchResults.vue'));
 Vue.component('custom-job-puff', require('./components/CustomJobPuff.vue'));
 Vue.component('job-puff', require('./components/JobPuff.vue'));
+Vue.component('cookie-info', require('./components/CookieInfo.vue'));
 
 const app = new Vue({
     el: '#app',
