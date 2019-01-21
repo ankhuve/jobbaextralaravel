@@ -41,7 +41,7 @@ class ContactController extends Controller
                 ), function($message)
                 {
                     $message->from(env('MAIL_USERNAME'));
-                    $message->to('info@jobbrek.se', 'Jobbrek.se')->subject('Kontakt via Jobbrek.se');
+                    $message->to('liv@svenskjobbindustri.se', 'Jobbmedia.se')->subject('Kontakt via Jobbmedia.se');
                 });
 
             return \Redirect::action('ContactController@create')

@@ -47,27 +47,11 @@
             .logo-hover{
                 transition: 0.5s;
 
-                &#jobbrek{
-                    background-image: url('/images/gray/jobbrek.png');
+                &#jobbmedia{
+                    background-image: url('/images/jobbmedia-logo.png');
 
                     &:hover{
-                        background-image: url('/images/colored/jobbrek.png');
-                    }
-                }
-
-                &#jobbiskola{
-                    background-image: url('/images/gray/jobbiskola.png');
-
-                    &:hover{
-                        background-image: url('/images/colored/jobbiskola.png');
-                    }
-                }
-
-                &#vardvakanser{
-                    background-image: url('/images/gray/vardvakanser.png');
-
-                    &:hover{
-                        background-image: url('/images/colored/vardvakanser.png');
+                        background-image: url('/images/colored/jobbmedia.png');
                     }
                 }
             }

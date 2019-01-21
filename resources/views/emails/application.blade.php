@@ -3,7 +3,7 @@
 </h2>
 
 <h3>
-    Ni har fått en jobbansökan via Jobbrek.se för jobbet: <a href="{{ $jobUrl }}" target="_blank">{{ $jobTitle }}</a>
+    Ni har fått en jobbansökan via Jobbmedia.se för jobbet: <a href="{{ $jobUrl }}" target="_blank">{{ $jobTitle }}</a>
 </h3>
 
 <h4>Namn:</h4>

@@ -1,5 +1,5 @@
 <h2>
-    Du har blivit kontaktad via Jobbrek.se:
+    Du har blivit kontaktad via Jobbmedia.se:
 </h2>
 
 <h4>Namn:</h4>

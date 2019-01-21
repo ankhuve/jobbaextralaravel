@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', env('APP_NAME', 'Jobbrek') . " | " . $jobMatch->title)
+@section('title', env('APP_NAME', 'Jobbmedia') . " | " . $jobMatch->title)
 @section('meta-description', $jobMatch->title . " | " . $jobMatch->work_place)
 
 @section('og-title', $jobMatch->title)
@@ -66,7 +66,7 @@
                     <div class="extraJobInfo">Sista ansökningsdag {{ $jobMatch->latest_application_date }}</div>
                 @endif
 
-                <h4 class="text-center m-v-2 text-secondary">Kom ihåg att ange {{ env('APP_NAME', 'Jobbrek') }} som referens vid ansökan!</h4>
+                <h4 class="text-center m-v-2 text-secondary">Kom ihåg att ange {{ env('APP_NAME', 'Jobbmedia') }} som referens vid ansökan!</h4>
 
                 <div class="row">
                     @if(empty($jobMatch->external_link))

@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" minimal-ui>
-        <meta name="description" content="@yield('meta-description', 'Jobbrek.se | Lediga jobb inom skola, sjukvård, IT, m.m.')" />
-        <meta name="keywords" content="Lediga jobb, jobb, skola, sjukvård, IT, jobbrek, extrajobb, deltidsjobb, jobba extra" />
+        <meta name="description" content="@yield('meta-description', 'Jobbmedia.se | Lediga jobb inom skola, sjukvård, IT, m.m.')" />
+        <meta name="keywords" content="Lediga jobb, jobb, skola, sjukvård, IT, jobbmedia, extrajobb, deltidsjobb, jobba extra" />
 
         <!-- CSRF Token -->
         <meta name="_token" content="{!! csrf_token() !!}"/>
 
         <meta property="fb:app_id" content="{{ env('FACEBOOK_APP_ID') }}" />
-        <meta property="og:title" content="@yield('og-title', 'Jobbrek.se | Lediga jobb inom skola, sjukvård, IT, m.m.')" />
+        <meta property="og:title" content="@yield('og-title', 'Jobbmedia.se | Lediga jobb inom skola, sjukvård, IT, m.m.')" />
         <meta property="og:description" content="@yield('og-description', 'Här kan du söka bland tusentals jobb! Oavsett om du är nyutexaminerad eller helt enkelt vill vidare i karriären kan vi hjälpa dig att hitta rätt. Vi jobbar rikstäckande och hjälper allt i från enskilda firmor till stora koncerner, kommuner och myndigheter med att hitta rätt personal. ')" />
 
         {{--Använd om man vill ha företagets logga för annons (kan bli konstiga proportioner)--}}
@@ -20,7 +20,7 @@
 
         <meta property="og:url" content={{ URL::current() }} />
 
-        <title>@yield('title', env('APP_NAME', 'Jobbrek | Lediga jobb i Sverige och Norge'))</title>
+        <title>@yield('title', env('APP_NAME', 'Jobbmedia | Lediga jobb i Sverige och Norge'))</title>
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -39,7 +39,7 @@
         <link rel="icon" type="image/png" href="{{ asset('images/favicons/favicon-32x32.png') }}" sizes="32x32" />
         <link rel="icon" type="image/png" href="{{ asset('images/favicons/favicon-16x16.png') }}" sizes="16x16" />
         <link rel="icon" type="image/png" href="{{ asset('images/favicons/favicon-128.png') }}" sizes="128x128" />
-        <meta name="application-name" content="{{ env('APP_NAME', 'Jobbrek.se') }}"/>
+        <meta name="application-name" content="{{ env('APP_NAME', 'Jobbmedia.se') }}"/>
         <meta name="msapplication-TileColor" content="#FFFFFF" />
         <meta name="msapplication-TileImage" content="{{ asset('images/favicons/mstile-144x144.png') }}" />
         <meta name="msapplication-square70x70logo" content="{{ asset('images/favicons/mstile-70x70.png') }}" />
@@ -77,7 +77,7 @@
         <header class="container-fluid">
             <a href="{{ action('HomeController@index') }}">
                 <div class="navbar-brand">
-                    <img src="{{ asset('images/jobbrek.png') }}"/>
+                    <img src="{{ asset('images/jobbmedia-logo.png') }}"/>
                 </div>
             </a>
             <div class="navbar-header">

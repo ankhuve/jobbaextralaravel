@@ -54,7 +54,7 @@ return [
 	|
 	*/
 
-	'from' => ['address' => 'postmaster@jobbrek.se', 'name' => 'Jobbrek.se'],
+	'from' => ['address' => 'postmaster@jobbrek.se', 'name' => 'Jobbmedia.se'],
 
 	/*
 	|--------------------------------------------------------------------------

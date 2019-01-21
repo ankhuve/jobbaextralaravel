@@ -182,11 +182,11 @@ class JobController extends Controller
                 'user_message' => $request->get('message')
             ), function($message) use ($attachmentData, $request, $job)
             {
-                $message->from(env('MAIL_USERNAME'), 'Jobbrek.se');
+                $message->from(env('MAIL_USERNAME'), 'Jobbmedia.se');
 
                 // lägg till annonsens kontaktemail som mottagare
-                $message->to($job ? $job->contact_email : 'info@jobbrek.se', 'Jobbrek.se')->subject('Jobbansökan: ' . $request->get('jobTitle') . ', via Jobbrek.se');
-                $message->bcc('info@jobbrek.se', 'Jobbrek.se');
+                $message->to($job ? $job->contact_email : 'liv@svenskjobbindustri.se', 'Jobbmedia.se')->subject('Jobbansökan: ' . $request->get('jobTitle') . ', via Jobbmedia.se');
+                $message->bcc('liv@svenskjobbindustri.se', 'Jobbmedia.se');
                 if(!is_null($attachmentData)){
                     $message->attach($attachmentData['path'],
                         [

@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', env('APP_NAME', 'Jobbrek') . " | " . $jobMatch->annons->annonsrubrik)
+@section('title', env('APP_NAME', 'Jobbmedia') . " | " . $jobMatch->annons->annonsrubrik)
 @section('meta-description', $jobMatch->annons->annonsrubrik . " | " . $jobMatch->arbetsplats->arbetsplatsnamn)
 
 @section('og-title', $jobMatch->annons->annonsrubrik)
@@ -72,7 +72,7 @@
                     {{--</div>--}}
                 {{--</div>--}}
 
-                <h4 class="text-center m-v-2 text-secondary">Kom ihåg att ange {{ env('APP_NAME', 'Jobbrek') }} som referens vid ansökan!</h4>
+                <h4 class="text-center m-v-2 text-secondary">Kom ihåg att ange {{ env('APP_NAME', 'Jobbmedia') }} som referens vid ansökan!</h4>
 
                 <div class="row">
                     <div class="col-sm-4 col-sm-offset-4">

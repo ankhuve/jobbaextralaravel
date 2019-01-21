@@ -14,7 +14,7 @@
                     @if(\App\User::find($job->user_id)->logo_path)
                         <div class="logo-img" style="background-image: url('{{ env("UPLOADS_URL") }}/{{ \App\User::find($job->user_id)->logo_path }}')"></div>
                     @else
-                        <div class="logo-img" style="background-image: url('{{ asset("images/colored/jobbrek.png") }}')"></div>
+                        <div class="logo-img" style="background-image: url('{{ asset("images/colored/jobbmedia.png") }}')"></div>
                     @endif
 
                 </div>
